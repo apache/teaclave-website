@@ -13,7 +13,7 @@ the complete workflow and necessary operations to achieve that goal.
 
 ## For New Release Managers
 
-### 0. Become a member of the Apache Teaclave™ (incubating) community
+### 0. Become a member of the Apache Teaclave™  community
 
 The release manager must be a member of the Apache Teaclave™ project. This
 ensures they have the necessary permissions, including access to the Apache
@@ -233,22 +233,22 @@ Here are some examples:
 
 **Vote / Result in the dev@teaclave list**:
 
-- subject: [VOTE] Release Apache Teaclave TrustZone SDK (incubating) v0.4.0-rc.2
+- subject: [VOTE] Release Apache Teaclave TrustZone SDK  v0.4.0-rc.2
 - to: dev@teaclave.apache.org
 - link: <https://lists.apache.org/thread/o60wpscnq8mp6lhbd8h654ybxd6wzhk7>
 
-- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK (incubating)
+- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK 
   v0.4.0-rc.2
 - to: dev@teaclave.apache.org
 - link: <https://lists.apache.org/thread/oo2r4xh731bqbn9b0659jjl7f4cym9g6>
 
 **Vote / Result in the general@incubator list**:
 
-- subject: [VOTE] Release Apache Teaclave TrustZone SDK (incubating) v0.4.0-rc.2
+- subject: [VOTE] Release Apache Teaclave TrustZone SDK  v0.4.0-rc.2
 - to: general@incubator.apache.org
 - link: <https://lists.apache.org/thread/8mstnqpoo0hy1sy8f96dyrkyrmcdwz2z>
 
-- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK (incubating)
+- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK 
   v0.4.0-rc.2
 - to: general@incubator.apache.org
 - link: <https://lists.apache.org/thread/y2m99kt8tbpkp4fs9pw4kxvwc4pvx2so>
@@ -308,7 +308,7 @@ for details.
 
 **Mailing list example**:
 
-- subject: [ANNOUNCE] Apache Teaclave TrustZone SDK (incubating) 0.4.0 Released
+- subject: [ANNOUNCE] Apache Teaclave TrustZone SDK  0.4.0 Released
 - to: announce@apache.org, dev@teaclave.apache.org
 - link: <https://lists.apache.org/thread/7zn019gsmd65xsbgw2tbv2c3jdvc44hb>
 
@@ -322,7 +322,7 @@ the download page: <https://teaclave.incubator.apache.org/download/>
 
 **Blog example**:
 
-- title: Announcing Apache Teaclave (incubating) 0.3.0
+- title: Announcing Apache Teaclave  0.3.0
 - link: <https://teaclave.apache.org/blog/2021-10-01-announcing-teaclave-0-3-0/>
 
 **Update Download Page Example**:

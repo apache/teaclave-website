@@ -4,7 +4,7 @@ permalink: /maturity
 
 # Maturity Assessment For The Apache Teaclave™ Ecosystem
 
-This is a maturity assessment of Apache Teaclave™ (incubating) based on the ASF project 
+This is a maturity assessment of Apache Teaclave™  based on the ASF project 
 [maturity model](https://community.apache.org/apache-way/apache-project-maturity-model.html).
 
 It is used to evaluate the overall maturity for the project and the codebase 

@@ -4,7 +4,7 @@ permalink: /contributing
 
 # Contributing
 
-Apache Teaclave™ (incubating) is open source and follows
+Apache Teaclave™  is open source and follows
 [The Apache Way](https://www.apache.org/theapacheway/).
 We aim to create a project that is maintained and owned by the 
 community. All kinds of contributions are welcome.

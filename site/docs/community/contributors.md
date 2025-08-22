@@ -4,7 +4,7 @@ permalink: /contributors
 
 # Contributors
 
-Apache Teaclave™ (incubating) adopts [The Apache Way](https://www.apache.org/theapacheway/).
+Apache Teaclave™  adopts [The Apache Way](https://www.apache.org/theapacheway/).
 Everyone is more than welcome to contribute and make the project better.
 We add tag along with committer name to show areas that they are familiar with.
 We do encourage everyone to work anything they are interested in.

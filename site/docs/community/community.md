@@ -4,7 +4,7 @@ permalink: /community
 
 # Community
 
-Welcome to the Apache Teaclave™ (incubating) community. Here are several ways that you can get involved.
+Welcome to the Apache Teaclave™  community. Here are several ways that you can get involved.
 
 ## Mailing Lists
 

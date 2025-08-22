@@ -11,7 +11,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Apache Teaclave™ (incubating)',
+  title: 'Apache Teaclave™ ',
   tagline: 'Open-source SDKs to build memory-safe Trusted Applications on Intel SGX, Arm TrustZone, and beyond.',
   favicon: undefined,
 
@@ -222,7 +222,7 @@ const config = {
       footer: {
         style: 'dark',
         copyright: `<div style="font-size:.7rem; text-align:left;">`
-          + `Apache Teaclave™ (incubating) is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. `
+          + `Apache Teaclave™  is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. `
           + `Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. `
           + `While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF. `
           + `Copyright © 2020 The Apache Software Foundation. `

@@ -2,9 +2,9 @@
 permalink: /overview
 ---
 
-# Apache Teaclave™ (incubating): Empowering Memory-Safe Development for TEEs
+# Apache Teaclave™ : Empowering Memory-Safe Development for TEEs
 
-Welcome to the official website of Teaclave, an open-source initiative under the [Apache Incubator](https://incubator.apache.org/). Teaclave empowers developers to build memory-safe Trusted Applications across diverse confidential computing platforms, including Intel SGX and Arm TrustZone.
+Welcome to the official website of Teaclave, an open-source initiative under the [Apache Software Foundation](https://www.apache.org/). Teaclave empowers developers to build memory-safe Trusted Applications across diverse confidential computing platforms, including Intel SGX and Arm TrustZone.
 
 Originally designed as a general-purpose secure computing framework, Teaclave has naturally evolved into a growing ecosystem of developer-friendly SDKs, enabling direct development of custom Trusted Applications. This evolution is driven by strong community adoption and contributions.
 
