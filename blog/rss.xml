@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Apache Teaclave™ (incubating) Blog</title>
+        <title>Apache Teaclave™  Blog</title>
         <link>https://teaclave.apache.org/blog</link>
-        <description>Apache Teaclave™ (incubating) Blog</description>
+        <description>Apache Teaclave™  Blog</description>
         <lastBuildDate>Tue, 08 Jul 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>

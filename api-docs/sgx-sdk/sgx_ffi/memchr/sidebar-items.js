@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["memchr","A safe interface to `memchr`."],["memrchr",""]]};
+window.SIDEBAR_ITEMS = {"fn":["memchr","memrchr"]};

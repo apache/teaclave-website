@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["alloc",""],["map",""]]};
+window.SIDEBAR_ITEMS = {"mod":["alloc","map"]};

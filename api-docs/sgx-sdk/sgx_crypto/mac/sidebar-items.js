@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["HashType",""]],"struct":[["AesCMac",""],["HMac",""]]};
+window.SIDEBAR_ITEMS = {"enum":["HashType"],"struct":["AesCMac","HMac"]};

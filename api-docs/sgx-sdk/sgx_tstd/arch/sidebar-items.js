@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"macro":[["is_x86_feature_detected",""]]};
+window.SIDEBAR_ITEMS = {"macro":["is_x86_feature_detected"]};

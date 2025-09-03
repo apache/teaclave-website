@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["TcsPolicy",""]],"fn":[["current",""],["stack_size",""],["tcs_max_num",""],["tcs_policy",""]],"struct":[["TcsId",""],["ThreadControl",""]]};
+window.SIDEBAR_ITEMS = {"enum":["TcsPolicy"],"fn":["current","stack_size","tcs_max_num","tcs_policy"],"struct":["TcsId","ThreadControl"]};

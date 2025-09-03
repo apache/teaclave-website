@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["Report","An error reporter that prints an error and its sources."]],"trait":[["Error","`Error` is a trait representing the basic expectations for error values, i.e., values of type `E` in [`Result<T, E>`]."]]};
+window.SIDEBAR_ITEMS = {"fn":["request_ref","request_value"],"struct":["Report","Request"],"trait":["Error"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["getrandom",""],["rand",""]],"struct":[["Rng",""]]};
+window.SIDEBAR_ITEMS = {"fn":["getrandom","rand"],"struct":["Rng"]};

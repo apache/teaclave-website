@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["lfence",""],["mfence",""]]};
+window.SIDEBAR_ITEMS = {"fn":["lfence","mfence"]};

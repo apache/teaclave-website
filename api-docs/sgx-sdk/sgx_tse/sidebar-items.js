@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"trait":[["EnclaveKey",""],["EnclaveReport",""],["EnclaveTarget",""],["TeeReport",""]]};
+window.SIDEBAR_ITEMS = {"trait":["EnclaveKey","EnclaveReport","EnclaveTarget","TeeReport"]};

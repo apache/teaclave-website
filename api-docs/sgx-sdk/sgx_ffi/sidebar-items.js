@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["ascii","Operations on ASCII strings and characters."],["c_str",""],["memchr",""]]};
+window.SIDEBAR_ITEMS = {"mod":["ascii","c_str","memchr"]};

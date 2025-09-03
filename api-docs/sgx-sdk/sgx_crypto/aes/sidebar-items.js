@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["cbc",""],["ccm",""],["ctr",""],["gcm",""]]};
+window.SIDEBAR_ITEMS = {"mod":["cbc","ccm","ctr","gcm"]};

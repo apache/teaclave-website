@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["SpinMutex",""],["SpinMutexGuard",""],["SpinRwLock",""],["SpinRwLockReadGuard",""],["SpinRwLockWriteGuard",""]],"trait":[["RawMutex",""],["RawRwLock",""]]};
+window.SIDEBAR_ITEMS = {"struct":["SpinMutex","SpinMutexGuard","SpinReentrantMutex","SpinReentrantMutexGuard","SpinRwLock","SpinRwLockReadGuard","SpinRwLockWriteGuard"],"trait":["RawMutex","RawRwLock"]};

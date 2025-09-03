@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["escape_default","Returns an iterator that produces an escaped version of a `u8`."]],"struct":[["EscapeDefault","An iterator over the escaped version of a byte."]],"trait":[["AsciiExt","Extension methods for ASCII-subset only operations."]]};
+window.SIDEBAR_ITEMS = {"enum":["Char"],"fn":["escape_default"],"struct":["EscapeDefault"],"trait":["AsciiExt"]};

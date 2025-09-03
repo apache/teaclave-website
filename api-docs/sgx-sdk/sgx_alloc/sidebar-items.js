@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["alignalloc","align alloc crate for Rust SGX SDK"],["alignbox","align box crate for Rust SGX SDK"],["capi",""]],"struct":[["System",""]]};
+window.SIDEBAR_ITEMS = {"mod":["alignalloc","alignbox","capi"],"struct":["System"]};

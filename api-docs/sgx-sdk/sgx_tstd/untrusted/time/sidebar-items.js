@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"trait":[["InstantEx",""],["SystemTimeEx",""]]};
+window.SIDEBAR_ITEMS = {"trait":["InstantEx","SystemTimeEx"]};

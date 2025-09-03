@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://teaclave.apache.org/blog</id>
-    <title>Apache Teaclave™ (incubating) Blog</title>
+    <title>Apache Teaclave™  Blog</title>
     <updated>2025-07-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://teaclave.apache.org/blog"/>
-    <subtitle>Apache Teaclave™ (incubating) Blog</subtitle>
+    <subtitle>Apache Teaclave™  Blog</subtitle>
     <entry>
         <title type="html"><![CDATA[Teaclave Repository Restructuring and Community Focus]]></title>
         <id>https://teaclave.apache.org/blog/2025/07/08/repo-reorg-community-focus</id>

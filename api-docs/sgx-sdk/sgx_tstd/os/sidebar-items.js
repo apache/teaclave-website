@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["fd","Owned and borrowed Unix-like file descriptors."],["linux","Linux-specific definitions."],["raw","Compatibility module for C platform-specific types. Use [`core::ffi`] instead."],["unix","Platform-specific extensions to `std` for Unix platforms."]]};
+window.SIDEBAR_ITEMS = {"mod":["fd","linux","raw","unix"]};

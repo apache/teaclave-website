@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["EcKeyPair",""],["EcPrivateKey",""],["EcPublicKey",""],["EcShareKey",""],["EcSignature",""]]};
+window.SIDEBAR_ITEMS = {"struct":["EcKeyPair","EcPrivateKey","EcPublicKey","EcShareKey","EcSignature"]};

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkapache_teaclave_incubating=self.webpackChunkapache_teaclave_incubating||[]).push([[4540],{4263:(a,e,c)=>{c.r(e),c.d(e,{default:()=>n});var t=c(6540);function n(){return(0,t.useEffect)(()=>{window.location.href="https://github.com/apache/incubator-teaclave/blob/main/LICENSE"},[]),null}}}]);

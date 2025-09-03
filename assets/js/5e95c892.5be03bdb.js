@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapache_teaclave_website=self.webpackChunkapache_teaclave_website||[]).push([[9647],{7121:(e,a,s)=>{s.r(a),s.d(a,{default:()=>n});s(6540);var c=s(4164),r=s(5500),t=s(7559),u=s(2831),l=s(1656),h=s(4848);function n(e){return(0,h.jsx)(r.e3,{className:(0,c.A)(t.G.wrapper.docsPages),children:(0,h.jsx)(l.A,{children:(0,u.v)(e.route.routes)})})}}}]);

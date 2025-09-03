@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["AesCtr",""],["Counter",""]]};
+window.SIDEBAR_ITEMS = {"struct":["AesCtr","Counter"]};

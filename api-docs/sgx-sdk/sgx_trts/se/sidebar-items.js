@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["AlignKeyRequest",""],["AlignReport",""],["AlignReport2Mac",""],["AlignReportData",""],["AlignTargetInfo",""]],"type":[["AlignKey",""]]};
+window.SIDEBAR_ITEMS = {"struct":["AlignKeyRequest","AlignReport","AlignReport2Mac","AlignReportData","AlignTargetInfo"],"type":["AlignKey"]};

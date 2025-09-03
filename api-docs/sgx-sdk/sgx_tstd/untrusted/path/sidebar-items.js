@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["absolute","Makes the path absolute without accessing the filesystem."]],"trait":[["PathEx",""]]};
+window.SIDEBAR_ITEMS = {"fn":["absolute"],"trait":["PathEx"]};

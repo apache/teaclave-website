@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"trait":[["ConstTimeEq",""]]};
+window.SIDEBAR_ITEMS = {"trait":["ConstTimeEq"]};

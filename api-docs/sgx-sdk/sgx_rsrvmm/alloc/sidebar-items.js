@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["RsrvMemAlloc",""],["RsrvMemAllocErr",""]]};
+window.SIDEBAR_ITEMS = {"struct":["RsrvMemAlloc","RsrvMemAllocErr"]};

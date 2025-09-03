@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"trait":[["MetadataExt","OS-specific extensions to `fs::Metadata`."]]};
+window.SIDEBAR_ITEMS = {"trait":["MetadataExt"]};

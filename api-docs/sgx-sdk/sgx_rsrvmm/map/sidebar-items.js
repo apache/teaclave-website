@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["MapAddr",""]],"struct":[["MapObject",""],["Mmap",""],["MmapMut",""],["Nothing",""],["Zero",""]],"trait":[["Map",""]]};
+window.SIDEBAR_ITEMS = {"enum":["MapAddr"],"struct":["MapObject","Mmap","MmapMut","Nothing","Zero"],"trait":["Map"]};

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["linux",""]]};
+window.SIDEBAR_ITEMS = {"mod":["linux"]};

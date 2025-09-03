@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":[["sgx_aligned_free","Safety"],["sgx_aligned_malloc","Safety"],["sgx_get_aligned_ptr","Safety"]]};
+window.SIDEBAR_ITEMS = {"fn":["sgx_aligned_free","sgx_aligned_malloc","sgx_get_aligned_ptr"]};
