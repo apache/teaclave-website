@@ -7,12 +7,12 @@ site: build
 	ghp-import --no-history --force build -b asf-site
 
 init-repo:
-	git clone -b main https://github.com/apache/incubator-teaclave.git docs/teaclave-docs --depth 1
-	git clone -b legacy https://github.com/apache/incubator-teaclave.git docs/teaclave-faas-legacy --depth 1
+	git clone -b main https://github.com/apache/teaclave.git docs/teaclave-docs --depth 1
+	git clone -b legacy https://github.com/apache/teaclave.git docs/teaclave-faas-legacy --depth 1
 
 	# v2.0.0-preview branch does not have documents folder, we use master branch instead
-	git clone -b master https://github.com/apache/incubator-teaclave-sgx-sdk.git docs/teaclave-sgx-sdk --depth 1
-	git clone https://github.com/apache/incubator-teaclave-trustzone-sdk.git docs/teaclave-trustzone-sdk --depth 1
+	git clone -b master https://github.com/apache/teaclave-sgx-sdk.git docs/teaclave-sgx-sdk --depth 1
+	git clone https://github.com/apache/teaclave-trustzone-sdk.git docs/teaclave-trustzone-sdk --depth 1
 
 check-repo:
 	@if [ ! -d "docs/teaclave-docs" ] || [ ! -d "docs/teaclave-faas-legacy" ] || [ ! -d "docs/teaclave-sgx-sdk" ] || [ ! -d "docs/teaclave-trustzone-sdk" ]; then \

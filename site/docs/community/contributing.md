@@ -16,12 +16,12 @@ documentation, bug reports, discussions, and outreach.
 
 For source code contributions, please refer to the respective GitHub repositories:
 
-- [Teaclave](https://github.com/apache/incubator-teaclave)
-- [Teaclave SGX SDK](https://github.com/apache/incubator-teaclave-sgx-sdk)
-- [Teaclave TrustZone SDK](https://github.com/apache/incubator-teaclave-trustzone-sdk)
-- [Teaclave Java TEE SDK](https://github.com/apache/incubator-teaclave-java-tee-sdk)
-- [Teaclave Dependency Crates](https://github.com/apache/incubator-teaclave-crates)
-- [Teaclave Website](https://github.com/apache/incubator-teaclave-website)
+- [Teaclave](https://github.com/apache/teaclave)
+- [Teaclave SGX SDK](https://github.com/apache/teaclave-sgx-sdk)
+- [Teaclave TrustZone SDK](https://github.com/apache/teaclave-trustzone-sdk)
+- [Teaclave Java TEE SDK](https://github.com/apache/teaclave-java-tee-sdk)
+- [Teaclave Dependency Crates](https://github.com/apache/teaclave-crates)
+- [Teaclave Website](https://github.com/apache/teaclave-website)
 
 Please open a pull request to the relevant repository with a clear explanation of 
 your changes. Follow any contribution guidelines and coding conventions described 

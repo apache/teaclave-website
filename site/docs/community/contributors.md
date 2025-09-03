@@ -127,7 +127,7 @@ SDK and Teaclave TrustZone SDK (in alphabetical order):
 
 More people tracked in GitHub:
 
-  - [Teaclave](https://github.com/apache/incubator-teaclave/graphs/contributors)
-  - [Teaclave SGX SDK](https://github.com/apache/incubator-teaclave-sgx-sdk/graphs/contributors)
-  - [Teaclave TrustZone SDK](https://github.com/apache/incubator-teaclave-trustzone-sdk/graphs/contributors)
-  - [Teaclave Java TEE SDK](https://github.com/apache/incubator-teaclave-java-tee-sdk/graphs/contributors)
+  - [Teaclave](https://github.com/apache/teaclave/graphs/contributors)
+  - [Teaclave SGX SDK](https://github.com/apache/teaclave-sgx-sdk/graphs/contributors)
+  - [Teaclave TrustZone SDK](https://github.com/apache/teaclave-trustzone-sdk/graphs/contributors)
+  - [Teaclave Java TEE SDK](https://github.com/apache/teaclave-java-tee-sdk/graphs/contributors)

@@ -8,5 +8,5 @@ edition = "2021"
 path = "lib.rs"
 
 [dependencies]
-optee-teec = { git = "https://github.com/apache/incubator-teaclave-trustzone-sdk.git", branch = "main" }
-optee-utee = { git = "https://github.com/apache/incubator-teaclave-trustzone-sdk.git", branch = "main" }
+optee-teec = { git = "https://github.com/apache/teaclave-trustzone-sdk.git", branch = "main" }
+optee-utee = { git = "https://github.com/apache/teaclave-trustzone-sdk.git", branch = "main" }

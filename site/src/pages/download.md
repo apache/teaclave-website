@@ -21,7 +21,7 @@ Each SDK evolves independently to best support its respective platform and use c
 
 | Latest Version | Source Code               | PGP/SHA | Release Notes |
 |:-------:|:-------------------------:|:----:|:-------:|
-| 0.5.0   | [apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz?action=download) | [asc](https://downloads.apache.org/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz.sha512) | [notes](https://github.com/apache/incubator-teaclave-trustzone-sdk/releases/tag/v0.5.0) |
+| 0.5.0   | [apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz?action=download) | [asc](https://downloads.apache.org/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz.sha512) | [notes](https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.5.0) |
 
 ### Teaclave SGX SDK
 
@@ -29,19 +29,19 @@ Each SDK evolves independently to best support its respective platform and use c
 |:-------:|:-------------------------:|:----:|:-------:|
 | - | - | - | - |
 
-*Note: Teaclave SGX SDK releases are currently in development. Please check the [GitHub repository](https://github.com/apache/incubator-teaclave-sgx-sdk) for the latest updates.*
+*Note: Teaclave SGX SDK releases are currently in development. Please check the [GitHub repository](https://github.com/apache/teaclave-sgx-sdk) for the latest updates.*
 
 ### Teaclave Java TEE SDK
 
 | Latest Version | Source Code               | PGP/SHA | Release Notes |
 |:-------:|:-------------------------:|:----:|:-------:|
-| 0.1.0 | [apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/java-tee-sdk-v0.1.0/apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz?action=download) | [asc](https://downloads.apache.org/incubator/teaclave/java-tee-sdk-v0.1.0/apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/java-tee-sdk-v0.1.0/apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz.sha512) | [notes](https://github.com/apache/incubator-teaclave-java-tee-sdk/releases/tag/v0.1.0) |
+| 0.1.0 | [apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/java-tee-sdk-v0.1.0/apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz?action=download) | [asc](https://downloads.apache.org/incubator/teaclave/java-tee-sdk-v0.1.0/apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/java-tee-sdk-v0.1.0/apache-teaclave-java-tee-sdk-0.1.0-incubating.tar.gz.sha512) | [notes](https://github.com/apache/teaclave-java-tee-sdk/releases/tag/v0.1.0) |
 
 ## Teaclave FaaS (legacy)
 
 | Latest Version | Source Code               | PGP/SHA | Release Notes |
 |:-------:|:-------------------------:|:-------:|:-------------:|
-| 0.5.1   | [apache-teaclave-0.5.1-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz?action=download)| [asc](https://downloads.apache.org/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz.sha512) | [notes](https://github.com/apache/incubator-teaclave/releases/tag/v0.5.1) |
+| 0.5.1   | [apache-teaclave-0.5.1-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz?action=download)| [asc](https://downloads.apache.org/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz.sha512) | [notes](https://github.com/apache/teaclave/releases/tag/v0.5.1) |
 
 Note that older releases can be found in the [archive](https://archive.apache.org/dist/incubator/teaclave/) site.
 

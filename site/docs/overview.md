@@ -18,7 +18,7 @@ The Teaclave ecosystem consists of several independently maintained repositories
 
 ---
 
-### 🔐 [Teaclave TrustZone SDK](https://github.com/apache/incubator-teaclave-trustzone-sdk/)
+### 🔐 [Teaclave TrustZone SDK](https://github.com/apache/teaclave-trustzone-sdk/)
 
 The Teaclave TrustZone SDK is a Rust-based development toolkit for building Trusted Applications (TAs) on Arm platforms using the open-source [OP-TEE](https://optee.readthedocs.io/) ecosystem. As the [**officially recommended Rust SDK for OP-TEE**](https://optee.readthedocs.io/en/latest/building/optee_with_rust.html), it enables developers to leverage the Rust standard library (`std`) in the secure world—something rarely possible in embedded TEE development.
 
@@ -34,7 +34,7 @@ This SDK adheres to the GlobalPlatform TEE specifications, ensuring broad compat
 
 ---
 
-### 🔐 [Teaclave SGX SDK](https://github.com/apache/incubator-teaclave-sgx-sdk/)
+### 🔐 [Teaclave SGX SDK](https://github.com/apache/teaclave-sgx-sdk/)
 
 The Teaclave SGX SDK brings memory-safe Rust programming to Intel SGX, enabling the development of secure enclave applications that benefit from Rust’s strong safety guarantees. It supports writing both enclaves and untrusted host applications in Rust, encouraging consistent use of modern Rust idioms across the entire trusted-untrusted boundary.
 
@@ -48,7 +48,7 @@ The SDK offers a complete SGX-compatible runtime and tooling suite, bridging the
 
 ---
 
-### 🔐 [Teaclave](https://github.com/apache/incubator-teaclave/)
+### 🔐 [Teaclave](https://github.com/apache/teaclave/)
 
 The main Teaclave repository serves as the central landing page and coordination hub for the entire Teaclave ecosystem. Originally hosting the Teaclave FaaS framework, this repository has evolved to focus on SDK showcases, project coordination, and ecosystem guidance as the community shifted toward direct SDK usage.
 
@@ -63,7 +63,7 @@ The repository maintains separate directories for TrustZone, SGX, and Crates eco
 
 ---
 
-### 🔐 [Teaclave FaaS (legacy)](https://github.com/apache/incubator-teaclave/tree/legacy)
+### 🔐 [Teaclave FaaS (legacy)](https://github.com/apache/teaclave/tree/legacy)
 
 The original **Teaclave Function-as-a-Service (FaaS)** platform was designed as a **general-purpose secure computing framework** that enables users to execute private computations on confidential data using Intel SGX.
 
@@ -78,7 +78,7 @@ Although now considered **legacy**, the FaaS platform remains a valuable milesto
 
 ---
 
-### ☕ [Teaclave Java TEE SDK *(Experimental)*](https://github.com/apache/incubator-teaclave-java-tee-sdk/)
+### ☕ [Teaclave Java TEE SDK *(Experimental)*](https://github.com/apache/teaclave-java-tee-sdk/)
 
 The Teaclave Java TEE SDK is an **experimental toolkit** for building Java-based Trusted Applications on Intel SGX. It follows a familiar host/enclave partitioning model, similar to Intel's official SGX SDK, and aims to make confidential computing more accessible to Java developers.
 
@@ -92,7 +92,7 @@ By supporting a modular structure with clear separation between host-side and en
 
 ---
 
-### 📦 [Teaclave Dependency Crates](https://github.com/apache/incubator-teaclave-crates)
+### 📦 [Teaclave Dependency Crates](https://github.com/apache/teaclave-crates)
 
 The Teaclave Dependency Crates repository hosts a curated set of Rust libraries that have been adapted for use within Trusted Execution Environments. Due to the limitations of TEEs—such as the absence of standard OS support, restricted I/O, and incomplete standard library coverage—many third-party crates require modification or isolation to ensure safety and compatibility.
 

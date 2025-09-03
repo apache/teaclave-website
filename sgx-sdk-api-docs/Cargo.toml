@@ -8,6 +8,6 @@ edition = "2021"
 path = "lib.rs"
 
 [dependencies]
-sgx_tstd = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk.git", branch = "v2.0.0-preview" }
-sgx_trts = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk.git", branch = "v2.0.0-preview" }
-sgx_tse  = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk.git", branch = "v2.0.0-preview" }
+sgx_tstd = { git = "https://github.com/apache/teaclave-sgx-sdk.git", branch = "v2.0.0-preview" }
+sgx_trts = { git = "https://github.com/apache/teaclave-sgx-sdk.git", branch = "v2.0.0-preview" }
+sgx_tse  = { git = "https://github.com/apache/teaclave-sgx-sdk.git", branch = "v2.0.0-preview" }

@@ -29,7 +29,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'apache', // Usually your GitHub org/user name.
-  projectName: 'incubator-teaclave', // Usually your repo name.
+  projectName: 'teaclave', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -196,11 +196,11 @@ const config = {
           {
             label: 'Repos',
             items: [
-              { label: 'Teaclave', href: 'https://github.com/apache/incubator-teaclave' },
-              { label: 'Teaclave SGX SDK', href: 'https://github.com/apache/incubator-teaclave-sgx-sdk' },
-              { label: 'Teaclave TrustZone SDK', href: 'https://github.com/apache/incubator-teaclave-trustzone-sdk' },
-              { label: 'Teaclave Java TEE SDK', href: 'https://github.com/apache/incubator-teaclave-java-tee-sdk' },
-              { label: 'Teaclave Website', href: 'https://github.com/apache/incubator-teaclave-website' }
+              { label: 'Teaclave', href: 'https://github.com/apache/teaclave' },
+              { label: 'Teaclave SGX SDK', href: 'https://github.com/apache/teaclave-sgx-sdk' },
+              { label: 'Teaclave TrustZone SDK', href: 'https://github.com/apache/teaclave-trustzone-sdk' },
+              { label: 'Teaclave Java TEE SDK', href: 'https://github.com/apache/teaclave-java-tee-sdk' },
+              { label: 'Teaclave Website', href: 'https://github.com/apache/teaclave-website' }
             ],
             position: 'right',
           },

@@ -86,7 +86,7 @@ During this phase:
   - If there are any changes to DISCLAIMER, NOTICE, or LICENSE files, make sure
     they comply with the items in the checklist.
   - If any new examples include third-party code, refer to how this is handled
-    in <https://github.com/apache/incubator-teaclave-trustzone-sdk/issues/196>
+    in <https://github.com/apache/teaclave-trustzone-sdk/issues/196>
 
 ### 2. Pre-release on GitHub
 
@@ -104,7 +104,7 @@ structured release notes.
 
 For trustzone-sdk, we already have a GitHub Action set up for this purpose,
 please refer to the
-[Release Tips](https://github.com/apache/incubator-teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
+[Release Tips](https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
 in the trustzone sdk repository for more details.
 
 #### 2.2 Create the pre-release
@@ -141,9 +141,9 @@ The check process is as follows:
 ```bash
 $ TAG=0.5.0-rc.1
 ## download tar
-$ wget https://github.com/apache/incubator-teaclave-trustzone-sdk/archive/refs/tags/v0.5.0-rc.1.tar.gz
+$ wget https://github.com/apache/teaclave-trustzone-sdk/archive/refs/tags/v0.5.0-rc.1.tar.gz
 $ tar xzvf 0.5.0-rc.1.tar.gz
-$ cd incubator-teaclave-trustzone-sdk-0.5.0.rc.1
+$ cd teaclave-trustzone-sdk-0.5.0.rc.1
 $ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w \
 /teaclave-trustzone-sdk yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 \
 bash -c "./setup.sh && (./build_optee_libraries.sh optee) && source \
@@ -155,7 +155,7 @@ You can adjust this based on the repository you're working on.
 #### 3.2 Prepare artifacts for voting
 
 We provide a script
-[`make_release_artifacts.sh`](https://github.com/apache/incubator-teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh)
+[`make_release_artifacts.sh`](https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh)
 to pack the artifacts, sign and upload to SVN. It has been tested with
 trustzone-sdk, and we believe it should work for other repositories as well.
 Feel free to test it with other teaclave repositories, and open a PR if you
@@ -222,7 +222,7 @@ Here are some important details:
 **Voting Email**
 
 For `trustzone-sdk`, we provide an email template in
-[Release Tips](https://github.com/apache/incubator-teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
+[Release Tips](https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
 , which follows a structure commonly used across all Teaclave repositories. You
 can refer to this template or look at past email examples for guidance.
 
@@ -276,7 +276,7 @@ For example, if the release version is `0.4.0`:
   <https://dist.apache.org/repos/dist/release/incubator/teaclave/trustzone-sdk-0.4.0/>
 
 You can refer to the script
-[`make_release_artifacts.sh`](https://github.com/apache/incubator-teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh)
+[`make_release_artifacts.sh`](https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh)
 to perform these operations:
 
 ```bash
@@ -299,7 +299,7 @@ and submit.
 
 Repository-specific publishing may be required. For example, for trustzone-sdk,
 publishing to crates.io is needed. Refer to the TrustZone documentation
-[Release Tips](https://github.com/apache/incubator-teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
+[Release Tips](https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
 for details.
 
 #### 4.4 Post the announcement
@@ -314,7 +314,7 @@ for details.
 
 **4.4.2 to Teaclave website**
 
-The website src is in: <https://github.com/apache/incubator-teaclave-website>,
+The website src is in: <https://github.com/apache/teaclave-website>,
 open a PR to update.
 
 Add an announcement in <https://teaclave.incubator.apache.org/blog/> and update
@@ -327,7 +327,7 @@ the download page: <https://teaclave.incubator.apache.org/download/>
 
 **Update Download Page Example**:
 
-<https://github.com/apache/incubator-teaclave-website/commit/94d33df6c1540d0490a0728d0fd0be67915f1ca9>
+<https://github.com/apache/teaclave-website/commit/94d33df6c1540d0490a0728d0fd0be67915f1ca9>
 
 After completing the steps above, the release process is finished.
 
