@@ -12,27 +12,10 @@ We do encourage everyone to work anything they are interested in.
 Please contact the community if you'd like to become a member of regular
 committers or PPMC of Teaclave.
 
-## Mentors
+## Project Management Committee
 
-Teaclave is now part of the Apache Incubator. We are fortunate to have the
-following mentors.
-
-| Name          | Apache ID   | GitHub ID      |
-| :------------ | :---------- | :------------- |
-| Daniel Dai    | daijy       | -              |
-| Felix Cheung  | felixcheung | felixcheung    |
-| Furkan Kamaci | kamaci      | kamaci         |
-| Gordon King   | garyw       | bigdata-memory |
-| Matt Sicker   | mattsicker  | jvz            |
-| Zhijie Shen   | zjshen      | zjshen14       |
-| Xuanwo        | xuanwo      | xuanwo         |
-| Zili Chen     | tison       | tisonkun       |
-| Willem Jiang  | ningjiang   | willemjiang    |
-
-## Podling Project Management Committee
-
-The role of [Podling Project Management Committee](https://incubator.apache.org/guides/ppmc.html)
-(PPMC) is to help to govern the project and is directly responsible for the
+The role of [Project Management Committee](https://www.apache.org/dev/pmc.html)
+(PMC) is to help to govern the project and is directly responsible for the
 oversight of Teaclave.
 
 | Name          | Apache ID     | GitHub ID                                         | Tag             |
@@ -50,6 +33,11 @@ oversight of Teaclave.
 | Yuan Zhuang   | yuanz         | [DemesneGH](https://github.com/DemesneGH)         | `trustzone-sdk` |
 | Yulong Zhang  | yulongzhang   | [yulongzhang](https://github.com/yulongzhang)     | -               |
 | Zhaofeng Chen | zfc           | [m4sterchain](https://github.com/m4sterchain)     | `all`           |
+| Furkan Kamaci | kamaci        | [kamaci](https://github.com/kamaci)               | -               |
+| Gordon King   | garyw         | [AI-Memory](https://github.com/AI-Memory)         | -               |
+| Xuanwo        | xuanwo        | [xuanwo](https://github.com/xuanwo)               | -               |
+| Zili Chen     | tison         | [tisonkun](https://github.com/tisonkun)           | -               |
+| Willem Jiang  | ningjiang     | [willemjiang](https://github.com/willemjiang)     | -               |
 
 
 ## Committers
@@ -66,6 +54,24 @@ being active.
 | Sanhong Li  | sanhongli | -                                             | `java-tee-sdk`            |
 | Zehui Chen  | ivila     | [ivila](https://github.com/ivila)             | `trustzone-sdk`           |
 | Ziyi Lin    | ziyilin   | [ziyilin](https://github.com/ziyilin)         | `java-tee-sdk`            |
+
+## Mentors During Incubation
+
+We are fortunate to have the following mentors during the Incubation.
+
+| Name          | Apache ID   | GitHub ID      |
+| :------------ | :---------- | :------------- |
+| Daniel Dai    | daijy       | -              |
+| Felix Cheung  | felixcheung | felixcheung    |
+| Furkan Kamaci | kamaci      | kamaci         |
+| Gordon King   | garyw       | AI-Memory      |
+| Matt Sicker   | mattsicker  | jvz            |
+| Zhijie Shen   | zjshen      | zjshen14       |
+| Xuanwo        | xuanwo      | xuanwo         |
+| Zili Chen     | tison       | tisonkun       |
+| Willem Jiang  | ningjiang   | willemjiang    |
+
+
 
 ## Contributors
 

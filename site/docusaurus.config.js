@@ -222,10 +222,7 @@ const config = {
       footer: {
         style: 'dark',
         copyright: `<div style="font-size:.7rem; text-align:left;">`
-          + `Apache Teaclave™  is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. `
-          + `Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. `
-          + `While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF. `
-          + `Copyright © 2020 The Apache Software Foundation. `
+          + `Copyright © 2019-2025, The Apache Software Foundation`
           + `Licensed under the Apache License, Version 2.0. Apache Teaclave™, Apache, the Apache feather, and the Apache Teaclave™ project logo are either trademarks or registered trademarks of the Apache Software Foundation.`
           + `</div>`,
       },

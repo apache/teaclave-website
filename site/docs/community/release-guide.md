@@ -6,110 +6,77 @@ permalink: /release-guide
 
 For the release manager, the primary goal of a release is to upload the release
 artifacts to the
-[Apache Distribution SVN](https://dist.apache.org/repos/dist/release/incubator/teaclave/)
-repositories. The artifacts must be **signed by the release manager** and
-**approved through two stages of community votes**. This documentation outlines
-the complete workflow and necessary operations to achieve that goal.
+[Apache Distribution SVN](https://dist.apache.org/repos/dist/release/teaclave/)
+repositories.
 
-## For New Release Managers
+The artifacts include three files, following the same naming convention:
+- apache-teaclave-xxx-sdk-$version.tar.gz
+- apache-teaclave-xxx-sdk-$version.tar.gz.asc
+- apache-teaclave-xxx-sdk-$version.tar.gz.sha512
 
-### 0. Become a member of the Apache Teaclave™  community
+The `.tar.gz` contains the archived source code, which is reviewed against the
+release checklist during the vote process by the Teaclave PMC.
+The `.asc` file is a signature **created with the release manager's GPG key**.
+The `.sha512` file contains a checksum for integrity verification.
 
-The release manager must be a member of the Apache Teaclave™ project. This
+## Prerequisites for new release managers
+
+The release manager must be a committer of the Apache Teaclave™ project. This
 ensures they have the necessary permissions, including access to the Apache
 email system, SVN, GitHub write access, and other required infrastructure.
 
-If you’re interested in this, please feel free to send email to
-`dev@teaclave.apache.org` or contact any other member in Teaclave. We appreciate
-all contributions!
+### 1. Prepare the GPG signing key
 
-### 1. Prepare the GPG Signing Key
-
-The GPG key is used to sign the release artifacts. The public key is uploaded so
-others can verify the release signatures.
-
-GPG signing key should be added to the Apache release dist sever
-(<https://dist.apache.org/repos/dist/release/incubator/teaclave/KEYS>) which is
-automatically synced to
-(<https://downloads.apache.org/incubator/teaclave/KEYS >)
-
-Please follow this instruction to generate and upload keys:
-
-**1.1. Generate an RSA4096 code signing key**
-
-Please refer to <https://infra.apache.org/openpgp.html#key-gen-generate-key> for
-generation guide. For safe practice of using the GPG key, please refer to:
+The release manager must maintain a personal GPG key to sign release artifacts.
+Refer to <https://infra.apache.org/openpgp.html#key-gen-generate-key> for the
+generation guide. For safe practices for using a GPG key, see:
 <https://infra.apache.org/release-signing.html#safe-practice>.
 
-**1.2. Append your public key to the KEYS file**
+Add the GPG public key to the Teaclave distribution `KEYS` file at
+<https://dist.apache.org/repos/dist/release/teaclave/KEYS>. It will be
+automatically synced to <https://downloads.apache.org/teaclave/KEYS>.
 
-Steps:
+Users verify release signatures against this published `KEYS` file.
+
+### 2. Add the release manager's GPG key to KEYS
+
+The dist server uses SVN. Check it out locally, update the `KEYS` file, and commit the change.
 
 ```bash
-$ SVN_RELEASE="https://dist.apache.org/repos/dist/release/incubator/teaclave"
-$ svn co --depth=files "$SVN_RELEASE" svn-release-teaclave
-# edit the svn-release-teaclave/KEYS file
+$ svn co --depth=files "https://dist.apache.org/repos/dist/release/teaclave" release-teaclave 
+# edit the release-teaclave/KEYS file
 # upload:
-$ svn ci --username "$ASF_USERNAME" --password "$ASF_PASSWORD" -m "Update KEYS"
+$ svn ci --username "$ASF_USERNAME" -m "Update KEYS"
 ```
 
-### 2. Optional: Request Other Permissions
+## Release stages
 
-Additional permissions may be needed depending on the repository. Contact the
-project maintainers for specific access requirements.
+The release involves working with GitHub and the Teaclave mailing list.
+1. Make a pre-release on GitHub to produce `$release-rc1.tar.gz`.
+2. Prepare artifacts on the Apache dist/dev server.
+3. Vote for the release candidate.
+4. Move the approved release candidate to the Apache dist/release server.
 
-## Release Stages
+### 1. Make a pre-release on GitHub
 
-### Timeline of release stages
-
-- **Prepare the release** (Week 1)
-- **Pre-release on GitHub** (Week 2)
-- **Voting** (Week 3–4)
-- **Post-release** (within one week after all votes pass)
-
-## Stage-by-Stage Operations Guide
-
-### 1. Prepare the release
-
-During this phase:
-
-- Optional: Bump the dependencies version. e.g. for trustzone-sdk: bump OP-TEE
-  version to the latest (including build scripts and test image)
-- Review and follow the
-  [Apache Incubator Release Checklist](https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist).
-
-  By default, no additional work is needed if you follow our release guide.
-  However, please double-check the checklist in the following cases:
-
+- Ensure the source code is ready for a new release, including bumping versions and upgrading dependencies.
+- Review and follow the checklist in these cases:
   - For the first release of a new year, ensure the year in the NOTICE file is
     updated to: 2019–[Current Year].
-  - If there are any changes to DISCLAIMER, NOTICE, or LICENSE files, make sure
+  - If there are any changes to NOTICE, or LICENSE files, make sure
     they comply with the items in the checklist.
   - If any new examples include third-party code, refer to how this is handled
-    in <https://github.com/apache/teaclave-trustzone-sdk/issues/196>
+    in <https://github.com/apache/teaclave-trustzone-sdk/issues/196>.
 
-### 2. Pre-release on GitHub
-
-Once all items in Stage 1 are completed, it's time to publish the release
-candidate.
-
-#### 2.1 Draft the release notes
+#### 1.1 Draft the release notes
 
 You can manually draft the release notes or use tools to generate them
 automatically. For example, on the GitHub Releases page, you can select the
 previous release tag and click “Generate Release Notes” to create a basic draft.
 
-Alternatively, you can use a GitHub Action to produce more detailed and
-structured release notes.
+#### 1.2 Create the pre-release
 
-For trustzone-sdk, we already have a GitHub Action set up for this purpose,
-please refer to the
-[Release Tips](https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
-in the trustzone sdk repository for more details.
-
-#### 2.2 Create the pre-release
-
-1. Choose a tag: create a tag from current main, e.g. 0.5.0-rc.1
+1. Choose a tag: create a tag from the current `main`, e.g. `v0.5.0-rc.1`.
 2. Fill in the release notes.
 3. Select "This is a pre-release".
 4. Click "Publish release".
@@ -117,163 +84,100 @@ in the trustzone sdk repository for more details.
 Once successful, the release page will appear with the release notes and two
 assets: **Source code (zip)** and **Source code (tar.gz)**.
 
-### 3. Voting
+### 2. Prepare artifacts on the Apache dist/dev server
 
-After the pre-release on GitHub, you can start the voting process. To prepare
-the voting email, we need to test building from source and prepare the
-artifacts.
+After the pre-release on GitHub, prepare for the voting process.
+The prerequisites include:
+- Instructions for building and testing from source so others can validate the release source.
+- Preparing the three artifact files (`.tar.gz`, `.asc`, `.sha512`) and uploading them to dist/dev.
 
-#### 3.1 Test building from source
+#### 2.1 Instructions: test building from source
 
-Typically, we provide a Docker command to test the build in the voting email,
-but the command varies between repositories. For example, in the case of
-trustzone-sdk:
-
+For example, in the case of trustzone-sdk:
 ```bash
-$ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w \
-/teaclave-trustzone-sdk yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 \
-bash -c "./setup.sh && (./build_optee_libraries.sh optee) && source \
-environment && make && (cd ci && ./ci.sh)"
+$ TAG=v0.5.0-rc.1
+$ wget https://github.com/apache/teaclave-trustzone-sdk/archive/refs/tags/$TAG.tar.gz -O $TAG.tar.gz
+$ tar xzvf $TAG.tar.gz
+$ cd teaclave-trustzone-sdk-0.5.0-rc.1
+$ docker run --rm -it -v"$(pwd)":/teaclave-trustzone-sdk -w /teaclave-trustzone-sdk \
+yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 bash -c "./setup.sh && ./build_optee_libraries.sh optee && source environment && make && (cd ci && ./ci.sh)"
 ```
+Please adjust this based on the repository you're working on.
 
-The check process is as follows:
+#### 2.2 Prepare artifacts: sign, verify, and upload
 
-```bash
-$ TAG=0.5.0-rc.1
-## download tar
-$ wget https://github.com/apache/teaclave-trustzone-sdk/archive/refs/tags/v0.5.0-rc.1.tar.gz
-$ tar xzvf 0.5.0-rc.1.tar.gz
-$ cd teaclave-trustzone-sdk-0.5.0.rc.1
-$ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w \
-/teaclave-trustzone-sdk yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 \
-bash -c "./setup.sh && (./build_optee_libraries.sh optee) && source \
-environment && make && (cd ci && ./ci.sh)"
-```
+We provide a script,
+[`make_release_artifacts.sh`](https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh),
+to package the artifacts, sign them, and upload to SVN.
 
-You can adjust this based on the repository you're working on.
-
-#### 3.2 Prepare artifacts for voting
-
-We provide a script
-[`make_release_artifacts.sh`](https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh)
-to pack the artifacts, sign and upload to SVN. It has been tested with
-trustzone-sdk, and we believe it should work for other repositories as well.
-Feel free to test it with other teaclave repositories, and open a PR if you
-encounter any compatibility issues.
-
+Check out the directory, make the necessary updates, and upload.
 Be sure to update the variables in the script to set the release version and use
-your ASF username/password and GPG key id.
+your ASF username/password and GPG key ID.
 
 ```bash
-## Get the key id of your signing key
+## Get the key ID of your signing key
 gpg --list-secret-keys
 GPG_KEY_UID=????
-```
-
-```bash
-# Download source tarball from Github, sign, and verify release artifacts
+# Download source tarball from GitHub, sign, and verify release artifacts
 ./make_release_artifacts.sh prepare
 
 # Verify existing artifacts and upload to Apache dist/dev SVN
 ./make_release_artifacts.sh upload
 ```
 
-#### 3.2 Start voting process
+Tip: After generating the `.sha512` and `.asc` files, verify the checksum and signature locally before uploading:
 
-**Voting Process**
+```bash
+shasum -a 512 apache-teaclave-xxx-sdk-$version.tar.gz | diff - apache-teaclave-xxx-sdk-$version.tar.gz.sha512
+gpg --verify apache-teaclave-xxx-sdk-$version.tar.gz.asc apache-teaclave-xxx-sdk-$version.tar.gz
+```
 
-Two votes are required:
+### 3. Vote for release candidates
 
-- First, vote on the Apache Teaclave™ developers mailing list
-  (`dev@teaclave.apache.org`).
-- After it passes, call the second vote on the Apache Incubator general mailing
-  list (`general@incubator.apache.org`).
+Vote on the Apache Teaclave™ developers mailing list (`dev@teaclave.apache.org`).
 
-Each vote requires **two email threads**:
+The vote requires **two email threads**:
 
 - `[VOTE]` – to initiate the vote
-- `[RESULT][VOTE]` – to announce the result
+- `[RESULT][VOTE]` – to announce the result if vote passes
 
-For example, if `rc1` is successfully released, you should send a total of
-**four emails**:
+Important details:
+- Each vote needs at least three binding +1 votes and more +1 votes than -1 votes to pass.
+- On `dev@teaclave.apache.org`, only votes from PMC members are binding.
+- Votes must remain open for at least 72 hours (3 days). If there aren’t enough binding votes by then, extend the voting period.
+- If a vote fails, update the release accordingly, create a new release candidate (with an increased rc number), and restart the voting process.
 
-- Two for the **community vote**
-- Two for the **IPMC vote**
+Voting email samples:
 
-If additional release candidates (e.g., `rc2`, `rc3`, etc.) are needed, you’ll
-need to repeat the voting process and send additional vote/result emails
-accordingly.
-
-Here are some important details:
-
-- Each vote needs at least 3 _binding_ +1 votes and more +1 votes than -1 votes
-  to pass.
-- _Binding_ votes mean:
-  - On `dev@teaclave.apache.org`, votes from PPMC members
-  - On `general@incubator.apache.org`, votes from IPMC members
-- Votes must stay open for at least 72 hours (3 days). If there aren’t enough
-  binding votes by then, extend the voting period.
-- If a vote fails, update the release accordingly, create a new release
-  candidate, and restart the voting process.
-- If the vote does not receive enough responses within 3 days, follow up by
-  requesting votes—send a reminder email to the project's mentor. You can find
-  the mentors’ email on our website.
-
-**Voting Email**
-
-For `trustzone-sdk`, we provide an email template in
-[Release Tips](https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
-, which follows a structure commonly used across all Teaclave repositories. You
-can refer to this template or look at past email examples for guidance.
-
-If you create a corresponding template for another Teaclave repository, we’d
-greatly appreciate it — feel free to open a PR to contribute it.
-
-Here are some examples:
-
-**Vote / Result in the dev@teaclave list**:
-
-- subject: [VOTE] Release Apache Teaclave TrustZone SDK  v0.4.0-rc.2
+- subject: [VOTE] Release Apache Teaclave™ TrustZone SDK  v0.4.0-rc.2
 - to: dev@teaclave.apache.org
 - link: <https://lists.apache.org/thread/o60wpscnq8mp6lhbd8h654ybxd6wzhk7>
 
-- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK 
+- subject: [RESULT][VOTE] Release Apache Teaclave™ TrustZone SDK 
   v0.4.0-rc.2
 - to: dev@teaclave.apache.org
 - link: <https://lists.apache.org/thread/oo2r4xh731bqbn9b0659jjl7f4cym9g6>
 
-**Vote / Result in the general@incubator list**:
+### 4. Move the approved release candidate to the Apache dist/release server
 
-- subject: [VOTE] Release Apache Teaclave TrustZone SDK  v0.4.0-rc.2
-- to: general@incubator.apache.org
-- link: <https://lists.apache.org/thread/8mstnqpoo0hy1sy8f96dyrkyrmcdwz2z>
-
-- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK 
-  v0.4.0-rc.2
-- to: general@incubator.apache.org
-- link: <https://lists.apache.org/thread/y2m99kt8tbpkp4fs9pw4kxvwc4pvx2so>
-
-### 4. Post-release
-
-Once the vote in the Incubator passes, the final step is to complete the
-release.
+Once the vote passes, move the voted release files to the dist/release SVN server.
 
 #### 4.1 Upload the Final Release Artifacts to SVN
 
 At this stage, you should:
 
 - Move the release candidate (RC) artifacts to the final directory in `dev`.
-- Delete all RC artifacts from the `dev`.
-- Upload the finalized artifacts to the `release`.
+- Delete all RC artifacts from `dev`.
+- Upload the finalized artifacts to `release`.
 
 For example, if the release version is `0.4.0`:
 
 - **In `dev`**: Ensure the final directory with artifacts exists at:
-  <https://dist.apache.org/repos/dist/dev/incubator/teaclave/trustzone-sdk-0.4.0/>
+  <https://dist.apache.org/repos/dist/dev/teaclave/trustzone-sdk-0.4.0/>
   Also, delete all previous `0.4.0-rc` artifacts.
 
 - **In `release`**: Copy the finalized artifacts from `dev` to:
-  <https://dist.apache.org/repos/dist/release/incubator/teaclave/trustzone-sdk-0.4.0/>
+  <https://dist.apache.org/repos/dist/release/teaclave/trustzone-sdk-0.4.0/>
 
 You can refer to the script
 [`make_release_artifacts.sh`](https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh)
@@ -283,75 +187,73 @@ to perform these operations:
 ./make_release_artifacts.sh finalize
 ```
 
-#### 4.2 Final release on Github
+### 5. Convert pre-release to release on GitHub
 
-Add the tag for 0.[X].0
+Add the tag for `0.[X].0`:
 
 ```
 git tag v0.[X].0
 git push origin v0.[X].0
 ```
 
-On the release edit page, use the tag “0.[X].0”, unmark “Set as a pre-release”,
-and submit.
+On the release edit page, use the tag `0.[X].0`, uncheck “Set as a pre-release”, and submit.
 
-#### 4.3 Optional: Other Publishing (e.g., on crates.io)
+#### Optional: other publishing (e.g., crates.io)
 
 Repository-specific publishing may be required. For example, for trustzone-sdk,
 publishing to crates.io is needed. Refer to the TrustZone documentation
 [Release Tips](https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md)
 for details.
 
-#### 4.4 Post the announcement
+## Post the release
 
-**4.4.1 to the Apache mailing list**
+**Announce on the Apache mailing list**
 
-**Mailing list example**:
+Mailing list example:
 
-- subject: [ANNOUNCE] Apache Teaclave TrustZone SDK  0.4.0 Released
+- subject: [ANNOUNCE] Apache Teaclave™ TrustZone SDK  0.4.0 Released
 - to: announce@apache.org, dev@teaclave.apache.org
 - link: <https://lists.apache.org/thread/7zn019gsmd65xsbgw2tbv2c3jdvc44hb>
 
-**4.4.2 to Teaclave website**
+**Update the Teaclave website**
 
-The website src is in: <https://github.com/apache/teaclave-website>,
-open a PR to update.
+The website source is at <https://github.com/apache/teaclave-website>. Open a PR to update.
 
-Add an announcement in <https://teaclave.incubator.apache.org/blog/> and update
-the download page: <https://teaclave.incubator.apache.org/download/>
+Add an announcement to <https://teaclave.incubator.apache.org/blog/> and update
+the download page: <https://teaclave.incubator.apache.org/download/>.
 
-**Blog example**:
+Blog example:
 
-- title: Announcing Apache Teaclave  0.3.0
+- title: Announcing Apache Teaclave™  0.3.0
 - link: <https://teaclave.apache.org/blog/2021-10-01-announcing-teaclave-0-3-0/>
 
-**Update Download Page Example**:
+Update download page example:
 
 <https://github.com/apache/teaclave-website/commit/94d33df6c1540d0490a0728d0fd0be67915f1ca9>
 
 After completing the steps above, the release process is finished.
 
-## 5. Other considerations
+## Other considerations
 
-### 5.1 About branch cut and feature freeze
+### About branch cut and feature freeze
 
-- After tag the release, new feature development is frozen for the release, but
-  the main(dev) branch remains active for ongoing development.
-- If there’re bug fixes for this release, cut the release branch from the tag,
-  e.g. `release-v0.5.0`. In the release branch, you can cherry-pick important
-  bug fixes from main as needed. All changes should be committed to main first,
-  and then optionally cherry-picked into the release branch. For example, if rc1
-  requires changes based on voting feedback (e.g. feedback-fix-1): Suppose the
+- After tagging the release, new feature development is frozen for that release, but
+  the `main` (development) branch remains active for ongoing work.
+- If there are bug fixes for this release, cut the release branch from the tag,
+  e.g., `release-v0.5.0`. In the release branch, you can cherry-pick important
+  bug fixes from `main` as needed. All changes should land in `main` first,
+  and then optionally be cherry-picked into the release branch. For example, if rc1
+  requires changes based on voting feedback (e.g., `feedback-fix-1`): Suppose the
   `main` branch already has the following commits: `MAIN: feature (commit1)` →
   `fix (commit2)` → `feature (commit3)`. Assume the release branch was cut at
   `commit1`, so currently it only contains: `RELEASE: feature (commit1)`.
-  - First, apply `feedback-fix-1` to the `main` branch. Now `main` looks like:  
+  - First, apply `feedback-fix-1` to the `main` branch. Now `main` looks like:
     `MAIN: feature (commit1)` → `fix (commit2)` → `feature (commit3)` →
-    `feedback-fix-1 (commit4)`
+    `feedback-fix-1 (commit4)`.
   - Then, cherry-pick `fix (commit2)` and `feedback-fix-1 (commit4)` into the
-    release branch. The release branch becomes:  
-    `RELEASE: feature (commit1)` → `fix (commit2)` → `feedback-fix-1 (commit4)`
-- If the fix for release isn’t compatible with the main branch, it’s acceptable
-  to apply the fix directly to the release branch and please mark at the commit
-  message like: "Fix specific to release-1.x; not applicable to main due to
+    release branch. The release branch becomes:
+    `RELEASE: feature (commit1)` → `fix (commit2)` → `feedback-fix-1 (commit4)`.
+- If a fix for the release isn’t compatible with `main`, it’s acceptable
+  to apply the fix directly to the release branch. Please mark the commit
+  message, e.g., "Fix specific to release-1.x; not applicable to main due to
   architectural differences."

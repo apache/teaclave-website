@@ -9,7 +9,7 @@ Teaclave SGX SDK, Teaclave TrustZone SDK, and Teaclave Java TEE SDK. These
 source archives are generated from tagged releases. You can verify your download
 by following these
 [procedures](https://www.apache.org/info/verification.html) and using these
-[KEYS](https://downloads.apache.org/incubator/teaclave/KEYS).
+[KEYS](https://downloads.apache.org/teaclave/KEYS).
 
 ## Apache Teaclave™ Ecosystem Releases
 
@@ -43,8 +43,6 @@ Each SDK evolves independently to best support its respective platform and use c
 |:-------:|:-------------------------:|:-------:|:-------------:|
 | 0.5.1   | [apache-teaclave-0.5.1-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz?action=download)| [asc](https://downloads.apache.org/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/0.5.1/apache-teaclave-0.5.1-incubating.tar.gz.sha512) | [notes](https://github.com/apache/teaclave/releases/tag/v0.5.1) |
 
-Note that older releases can be found in the [archive](https://archive.apache.org/dist/incubator/teaclave/) site.
-
 ## Verify the Integrity of the Files
 
 ::: tip NOTE
@@ -55,7 +53,7 @@ for more information on why you should verify our releases.
 :::
 
 The PGP signature can be verified using PGP or GPG. First download the
-[KEYS](https://downloads.apache.org/incubator/teaclave/KEYS) as
+[KEYS](https://downloads.apache.org/teaclave/KEYS) as
 well as the asc signature file for the relevant distribution. Make sure you get
 these files from the main distribution site, rather than from a mirror. Then
 verify the signatures using
