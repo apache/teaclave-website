@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Release Guide | Apache Teaclave™ </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://teaclave.apache.org/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://teaclave.apache.org/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://teaclave.apache.org/release-guide"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Release Guide | Apache Teaclave™ "><meta data-rh="true" name="description" content="For the release manager, the primary goal of a release is to upload the release"><meta data-rh="true" property="og:description" content="For the release manager, the primary goal of a release is to upload the release"><link data-rh="true" rel="canonical" href="https://teaclave.apache.org/release-guide"><link data-rh="true" rel="alternate" href="https://teaclave.apache.org/release-guide" hreflang="en"><link data-rh="true" rel="alternate" href="https://teaclave.apache.org/release-guide" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Release Guide","item":"https://teaclave.apache.org/release-guide"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Apache Teaclave™  RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Apache Teaclave™  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e2b519a3.css">
-<script src="/assets/js/runtime~main.543d7a40.js" defer="defer"></script>
-<script src="/assets/js/main.feab770a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d5c4a11f.js" defer="defer"></script>
+<script src="/assets/js/main.033f4407.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -15,165 +15,108 @@
 <script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Apache Teaclave™" class="themedComponent_mlkZ themedComponent--light_NVdE" style="height:2.5rem;max-width:300px;padding-left:1.6rem;position:relative;top:0.1rem"><img src="/img/logo.svg" alt="Apache Teaclave™" class="themedComponent_mlkZ themedComponent--dark_xIcU" style="height:2.5rem;max-width:300px;padding-left:1.6rem;position:relative;top:0.1rem"></div></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/powered-by">Powered By</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" file="community/community.md" href="/community">Community</a><ul class="dropdown__menu"><li><a class="dropdown__link" file="community/contributing.md" href="/contributing">Contributing</a></li><li><a class="dropdown__link" file="community/contributors.md" href="/contributors">Contributors</a></li><li><a class="dropdown__link" file="community/becoming-a-member.md" href="/becoming-a-member">Becoming a Member</a></li><li><a class="dropdown__link" file="community/maturity.md" href="/maturity">Maturity Assessment</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" file="community/release-guide.md" href="/release-guide">Release Guide</a></li></ul></div><a class="navbar__item navbar__link" href="/download">Download</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" file="overview.md" href="/overview">Docs</a><ul class="dropdown__menu"><li><a class="dropdown__link" file="teaclave-trustzone-sdk/docs/README.md" href="/trustzone-sdk-docs/">Teaclave TrustZone SDK</a></li><li><a href="https://teaclave.apache.org/api-docs/trustzone-sdk/optee_teec" target="_self" rel="" class="dropdown__link">API Docs: Teaclave TrustZone SDK (Host)<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://teaclave.apache.org/api-docs/trustzone-sdk/optee_utee" target="_self" rel="" class="dropdown__link">API Docs: Teaclave TrustZone SDK (TA)<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a class="dropdown__link" file="teaclave-sgx-sdk/documents/README.md" href="/sgx-sdk-docs/">Teaclave SGX SDK</a></li><li><a href="https://teaclave.apache.org/api-docs/sgx-sdk/" target="_self" rel="" class="dropdown__link">API Docs: Teaclave SGX SDK<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a class="dropdown__link" file="teaclave-docs/README.md" href="/teaclave-docs/">Teaclave</a></li><li><a class="dropdown__link" file="teaclave-faas-legacy/docs/README.md" href="/docs/">Teaclave FaaS (legacy)</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Repos</a><ul class="dropdown__menu"><li><a href="https://github.com/apache/teaclave" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-sgx-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave SGX SDK<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-trustzone-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave TrustZone SDK<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-java-tee-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave Java TEE SDK<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-website" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave Website<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">ASF</a><ul class="dropdown__menu"><li><a href="https://www.apache.org/" target="_blank" rel="noopener noreferrer" class="dropdown__link">ASF Homepage<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/licenses/" target="_blank" rel="noopener noreferrer" class="dropdown__link">License<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/foundation/sponsorship.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Sponsorship<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/security/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Security<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Privacy<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/foundation/thanks.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Thanks<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/events/current-event.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Events<svg width="12" height="12" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/community">Community</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/contributing">Contributing</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/contributors">Contributors</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/becoming-a-member">Becoming a Member</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/maturity">Maturity Assessment</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/release-guide">Release Guide</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Release Guide</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Release Guide</h1></header>
 <p>For the release manager, the primary goal of a release is to upload the release
 artifacts to the
-<a href="https://dist.apache.org/repos/dist/release/incubator/teaclave/" target="_blank" rel="noopener noreferrer">Apache Distribution SVN</a>
-repositories. The artifacts must be <strong>signed by the release manager</strong> and
-<strong>approved through two stages of community votes</strong>. This documentation outlines
-the complete workflow and necessary operations to achieve that goal.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="for-new-release-managers">For New Release Managers<a href="#for-new-release-managers" class="hash-link" aria-label="Direct link to For New Release Managers" title="Direct link to For New Release Managers">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="0-become-a-member-of-the-apache-teaclave--community">0. Become a member of the Apache Teaclave™  community<a href="#0-become-a-member-of-the-apache-teaclave--community" class="hash-link" aria-label="Direct link to 0. Become a member of the Apache Teaclave™  community" title="Direct link to 0. Become a member of the Apache Teaclave™  community">​</a></h3>
-<p>The release manager must be a member of the Apache Teaclave™ project. This
+<a href="https://dist.apache.org/repos/dist/release/teaclave/" target="_blank" rel="noopener noreferrer">Apache Distribution SVN</a>
+repositories.</p>
+<p>The artifacts include three files, following the same naming convention:</p>
+<ul>
+<li>apache-teaclave-xxx-sdk-$version.tar.gz</li>
+<li>apache-teaclave-xxx-sdk-$version.tar.gz.asc</li>
+<li>apache-teaclave-xxx-sdk-$version.tar.gz.sha512</li>
+</ul>
+<p>The <code>.tar.gz</code> contains the archived source code, which is reviewed against the
+release checklist during the vote process by the Teaclave PMC.
+The <code>.asc</code> file is a signature <strong>created with the release manager&#x27;s GPG key</strong>.
+The <code>.sha512</code> file contains a checksum for integrity verification.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites-for-new-release-managers">Prerequisites for new release managers<a href="#prerequisites-for-new-release-managers" class="hash-link" aria-label="Direct link to Prerequisites for new release managers" title="Direct link to Prerequisites for new release managers">​</a></h2>
+<p>The release manager must be a committer of the Apache Teaclave™ project. This
 ensures they have the necessary permissions, including access to the Apache
 email system, SVN, GitHub write access, and other required infrastructure.</p>
-<p>If you’re interested in this, please feel free to send email to
-<code>dev@teaclave.apache.org</code> or contact any other member in Teaclave. We appreciate
-all contributions!</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-prepare-the-gpg-signing-key">1. Prepare the GPG Signing Key<a href="#1-prepare-the-gpg-signing-key" class="hash-link" aria-label="Direct link to 1. Prepare the GPG Signing Key" title="Direct link to 1. Prepare the GPG Signing Key">​</a></h3>
-<p>The GPG key is used to sign the release artifacts. The public key is uploaded so
-others can verify the release signatures.</p>
-<p>GPG signing key should be added to the Apache release dist sever
-(<a href="https://dist.apache.org/repos/dist/release/incubator/teaclave/KEYS" target="_blank" rel="noopener noreferrer">https://dist.apache.org/repos/dist/release/incubator/teaclave/KEYS</a>) which is
-automatically synced to
-(&lt;<a href="https://downloads.apache.org/incubator/teaclave/KEYS" target="_blank" rel="noopener noreferrer">https://downloads.apache.org/incubator/teaclave/KEYS</a> &gt;)</p>
-<p>Please follow this instruction to generate and upload keys:</p>
-<p><strong>1.1. Generate an RSA4096 code signing key</strong></p>
-<p>Please refer to <a href="https://infra.apache.org/openpgp.html#key-gen-generate-key" target="_blank" rel="noopener noreferrer">https://infra.apache.org/openpgp.html#key-gen-generate-key</a> for
-generation guide. For safe practice of using the GPG key, please refer to:
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-prepare-the-gpg-signing-key">1. Prepare the GPG signing key<a href="#1-prepare-the-gpg-signing-key" class="hash-link" aria-label="Direct link to 1. Prepare the GPG signing key" title="Direct link to 1. Prepare the GPG signing key">​</a></h3>
+<p>The release manager must maintain a personal GPG key to sign release artifacts.
+Refer to <a href="https://infra.apache.org/openpgp.html#key-gen-generate-key" target="_blank" rel="noopener noreferrer">https://infra.apache.org/openpgp.html#key-gen-generate-key</a> for the
+generation guide. For safe practices for using a GPG key, see:
 <a href="https://infra.apache.org/release-signing.html#safe-practice" target="_blank" rel="noopener noreferrer">https://infra.apache.org/release-signing.html#safe-practice</a>.</p>
-<p><strong>1.2. Append your public key to the KEYS file</strong></p>
-<p>Steps:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ SVN_RELEASE=&quot;https://dist.apache.org/repos/dist/release/incubator/teaclave&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ svn co --depth=files &quot;$SVN_RELEASE&quot; svn-release-teaclave</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># edit the svn-release-teaclave/KEYS file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># upload:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ svn ci --username &quot;$ASF_USERNAME&quot; --password &quot;$ASF_PASSWORD&quot; -m &quot;Update KEYS&quot;</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-optional-request-other-permissions">2. Optional: Request Other Permissions<a href="#2-optional-request-other-permissions" class="hash-link" aria-label="Direct link to 2. Optional: Request Other Permissions" title="Direct link to 2. Optional: Request Other Permissions">​</a></h3>
-<p>Additional permissions may be needed depending on the repository. Contact the
-project maintainers for specific access requirements.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="release-stages">Release Stages<a href="#release-stages" class="hash-link" aria-label="Direct link to Release Stages" title="Direct link to Release Stages">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="timeline-of-release-stages">Timeline of release stages<a href="#timeline-of-release-stages" class="hash-link" aria-label="Direct link to Timeline of release stages" title="Direct link to Timeline of release stages">​</a></h3>
+<p>Add the GPG public key to the Teaclave distribution <code>KEYS</code> file at
+<a href="https://dist.apache.org/repos/dist/release/teaclave/KEYS" target="_blank" rel="noopener noreferrer">https://dist.apache.org/repos/dist/release/teaclave/KEYS</a>. It will be
+automatically synced to <a href="https://downloads.apache.org/teaclave/KEYS" target="_blank" rel="noopener noreferrer">https://downloads.apache.org/teaclave/KEYS</a>.</p>
+<p>Users verify release signatures against this published <code>KEYS</code> file.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-add-the-release-managers-gpg-key-to-keys">2. Add the release manager&#x27;s GPG key to KEYS<a href="#2-add-the-release-managers-gpg-key-to-keys" class="hash-link" aria-label="Direct link to 2. Add the release manager&#x27;s GPG key to KEYS" title="Direct link to 2. Add the release manager&#x27;s GPG key to KEYS">​</a></h3>
+<p>The dist server uses SVN. Check it out locally, update the <code>KEYS</code> file, and commit the change.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ svn co --depth=files &quot;https://dist.apache.org/repos/dist/release/teaclave&quot; release-teaclave </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># edit the release-teaclave/KEYS file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># upload:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ svn ci --username &quot;$ASF_USERNAME&quot; -m &quot;Update KEYS&quot;</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="release-stages">Release stages<a href="#release-stages" class="hash-link" aria-label="Direct link to Release stages" title="Direct link to Release stages">​</a></h2>
+<p>The release involves working with GitHub and the Teaclave mailing list.</p>
+<ol>
+<li>Make a pre-release on GitHub to produce <code>$release-rc1.tar.gz</code>.</li>
+<li>Prepare artifacts on the Apache dist/dev server.</li>
+<li>Vote for the release candidate.</li>
+<li>Move the approved release candidate to the Apache dist/release server.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-make-a-pre-release-on-github">1. Make a pre-release on GitHub<a href="#1-make-a-pre-release-on-github" class="hash-link" aria-label="Direct link to 1. Make a pre-release on GitHub" title="Direct link to 1. Make a pre-release on GitHub">​</a></h3>
 <ul>
-<li><strong>Prepare the release</strong> (Week 1)</li>
-<li><strong>Pre-release on GitHub</strong> (Week 2)</li>
-<li><strong>Voting</strong> (Week 3–4)</li>
-<li><strong>Post-release</strong> (within one week after all votes pass)</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stage-by-stage-operations-guide">Stage-by-Stage Operations Guide<a href="#stage-by-stage-operations-guide" class="hash-link" aria-label="Direct link to Stage-by-Stage Operations Guide" title="Direct link to Stage-by-Stage Operations Guide">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-prepare-the-release">1. Prepare the release<a href="#1-prepare-the-release" class="hash-link" aria-label="Direct link to 1. Prepare the release" title="Direct link to 1. Prepare the release">​</a></h3>
-<p>During this phase:</p>
-<ul>
-<li>
-<p>Optional: Bump the dependencies version. e.g. for trustzone-sdk: bump OP-TEE
-version to the latest (including build scripts and test image)</p>
-</li>
-<li>
-<p>Review and follow the
-<a href="https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist" target="_blank" rel="noopener noreferrer">Apache Incubator Release Checklist</a>.</p>
-<p>By default, no additional work is needed if you follow our release guide.
-However, please double-check the checklist in the following cases:</p>
+<li>Ensure the source code is ready for a new release, including bumping versions and upgrading dependencies.</li>
+<li>Review and follow the checklist in these cases:
 <ul>
 <li>For the first release of a new year, ensure the year in the NOTICE file is
 updated to: 2019–[Current Year].</li>
-<li>If there are any changes to DISCLAIMER, NOTICE, or LICENSE files, make sure
+<li>If there are any changes to NOTICE, or LICENSE files, make sure
 they comply with the items in the checklist.</li>
 <li>If any new examples include third-party code, refer to how this is handled
-in <a href="https://github.com/apache/teaclave-trustzone-sdk/issues/196" target="_blank" rel="noopener noreferrer">https://github.com/apache/teaclave-trustzone-sdk/issues/196</a></li>
+in <a href="https://github.com/apache/teaclave-trustzone-sdk/issues/196" target="_blank" rel="noopener noreferrer">https://github.com/apache/teaclave-trustzone-sdk/issues/196</a>.</li>
 </ul>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-pre-release-on-github">2. Pre-release on GitHub<a href="#2-pre-release-on-github" class="hash-link" aria-label="Direct link to 2. Pre-release on GitHub" title="Direct link to 2. Pre-release on GitHub">​</a></h3>
-<p>Once all items in Stage 1 are completed, it&#x27;s time to publish the release
-candidate.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="21-draft-the-release-notes">2.1 Draft the release notes<a href="#21-draft-the-release-notes" class="hash-link" aria-label="Direct link to 2.1 Draft the release notes" title="Direct link to 2.1 Draft the release notes">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="11-draft-the-release-notes">1.1 Draft the release notes<a href="#11-draft-the-release-notes" class="hash-link" aria-label="Direct link to 1.1 Draft the release notes" title="Direct link to 1.1 Draft the release notes">​</a></h4>
 <p>You can manually draft the release notes or use tools to generate them
 automatically. For example, on the GitHub Releases page, you can select the
 previous release tag and click “Generate Release Notes” to create a basic draft.</p>
-<p>Alternatively, you can use a GitHub Action to produce more detailed and
-structured release notes.</p>
-<p>For trustzone-sdk, we already have a GitHub Action set up for this purpose,
-please refer to the
-<a href="https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md" target="_blank" rel="noopener noreferrer">Release Tips</a>
-in the trustzone sdk repository for more details.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="22-create-the-pre-release">2.2 Create the pre-release<a href="#22-create-the-pre-release" class="hash-link" aria-label="Direct link to 2.2 Create the pre-release" title="Direct link to 2.2 Create the pre-release">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="12-create-the-pre-release">1.2 Create the pre-release<a href="#12-create-the-pre-release" class="hash-link" aria-label="Direct link to 1.2 Create the pre-release" title="Direct link to 1.2 Create the pre-release">​</a></h4>
 <ol>
-<li>Choose a tag: create a tag from current main, e.g. 0.5.0-rc.1</li>
+<li>Choose a tag: create a tag from the current <code>main</code>, e.g. <code>v0.5.0-rc.1</code>.</li>
 <li>Fill in the release notes.</li>
 <li>Select &quot;This is a pre-release&quot;.</li>
 <li>Click &quot;Publish release&quot;.</li>
 </ol>
 <p>Once successful, the release page will appear with the release notes and two
 assets: <strong>Source code (zip)</strong> and <strong>Source code (tar.gz)</strong>.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-voting">3. Voting<a href="#3-voting" class="hash-link" aria-label="Direct link to 3. Voting" title="Direct link to 3. Voting">​</a></h3>
-<p>After the pre-release on GitHub, you can start the voting process. To prepare
-the voting email, we need to test building from source and prepare the
-artifacts.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="31-test-building-from-source">3.1 Test building from source<a href="#31-test-building-from-source" class="hash-link" aria-label="Direct link to 3.1 Test building from source" title="Direct link to 3.1 Test building from source">​</a></h4>
-<p>Typically, we provide a Docker command to test the build in the voting email,
-but the command varies between repositories. For example, in the case of
-trustzone-sdk:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/teaclave-trustzone-sdk yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash -c &quot;./setup.sh &amp;&amp; (./build_optee_libraries.sh optee) &amp;&amp; source \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">environment &amp;&amp; make &amp;&amp; (cd ci &amp;&amp; ./ci.sh)&quot;</span><br></span></code></pre></div></div>
-<p>The check process is as follows:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ TAG=0.5.0-rc.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">## download tar</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ wget https://github.com/apache/teaclave-trustzone-sdk/archive/refs/tags/v0.5.0-rc.1.tar.gz</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ tar xzvf 0.5.0-rc.1.tar.gz</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ cd teaclave-trustzone-sdk-0.5.0.rc.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/teaclave-trustzone-sdk yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash -c &quot;./setup.sh &amp;&amp; (./build_optee_libraries.sh optee) &amp;&amp; source \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">environment &amp;&amp; make &amp;&amp; (cd ci &amp;&amp; ./ci.sh)&quot;</span><br></span></code></pre></div></div>
-<p>You can adjust this based on the repository you&#x27;re working on.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="32-prepare-artifacts-for-voting">3.2 Prepare artifacts for voting<a href="#32-prepare-artifacts-for-voting" class="hash-link" aria-label="Direct link to 3.2 Prepare artifacts for voting" title="Direct link to 3.2 Prepare artifacts for voting">​</a></h4>
-<p>We provide a script
-<a href="https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh" target="_blank" rel="noopener noreferrer"><code>make_release_artifacts.sh</code></a>
-to pack the artifacts, sign and upload to SVN. It has been tested with
-trustzone-sdk, and we believe it should work for other repositories as well.
-Feel free to test it with other teaclave repositories, and open a PR if you
-encounter any compatibility issues.</p>
-<p>Be sure to update the variables in the script to set the release version and use
-your ASF username/password and GPG key id.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">## Get the key id of your signing key</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">gpg --list-secret-keys</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">GPG_KEY_UID=????</span><br></span></code></pre></div></div>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Download source tarball from Github, sign, and verify release artifacts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">./make_release_artifacts.sh prepare</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Verify existing artifacts and upload to Apache dist/dev SVN</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">./make_release_artifacts.sh upload</span><br></span></code></pre></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="32-start-voting-process">3.2 Start voting process<a href="#32-start-voting-process" class="hash-link" aria-label="Direct link to 3.2 Start voting process" title="Direct link to 3.2 Start voting process">​</a></h4>
-<p><strong>Voting Process</strong></p>
-<p>Two votes are required:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-prepare-artifacts-on-the-apache-distdev-server">2. Prepare artifacts on the Apache dist/dev server<a href="#2-prepare-artifacts-on-the-apache-distdev-server" class="hash-link" aria-label="Direct link to 2. Prepare artifacts on the Apache dist/dev server" title="Direct link to 2. Prepare artifacts on the Apache dist/dev server">​</a></h3>
+<p>After the pre-release on GitHub, prepare for the voting process.
+The prerequisites include:</p>
 <ul>
-<li>First, vote on the Apache Teaclave™ developers mailing list
-(<code>dev@teaclave.apache.org</code>).</li>
-<li>After it passes, call the second vote on the Apache Incubator general mailing
-list (<code>general@incubator.apache.org</code>).</li>
+<li>Instructions for building and testing from source so others can validate the release source.</li>
+<li>Preparing the three artifact files (<code>.tar.gz</code>, <code>.asc</code>, <code>.sha512</code>) and uploading them to dist/dev.</li>
 </ul>
-<p>Each vote requires <strong>two email threads</strong>:</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="21-instructions-test-building-from-source">2.1 Instructions: test building from source<a href="#21-instructions-test-building-from-source" class="hash-link" aria-label="Direct link to 2.1 Instructions: test building from source" title="Direct link to 2.1 Instructions: test building from source">​</a></h4>
+<p>For example, in the case of trustzone-sdk:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ TAG=v0.5.0-rc.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ wget https://github.com/apache/teaclave-trustzone-sdk/archive/refs/tags/$TAG.tar.gz -O $TAG.tar.gz</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ tar xzvf $TAG.tar.gz</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ cd teaclave-trustzone-sdk-0.5.0-rc.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ docker run --rm -it -v&quot;$(pwd)&quot;:/teaclave-trustzone-sdk -w /teaclave-trustzone-sdk \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">yuanz0/teaclave-trustzone-sdk:ubuntu-24.04 bash -c &quot;./setup.sh &amp;&amp; ./build_optee_libraries.sh optee &amp;&amp; source environment &amp;&amp; make &amp;&amp; (cd ci &amp;&amp; ./ci.sh)&quot;</span><br></span></code></pre></div></div>
+<p>Please adjust this based on the repository you&#x27;re working on.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="22-prepare-artifacts-sign-verify-and-upload">2.2 Prepare artifacts: sign, verify, and upload<a href="#22-prepare-artifacts-sign-verify-and-upload" class="hash-link" aria-label="Direct link to 2.2 Prepare artifacts: sign, verify, and upload" title="Direct link to 2.2 Prepare artifacts: sign, verify, and upload">​</a></h4>
+<p>We provide a script,
+<a href="https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh" target="_blank" rel="noopener noreferrer"><code>make_release_artifacts.sh</code></a>,
+to package the artifacts, sign them, and upload to SVN.</p>
+<p>Check out the directory, make the necessary updates, and upload.
+Be sure to update the variables in the script to set the release version and use
+your ASF username/password and GPG key ID.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">## Get the key ID of your signing key</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">gpg --list-secret-keys</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">GPG_KEY_UID=????</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Download source tarball from GitHub, sign, and verify release artifacts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">./make_release_artifacts.sh prepare</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Verify existing artifacts and upload to Apache dist/dev SVN</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">./make_release_artifacts.sh upload</span><br></span></code></pre></div></div>
+<p>Tip: After generating the <code>.sha512</code> and <code>.asc</code> files, verify the checksum and signature locally before uploading:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">shasum -a 512 apache-teaclave-xxx-sdk-$version.tar.gz | diff - apache-teaclave-xxx-sdk-$version.tar.gz.sha512</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">gpg --verify apache-teaclave-xxx-sdk-$version.tar.gz.asc apache-teaclave-xxx-sdk-$version.tar.gz</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-vote-for-release-candidates">3. Vote for release candidates<a href="#3-vote-for-release-candidates" class="hash-link" aria-label="Direct link to 3. Vote for release candidates" title="Direct link to 3. Vote for release candidates">​</a></h3>
+<p>Vote on the Apache Teaclave™ developers mailing list (<code>dev@teaclave.apache.org</code>).</p>
+<p>The vote requires <strong>two email threads</strong>:</p>
 <ul>
 <li><code>[VOTE]</code> – to initiate the vote</li>
-<li><code>[RESULT][VOTE]</code> – to announce the result</li>
+<li><code>[RESULT][VOTE]</code> – to announce the result if vote passes</li>
 </ul>
-<p>For example, if <code>rc1</code> is successfully released, you should send a total of
-<strong>four emails</strong>:</p>
+<p>Important details:</p>
 <ul>
-<li>Two for the <strong>community vote</strong></li>
-<li>Two for the <strong>IPMC vote</strong></li>
+<li>Each vote needs at least three binding +1 votes and more +1 votes than -1 votes to pass.</li>
+<li>On <code>dev@teaclave.apache.org</code>, only votes from PMC members are binding.</li>
+<li>Votes must remain open for at least 72 hours (3 days). If there aren’t enough binding votes by then, extend the voting period.</li>
+<li>If a vote fails, update the release accordingly, create a new release candidate (with an increased rc number), and restart the voting process.</li>
 </ul>
-<p>If additional release candidates (e.g., <code>rc2</code>, <code>rc3</code>, etc.) are needed, you’ll
-need to repeat the voting process and send additional vote/result emails
-accordingly.</p>
-<p>Here are some important details:</p>
-<ul>
-<li>Each vote needs at least 3 <em>binding</em> +1 votes and more +1 votes than -1 votes
-to pass.</li>
-<li><em>Binding</em> votes mean:
-<ul>
-<li>On <code>dev@teaclave.apache.org</code>, votes from PPMC members</li>
-<li>On <code>general@incubator.apache.org</code>, votes from IPMC members</li>
-</ul>
-</li>
-<li>Votes must stay open for at least 72 hours (3 days). If there aren’t enough
-binding votes by then, extend the voting period.</li>
-<li>If a vote fails, update the release accordingly, create a new release
-candidate, and restart the voting process.</li>
-<li>If the vote does not receive enough responses within 3 days, follow up by
-requesting votes—send a reminder email to the project&#x27;s mentor. You can find
-the mentors’ email on our website.</li>
-</ul>
-<p><strong>Voting Email</strong></p>
-<p>For <code>trustzone-sdk</code>, we provide an email template in
-<a href="https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md" target="_blank" rel="noopener noreferrer">Release Tips</a>
-, which follows a structure commonly used across all Teaclave repositories. You
-can refer to this template or look at past email examples for guidance.</p>
-<p>If you create a corresponding template for another Teaclave repository, we’d
-greatly appreciate it — feel free to open a PR to contribute it.</p>
-<p>Here are some examples:</p>
-<p><strong>Vote / Result in the dev@teaclave list</strong>:</p>
+<p>Voting email samples:</p>
 <ul>
 <li>
-<p>subject: [VOTE] Release Apache Teaclave TrustZone SDK  v0.4.0-rc.2</p>
+<p>subject: [VOTE] Release Apache Teaclave™ TrustZone SDK  v0.4.0-rc.2</p>
 </li>
 <li>
 <p>to: <a href="mailto:dev@teaclave.apache.org" target="_blank" rel="noopener noreferrer">dev@teaclave.apache.org</a></p>
@@ -182,7 +125,7 @@ greatly appreciate it — feel free to open a PR to contribute it.</p>
 <p>link: <a href="https://lists.apache.org/thread/o60wpscnq8mp6lhbd8h654ybxd6wzhk7" target="_blank" rel="noopener noreferrer">https://lists.apache.org/thread/o60wpscnq8mp6lhbd8h654ybxd6wzhk7</a></p>
 </li>
 <li>
-<p>subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK
+<p>subject: [RESULT][VOTE] Release Apache Teaclave™ TrustZone SDK
 v0.4.0-rc.2</p>
 </li>
 <li>
@@ -192,111 +135,86 @@ v0.4.0-rc.2</p>
 <p>link: <a href="https://lists.apache.org/thread/oo2r4xh731bqbn9b0659jjl7f4cym9g6" target="_blank" rel="noopener noreferrer">https://lists.apache.org/thread/oo2r4xh731bqbn9b0659jjl7f4cym9g6</a></p>
 </li>
 </ul>
-<p><strong>Vote / Result in the general@incubator list</strong>:</p>
-<ul>
-<li>
-<p>subject: [VOTE] Release Apache Teaclave TrustZone SDK  v0.4.0-rc.2</p>
-</li>
-<li>
-<p>to: <a href="mailto:general@incubator.apache.org" target="_blank" rel="noopener noreferrer">general@incubator.apache.org</a></p>
-</li>
-<li>
-<p>link: <a href="https://lists.apache.org/thread/8mstnqpoo0hy1sy8f96dyrkyrmcdwz2z" target="_blank" rel="noopener noreferrer">https://lists.apache.org/thread/8mstnqpoo0hy1sy8f96dyrkyrmcdwz2z</a></p>
-</li>
-<li>
-<p>subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK
-v0.4.0-rc.2</p>
-</li>
-<li>
-<p>to: <a href="mailto:general@incubator.apache.org" target="_blank" rel="noopener noreferrer">general@incubator.apache.org</a></p>
-</li>
-<li>
-<p>link: <a href="https://lists.apache.org/thread/y2m99kt8tbpkp4fs9pw4kxvwc4pvx2so" target="_blank" rel="noopener noreferrer">https://lists.apache.org/thread/y2m99kt8tbpkp4fs9pw4kxvwc4pvx2so</a></p>
-</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-post-release">4. Post-release<a href="#4-post-release" class="hash-link" aria-label="Direct link to 4. Post-release" title="Direct link to 4. Post-release">​</a></h3>
-<p>Once the vote in the Incubator passes, the final step is to complete the
-release.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-move-the-approved-release-candidate-to-the-apache-distrelease-server">4. Move the approved release candidate to the Apache dist/release server<a href="#4-move-the-approved-release-candidate-to-the-apache-distrelease-server" class="hash-link" aria-label="Direct link to 4. Move the approved release candidate to the Apache dist/release server" title="Direct link to 4. Move the approved release candidate to the Apache dist/release server">​</a></h3>
+<p>Once the vote passes, move the voted release files to the dist/release SVN server.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="41-upload-the-final-release-artifacts-to-svn">4.1 Upload the Final Release Artifacts to SVN<a href="#41-upload-the-final-release-artifacts-to-svn" class="hash-link" aria-label="Direct link to 4.1 Upload the Final Release Artifacts to SVN" title="Direct link to 4.1 Upload the Final Release Artifacts to SVN">​</a></h4>
 <p>At this stage, you should:</p>
 <ul>
 <li>Move the release candidate (RC) artifacts to the final directory in <code>dev</code>.</li>
-<li>Delete all RC artifacts from the <code>dev</code>.</li>
-<li>Upload the finalized artifacts to the <code>release</code>.</li>
+<li>Delete all RC artifacts from <code>dev</code>.</li>
+<li>Upload the finalized artifacts to <code>release</code>.</li>
 </ul>
 <p>For example, if the release version is <code>0.4.0</code>:</p>
 <ul>
 <li>
 <p><strong>In <code>dev</code></strong>: Ensure the final directory with artifacts exists at:
-<a href="https://dist.apache.org/repos/dist/dev/incubator/teaclave/trustzone-sdk-0.4.0/" target="_blank" rel="noopener noreferrer">https://dist.apache.org/repos/dist/dev/incubator/teaclave/trustzone-sdk-0.4.0/</a>
+<a href="https://dist.apache.org/repos/dist/dev/teaclave/trustzone-sdk-0.4.0/" target="_blank" rel="noopener noreferrer">https://dist.apache.org/repos/dist/dev/teaclave/trustzone-sdk-0.4.0/</a>
 Also, delete all previous <code>0.4.0-rc</code> artifacts.</p>
 </li>
 <li>
 <p><strong>In <code>release</code></strong>: Copy the finalized artifacts from <code>dev</code> to:
-<a href="https://dist.apache.org/repos/dist/release/incubator/teaclave/trustzone-sdk-0.4.0/" target="_blank" rel="noopener noreferrer">https://dist.apache.org/repos/dist/release/incubator/teaclave/trustzone-sdk-0.4.0/</a></p>
+<a href="https://dist.apache.org/repos/dist/release/teaclave/trustzone-sdk-0.4.0/" target="_blank" rel="noopener noreferrer">https://dist.apache.org/repos/dist/release/teaclave/trustzone-sdk-0.4.0/</a></p>
 </li>
 </ul>
 <p>You can refer to the script
 <a href="https://github.com/apache/teaclave-trustzone-sdk/tree/main/scripts/release/make_release_artifacts.sh" target="_blank" rel="noopener noreferrer"><code>make_release_artifacts.sh</code></a>
 to perform these operations:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">./make_release_artifacts.sh finalize</span><br></span></code></pre></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="42-final-release-on-github">4.2 Final release on Github<a href="#42-final-release-on-github" class="hash-link" aria-label="Direct link to 4.2 Final release on Github" title="Direct link to 4.2 Final release on Github">​</a></h4>
-<p>Add the tag for 0.[X].0</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-convert-pre-release-to-release-on-github">5. Convert pre-release to release on GitHub<a href="#5-convert-pre-release-to-release-on-github" class="hash-link" aria-label="Direct link to 5. Convert pre-release to release on GitHub" title="Direct link to 5. Convert pre-release to release on GitHub">​</a></h3>
+<p>Add the tag for <code>0.[X].0</code>:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git tag v0.[X].0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git push origin v0.[X].0</span><br></span></code></pre></div></div>
-<p>On the release edit page, use the tag “0.[X].0”, unmark “Set as a pre-release”,
-and submit.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="43-optional-other-publishing-eg-on-cratesio">4.3 Optional: Other Publishing (e.g., on crates.io)<a href="#43-optional-other-publishing-eg-on-cratesio" class="hash-link" aria-label="Direct link to 4.3 Optional: Other Publishing (e.g., on crates.io)" title="Direct link to 4.3 Optional: Other Publishing (e.g., on crates.io)">​</a></h4>
+<p>On the release edit page, use the tag <code>0.[X].0</code>, uncheck “Set as a pre-release”, and submit.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="optional-other-publishing-eg-cratesio">Optional: other publishing (e.g., crates.io)<a href="#optional-other-publishing-eg-cratesio" class="hash-link" aria-label="Direct link to Optional: other publishing (e.g., crates.io)" title="Direct link to Optional: other publishing (e.g., crates.io)">​</a></h4>
 <p>Repository-specific publishing may be required. For example, for trustzone-sdk,
 publishing to crates.io is needed. Refer to the TrustZone documentation
 <a href="https://github.com/apache/teaclave-trustzone-sdk/tree/main/docs/release-tips.md" target="_blank" rel="noopener noreferrer">Release Tips</a>
 for details.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="44-post-the-announcement">4.4 Post the announcement<a href="#44-post-the-announcement" class="hash-link" aria-label="Direct link to 4.4 Post the announcement" title="Direct link to 4.4 Post the announcement">​</a></h4>
-<p><strong>4.4.1 to the Apache mailing list</strong></p>
-<p><strong>Mailing list example</strong>:</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="post-the-release">Post the release<a href="#post-the-release" class="hash-link" aria-label="Direct link to Post the release" title="Direct link to Post the release">​</a></h2>
+<p><strong>Announce on the Apache mailing list</strong></p>
+<p>Mailing list example:</p>
 <ul>
-<li>subject: [ANNOUNCE] Apache Teaclave TrustZone SDK  0.4.0 Released</li>
+<li>subject: [ANNOUNCE] Apache Teaclave™ TrustZone SDK  0.4.0 Released</li>
 <li>to: <a href="mailto:announce@apache.org" target="_blank" rel="noopener noreferrer">announce@apache.org</a>, <a href="mailto:dev@teaclave.apache.org" target="_blank" rel="noopener noreferrer">dev@teaclave.apache.org</a></li>
 <li>link: <a href="https://lists.apache.org/thread/7zn019gsmd65xsbgw2tbv2c3jdvc44hb" target="_blank" rel="noopener noreferrer">https://lists.apache.org/thread/7zn019gsmd65xsbgw2tbv2c3jdvc44hb</a></li>
 </ul>
-<p><strong>4.4.2 to Teaclave website</strong></p>
-<p>The website src is in: <a href="https://github.com/apache/teaclave-website" target="_blank" rel="noopener noreferrer">https://github.com/apache/teaclave-website</a>,
-open a PR to update.</p>
-<p>Add an announcement in <a href="https://teaclave.incubator.apache.org/blog/" target="_blank" rel="noopener noreferrer">https://teaclave.incubator.apache.org/blog/</a> and update
-the download page: <a href="https://teaclave.incubator.apache.org/download/" target="_blank" rel="noopener noreferrer">https://teaclave.incubator.apache.org/download/</a></p>
-<p><strong>Blog example</strong>:</p>
+<p><strong>Update the Teaclave website</strong></p>
+<p>The website source is at <a href="https://github.com/apache/teaclave-website" target="_blank" rel="noopener noreferrer">https://github.com/apache/teaclave-website</a>. Open a PR to update.</p>
+<p>Add an announcement to <a href="https://teaclave.incubator.apache.org/blog/" target="_blank" rel="noopener noreferrer">https://teaclave.incubator.apache.org/blog/</a> and update
+the download page: <a href="https://teaclave.incubator.apache.org/download/" target="_blank" rel="noopener noreferrer">https://teaclave.incubator.apache.org/download/</a>.</p>
+<p>Blog example:</p>
 <ul>
-<li>title: Announcing Apache Teaclave  0.3.0</li>
+<li>title: Announcing Apache Teaclave™  0.3.0</li>
 <li>link: <a href="https://teaclave.apache.org/blog/2021-10-01-announcing-teaclave-0-3-0/" target="_blank" rel="noopener noreferrer">https://teaclave.apache.org/blog/2021-10-01-announcing-teaclave-0-3-0/</a></li>
 </ul>
-<p><strong>Update Download Page Example</strong>:</p>
+<p>Update download page example:</p>
 <p><a href="https://github.com/apache/teaclave-website/commit/94d33df6c1540d0490a0728d0fd0be67915f1ca9" target="_blank" rel="noopener noreferrer">https://github.com/apache/teaclave-website/commit/94d33df6c1540d0490a0728d0fd0be67915f1ca9</a></p>
 <p>After completing the steps above, the release process is finished.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-other-considerations">5. Other considerations<a href="#5-other-considerations" class="hash-link" aria-label="Direct link to 5. Other considerations" title="Direct link to 5. Other considerations">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="51-about-branch-cut-and-feature-freeze">5.1 About branch cut and feature freeze<a href="#51-about-branch-cut-and-feature-freeze" class="hash-link" aria-label="Direct link to 5.1 About branch cut and feature freeze" title="Direct link to 5.1 About branch cut and feature freeze">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="other-considerations">Other considerations<a href="#other-considerations" class="hash-link" aria-label="Direct link to Other considerations" title="Direct link to Other considerations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="about-branch-cut-and-feature-freeze">About branch cut and feature freeze<a href="#about-branch-cut-and-feature-freeze" class="hash-link" aria-label="Direct link to About branch cut and feature freeze" title="Direct link to About branch cut and feature freeze">​</a></h3>
 <ul>
-<li>After tag the release, new feature development is frozen for the release, but
-the main(dev) branch remains active for ongoing development.</li>
-<li>If there’re bug fixes for this release, cut the release branch from the tag,
-e.g. <code>release-v0.5.0</code>. In the release branch, you can cherry-pick important
-bug fixes from main as needed. All changes should be committed to main first,
-and then optionally cherry-picked into the release branch. For example, if rc1
-requires changes based on voting feedback (e.g. feedback-fix-1): Suppose the
+<li>After tagging the release, new feature development is frozen for that release, but
+the <code>main</code> (development) branch remains active for ongoing work.</li>
+<li>If there are bug fixes for this release, cut the release branch from the tag,
+e.g., <code>release-v0.5.0</code>. In the release branch, you can cherry-pick important
+bug fixes from <code>main</code> as needed. All changes should land in <code>main</code> first,
+and then optionally be cherry-picked into the release branch. For example, if rc1
+requires changes based on voting feedback (e.g., <code>feedback-fix-1</code>): Suppose the
 <code>main</code> branch already has the following commits: <code>MAIN: feature (commit1)</code> →
 <code>fix (commit2)</code> → <code>feature (commit3)</code>. Assume the release branch was cut at
 <code>commit1</code>, so currently it only contains: <code>RELEASE: feature (commit1)</code>.
 <ul>
-<li>First, apply <code>feedback-fix-1</code> to the <code>main</code> branch. Now <code>main</code> looks like:<br>
+<li>First, apply <code>feedback-fix-1</code> to the <code>main</code> branch. Now <code>main</code> looks like:
 <code>MAIN: feature (commit1)</code> → <code>fix (commit2)</code> → <code>feature (commit3)</code> →
-<code>feedback-fix-1 (commit4)</code></li>
+<code>feedback-fix-1 (commit4)</code>.</li>
 <li>Then, cherry-pick <code>fix (commit2)</code> and <code>feedback-fix-1 (commit4)</code> into the
-release branch. The release branch becomes:<br>
-<code>RELEASE: feature (commit1)</code> → <code>fix (commit2)</code> → <code>feedback-fix-1 (commit4)</code></li>
+release branch. The release branch becomes:
+<code>RELEASE: feature (commit1)</code> → <code>fix (commit2)</code> → <code>feedback-fix-1 (commit4)</code>.</li>
 </ul>
 </li>
-<li>If the fix for release isn’t compatible with the main branch, it’s acceptable
-to apply the fix directly to the release branch and please mark at the commit
-message like: &quot;Fix specific to release-1.x; not applicable to main due to
+<li>If a fix for the release isn’t compatible with <code>main</code>, it’s acceptable
+to apply the fix directly to the release branch. Please mark the commit
+message, e.g., &quot;Fix specific to release-1.x; not applicable to main due to
 architectural differences.&quot;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/maturity"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Maturity Assessment</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#for-new-release-managers" class="table-of-contents__link toc-highlight">For New Release Managers</a><ul><li><a href="#0-become-a-member-of-the-apache-teaclave--community" class="table-of-contents__link toc-highlight">0. Become a member of the Apache Teaclave™  community</a></li><li><a href="#1-prepare-the-gpg-signing-key" class="table-of-contents__link toc-highlight">1. Prepare the GPG Signing Key</a></li><li><a href="#2-optional-request-other-permissions" class="table-of-contents__link toc-highlight">2. Optional: Request Other Permissions</a></li></ul></li><li><a href="#release-stages" class="table-of-contents__link toc-highlight">Release Stages</a><ul><li><a href="#timeline-of-release-stages" class="table-of-contents__link toc-highlight">Timeline of release stages</a></li></ul></li><li><a href="#stage-by-stage-operations-guide" class="table-of-contents__link toc-highlight">Stage-by-Stage Operations Guide</a><ul><li><a href="#1-prepare-the-release" class="table-of-contents__link toc-highlight">1. Prepare the release</a></li><li><a href="#2-pre-release-on-github" class="table-of-contents__link toc-highlight">2. Pre-release on GitHub</a></li><li><a href="#3-voting" class="table-of-contents__link toc-highlight">3. Voting</a></li><li><a href="#4-post-release" class="table-of-contents__link toc-highlight">4. Post-release</a></li></ul></li><li><a href="#5-other-considerations" class="table-of-contents__link toc-highlight">5. Other considerations</a><ul><li><a href="#51-about-branch-cut-and-feature-freeze" class="table-of-contents__link toc-highlight">5.1 About branch cut and feature freeze</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright"><div style="font-size:.7rem; text-align:left;">Apache Teaclave™  is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF. Copyright © 2020 The Apache Software Foundation. Licensed under the Apache License, Version 2.0. Apache Teaclave™, Apache, the Apache feather, and the Apache Teaclave™ project logo are either trademarks or registered trademarks of the Apache Software Foundation.</div></div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/maturity"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Maturity Assessment</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#prerequisites-for-new-release-managers" class="table-of-contents__link toc-highlight">Prerequisites for new release managers</a><ul><li><a href="#1-prepare-the-gpg-signing-key" class="table-of-contents__link toc-highlight">1. Prepare the GPG signing key</a></li><li><a href="#2-add-the-release-managers-gpg-key-to-keys" class="table-of-contents__link toc-highlight">2. Add the release manager&#39;s GPG key to KEYS</a></li></ul></li><li><a href="#release-stages" class="table-of-contents__link toc-highlight">Release stages</a><ul><li><a href="#1-make-a-pre-release-on-github" class="table-of-contents__link toc-highlight">1. Make a pre-release on GitHub</a></li><li><a href="#2-prepare-artifacts-on-the-apache-distdev-server" class="table-of-contents__link toc-highlight">2. Prepare artifacts on the Apache dist/dev server</a></li><li><a href="#3-vote-for-release-candidates" class="table-of-contents__link toc-highlight">3. Vote for release candidates</a></li><li><a href="#4-move-the-approved-release-candidate-to-the-apache-distrelease-server" class="table-of-contents__link toc-highlight">4. Move the approved release candidate to the Apache dist/release server</a></li><li><a href="#5-convert-pre-release-to-release-on-github" class="table-of-contents__link toc-highlight">5. Convert pre-release to release on GitHub</a></li></ul></li><li><a href="#post-the-release" class="table-of-contents__link toc-highlight">Post the release</a></li><li><a href="#other-considerations" class="table-of-contents__link toc-highlight">Other considerations</a><ul><li><a href="#about-branch-cut-and-feature-freeze" class="table-of-contents__link toc-highlight">About branch cut and feature freeze</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright"><div style="font-size:.7rem; text-align:left;">Copyright © 2019-2025, The Apache Software FoundationLicensed under the Apache License, Version 2.0. Apache Teaclave™, Apache, the Apache feather, and the Apache Teaclave™ project logo are either trademarks or registered trademarks of the Apache Software Foundation.</div></div></div></div></footer></div>
 </body>
 </html>
