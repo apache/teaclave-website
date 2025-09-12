@@ -4,7 +4,7 @@ sidebar: false
 ---
 # Download
 
-The followings are Apache Incubator releases for Teaclave projects - Teaclave,
+The followings are Apache releases for Teaclave projects - Teaclave,
 Teaclave SGX SDK, Teaclave TrustZone SDK, and Teaclave Java TEE SDK. These
 source archives are generated from tagged releases. You can verify your download
 by following these
@@ -21,7 +21,7 @@ Each SDK evolves independently to best support its respective platform and use c
 
 | Latest Version | Source Code               | PGP/SHA | Release Notes |
 |:-------:|:-------------------------:|:----:|:-------:|
-| 0.5.0   | [apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz?action=download) | [asc](https://downloads.apache.org/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/teaclave/trustzone-sdk-0.5.0/apache-teaclave-trustzone-sdk-0.5.0-incubating.tar.gz.sha512) | [notes](https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.5.0) |
+| 0.6.0   | [apache-teaclave-trustzone-sdk-0.6.0.tar.gz](https://www.apache.org/dyn/closer.lua/teaclave/trustzone-sdk-0.6.0/apache-teaclave-trustzone-sdk-0.6.0.tar.gz?action=download) | [asc](https://downloads.apache.org/teaclave/trustzone-sdk-0.6.0/apache-teaclave-trustzone-sdk-0.6.0.tar.gz.asc), [sha512](https://downloads.apache.org/teaclave/trustzone-sdk-0.6.0/apache-teaclave-trustzone-sdk-0.6.0.tar.gz.sha512) | [notes](https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.6.0) |
 
 ### Teaclave SGX SDK
 
