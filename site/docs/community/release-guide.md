@@ -211,25 +211,21 @@ for details.
 
 Mailing list example:
 
-- subject: [ANNOUNCE] Apache Teaclave™ TrustZone SDK  0.4.0 Released
+- subject: [ANNOUNCE] Apache Teaclave™ TrustZone SDK 0.6.0 Released
 - to: announce@apache.org, dev@teaclave.apache.org
-- link: <https://lists.apache.org/thread/7zn019gsmd65xsbgw2tbv2c3jdvc44hb>
+- link: <https://lists.apache.org/thread/npxxtxxxolozjn15l5ff9nx6tltyt4o8>
 
 **Update the Teaclave website**
 
 The website source is at <https://github.com/apache/teaclave-website>. Open a PR to update.
 
-Add an announcement to <https://teaclave.incubator.apache.org/blog/> and update
-the download page: <https://teaclave.incubator.apache.org/download/>.
+Add an announcement to <https://teaclave.apache.org/blog/> and update
+the download page: <https://teaclave.apache.org/download/>.
 
 Blog example:
 
-- title: Announcing Apache Teaclave™  0.3.0
-- link: <https://teaclave.apache.org/blog/2021-10-01-announcing-teaclave-0-3-0/>
-
-Update download page example:
-
-<https://github.com/apache/teaclave-website/commit/94d33df6c1540d0490a0728d0fd0be67915f1ca9>
+- title: Announcing Apache Teaclave™ TrustZone SDK 0.6.0
+- link: <https://teaclave.apache.org/blog/2025/09/12/announcing-teaclave-trustzone-sdk-0.6.0/>
 
 After completing the steps above, the release process is finished.
 
