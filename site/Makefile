@@ -21,9 +21,9 @@ check-repo:
 	fi
 
 update-repo: check-repo
-	cd docs/teaclave-docs && git pull --depth 1
-	cd docs/teaclave-faas-legacy && git pull --depth 1
-	cd docs/teaclave-sgx-sdk && git pull --depth 1
+	cd docs/teaclave-docs && git pull --depth 1 --rebase
+	cd docs/teaclave-faas-legacy && git pull --depth 1 --rebase
+	cd docs/teaclave-sgx-sdk && git pull --depth 1 --rebase
 	cd docs/teaclave-trustzone-sdk && git pull --depth 1 --rebase
 
 sgx-sdk-api-docs: site-build
