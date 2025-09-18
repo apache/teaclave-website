@@ -37,15 +37,15 @@ growth, not just commit access.
 
 ---
 
-## Become a PPMC Member of Apache Teaclave™
+## Become a PMC Member of Apache Teaclave™
 
-Podling Project Management Committee (PPMC) members help guide the project's vision and 
-governance. PPMC members are usually experienced committers who've shown 
+Project Management Committee (PMC) members help guide the project's vision and 
+governance. PMC members are usually experienced committers who've shown 
 leadership, deep engagement, and a long-term commitment to Teaclave. We value 
 contributions across CoPDoC areas, with an emphasis on community maturity and 
 project stewardship.
 
-**What we look for in a PPMC Member:**
+**What we look for in a PMC Member:**
 - **Sustained contributions** and active presence (e.g., roadmap discussions, 
   mentoring, organizing releases).
 - **Strong understanding** of the project's goals and governance.
@@ -56,5 +56,5 @@ project stewardship.
   - ~4 months of medium activity  
   - ~3 months of solid activity
 
-Both roles are voted on by the current PPMC and reflect the Apache Way: 
+Both roles are voted on by the current PMC and reflect the Apache Way: 
 **merit, transparency, and community-driven growth**.
