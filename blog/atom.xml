@@ -2,10 +2,45 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://teaclave.apache.org/blog</id>
     <title>Apache Teaclave™  Blog</title>
-    <updated>2025-07-08T00:00:00.000Z</updated>
+    <updated>2025-09-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://teaclave.apache.org/blog"/>
     <subtitle>Apache Teaclave™  Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Announcing Apache Teaclave™ TrustZone SDK 0.6.0]]></title>
+        <id>https://teaclave.apache.org/blog/2025/09/12/announcing-teaclave-trustzone-sdk-0.6.0</id>
+        <link href="https://teaclave.apache.org/blog/2025/09/12/announcing-teaclave-trustzone-sdk-0.6.0"/>
+        <updated>2025-09-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On behalf of the Teaclave community, I am happy to announce the release of]]></summary>
+        <content type="html"><![CDATA[<p>On behalf of the Teaclave community, I am happy to announce the release of
+Teaclave TrustZone SDK 0.6.0.</p>
+<p>Teaclave empowers developers to build memory-safe Trusted Applications across
+diverse confidential computing platforms, including Intel SGX and Arm TrustZone.
+Apache Teaclave TrustZone SDK, a subproject of Apache Teaclave, is based on the
+OP-TEE project, a widely used open-source TrustZone OS.</p>
+<p>This release aligns with the OP-TEE quarterly release schedule and is compatible
+with OP-TEE 4.7.0. It introduces major improvements across features, build
+workflows, and documentation. Highlights include new TLS client and server
+examples built on the latest Rustls, a significant refactoring of the Object
+component for better maintainability, and enhancements to the build system and
+CI pipeline with separated test workflows, new environment configurations for
+building standard TAs, and simplified Makefiles. Documentation has also been
+refreshed for consistency, clarity, and an improved developer experience.</p>
+<p>For more details, please refer to our release notes:
+<a href="https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.6.0" target="_blank" rel="noopener noreferrer">https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.6.0</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="download">Download<a href="https://teaclave.apache.org/blog/2025/09/12/announcing-teaclave-trustzone-sdk-0.6.0#download" class="hash-link" aria-label="Direct link to Download" title="Direct link to Download">​</a></h2>
+<p>You can download the release from the
+<a href="https://teaclave.apache.org/download/" target="_blank" rel="noopener noreferrer">download</a> page. Also, please checkout
+our <a href="https://github.com/apache/teaclave-trustzone-sdk" target="_blank" rel="noopener noreferrer">repository</a> hosted on
+GitHub.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="contributing">Contributing<a href="https://teaclave.apache.org/blog/2025/09/12/announcing-teaclave-trustzone-sdk-0.6.0#contributing" class="hash-link" aria-label="Direct link to Contributing" title="Direct link to Contributing">​</a></h2>
+<p>Teaclave TrustZone SDK is under the Apache License v2 and open source in The
+Apache Way. We aim to create a project that is maintained and owned by the
+community. All kinds of contributions are welcome. Thanks to our contributors.</p>]]></content>
+        <author>
+            <name>Yuan Zhuang</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Teaclave Repository Restructuring and Community Focus]]></title>
         <id>https://teaclave.apache.org/blog/2025/07/08/repo-reorg-community-focus</id>
@@ -1476,78 +1511,6 @@ adding WebAssembly Micro Runtime to Teaclave as an executor (PR:
 <li>EdgelessSys mablerun: <a href="https://github.com/edgelesssys/marblerun" target="_blank" rel="noopener noreferrer">https://github.com/edgelesssys/marblerun</a></li>
 <li>Attestation mechanism in Google Cloud Confidential Computing</li>
 </ul>]]></content>
-        <author>
-            <name>Mingshen Sun</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Announcing Apache Teaclave™ TrustZone SDK (incubating) 0.1.0]]></title>
-        <id>https://teaclave.apache.org/blog/2021/06/16/announcing-teaclave-trustzone-sdk-0.1.0</id>
-        <link href="https://teaclave.apache.org/blog/2021/06/16/announcing-teaclave-trustzone-sdk-0.1.0"/>
-        <updated>2021-06-16T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[On behalf of the Teaclave community, I am happy to announce the release of]]></summary>
-        <content type="html"><![CDATA[<p>On behalf of the Teaclave community, I am happy to announce the release of
-Teaclave TrustZone SDK 0.1.0. This is the first Apache Incubator release since
-the recent donation to the Teaclave community.</p>
-<p>Teaclave TrustZone SDK provides abilities to build safe TrustZone applications
-in Rust. The SDK is based on the OP-TEE project which follows GlobalPlatform TEE
-specifications and provides ergonomic APIs. In addition, it enables capability
-to write TrustZone applications with Rust's standard library and many
-third-party libraries (i.e., crates). Teaclave TrustZone SDK is a sub-project of
-Apache Teaclave™ (incubating). To learn more about the design and history of
-TrustZone SDK,
-please read the blog <a href="https://teaclave.apache.org/blog/2021-03-14-welcome-rust-optee-trustzone-sdk/" target="_blank" rel="noopener noreferrer">Welcome Rust OP-TEE TrustZone SDK To Teaclave</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="highlights">Highlights<a href="https://teaclave.apache.org/blog/2021/06/16/announcing-teaclave-trustzone-sdk-0.1.0#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h2>
-<p>This version implements the following Rust APIs in GlobalPlatform TEE
-specifications:</p>
-<p><strong>TEE Client API</strong> (<code>optee-teec</code>)</p>
-<ul>
-<li>Context</li>
-<li>Error</li>
-<li>Operation</li>
-<li>Parameter</li>
-<li>Session</li>
-<li>UUID</li>
-</ul>
-<p><strong>TEE Internal Core API</strong> (<code>optee-utee</code>)</p>
-<ul>
-<li>Arithmetical</li>
-<li>Crypto Operation</li>
-<li>Error</li>
-<li>Object</li>
-<li>Parameter</li>
-<li>Time</li>
-<li>Trace</li>
-</ul>
-<p>Here is a demonstration of using these Rust APIs to open a session and invoke a
-function to TA.</p>
-<p><img decoding="async" loading="lazy" alt="Teaclave TrustZone SDK APIs" src="https://teaclave.apache.org/assets/images/teaclave-trustzone-sdk-apis-151d6d694e0305ffe603015e158c1e57.png" width="2204" height="1364" class="img_ev3q"></p>
-<p>We also provides procedure macros to automatically generate bindings interfaces of TA:</p>
-<ul>
-<li><code>#[ta_create]</code>, <code>#[ta_destroy]</code>, <code>#[ta_open_session]</code>, <code>#[ta_close_session]</code>, <code>#[ta_invoke_command]</code></li>
-</ul>
-<p>These annotations will automatically generate helper functions to bridge the normal/secure worlds.</p>
-<p><img decoding="async" loading="lazy" alt="Teaclave TrustZone SDK Macros" src="https://teaclave.apache.org/assets/images/teaclave-trustzone-sdk-macros-ca78ab7fc499178c82f7aba8313a0bc4.png" width="2158" height="1530" class="img_ev3q"></p>
-<p>This version includes rewrites of all examples (e.g., AES, authentication, big
-integer, HOTP) from OP-TEE repository. In addition, we include more examples
-using <code>serde</code> for serialization and deserialization.</p>
-<p><img decoding="async" loading="lazy" alt="Examples in Teaclave TrustZone SDK" src="https://teaclave.apache.org/assets/images/teaclave-trustzone-sdk-examples-478d03e03e0654fe3e67ec1fbefe9918.png" width="2254" height="1318" class="img_ev3q"></p>
-<p>This version is compatible with OP-TEE 3.13.0.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="getting-started">Getting Started<a href="https://teaclave.apache.org/blog/2021/06/16/announcing-teaclave-trustzone-sdk-0.1.0#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started">​</a></h2>
-<p>Here is a simple instruction to download, build and test the TrustZone SDK:</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ wget https://dist.apache.org/repos/dist/dev/incubator/teaclave/trustzone-sdk-0.1.0-rc.1/apache-teaclave-trustzone-sdk-0.1.0-rc.1-incubating.tar.gz</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ tar zxvf apache-teaclave-trustzone-sdk-0.1.0-rc.1-incubating.tar.gz &amp;&amp; cd</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">apache-teaclave-trustzone-sdk-0.1.0-incubating</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ # Instructions to verify the source tar:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">https://teaclave.apache.org/download/#verify-the-integrity-of-the-files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ # Building</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/teaclave-trustzone-sdk teaclave/teaclave-trustzone-sdk-build:0.1.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash -c "source environment &amp;&amp; make"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ # Testing</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$ docker run --rm -it -v$(pwd):/teaclave-trustzone-sdk -w</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/teaclave-trustzone-sdk teaclave/teaclave-trustzone-sdk-build:0.1.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash -c "source environment &amp;&amp; cd ci &amp;&amp; ./ci.sh"</span><br></span></code></pre></div></div>
-<p>We also provide a document <a href="https://teaclave.apache.org/trustzone-sdk-docs/getting-started-with-optee-for-qemu-armv8/" target="_blank" rel="noopener noreferrer">Getting Started with OP-TEE for QEMU
-ARMv8</a>
-to get started step by step.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="download">Download<a href="https://teaclave.apache.org/blog/2021/06/16/announcing-teaclave-trustzone-sdk-0.1.0#download" class="hash-link" aria-label="Direct link to Download" title="Direct link to Download">​</a></h2>
-<p>You can download the release from the
-<a href="https://teaclave.apache.org/download/" target="_blank" rel="noopener noreferrer">download</a> page. Also, please checkout
-our <a href="https://github.com/apache/incubator-teaclave-trustzone-sdk" target="_blank" rel="noopener noreferrer">repository</a>
-hosted on GitHub.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="contributing">Contributing<a href="https://teaclave.apache.org/blog/2021/06/16/announcing-teaclave-trustzone-sdk-0.1.0#contributing" class="hash-link" aria-label="Direct link to Contributing" title="Direct link to Contributing">​</a></h2>
-<p>Teaclave TrustZone SDK is under the Apache License v2 and open source in The
-Apache Way. We aim to create a project that is maintained and owned by the
-community. All kinds of contributions are welcome. Thanks to our contributors.</p>]]></content>
         <author>
             <name>Mingshen Sun</name>
         </author>
