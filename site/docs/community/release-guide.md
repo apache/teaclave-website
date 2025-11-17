@@ -149,14 +149,13 @@ Important details:
 
 Voting email samples:
 
-- subject: [VOTE] Release Apache Teaclave™ TrustZone SDK  v0.4.0-rc.2
+- subject: [VOTE] Release Apache Teaclave TrustZone SDK v0.6.0-rc.1
 - to: dev@teaclave.apache.org
-- link: <https://lists.apache.org/thread/o60wpscnq8mp6lhbd8h654ybxd6wzhk7>
+- link: <https://lists.apache.org/thread/sgmqw0fwvz8bcpcytfrl9f1hk0yzr8xb>
 
-- subject: [RESULT][VOTE] Release Apache Teaclave™ TrustZone SDK 
-  v0.4.0-rc.2
+- subject: [RESULT][VOTE] Release Apache Teaclave TrustZone SDK v0.6.0-rc.1
 - to: dev@teaclave.apache.org
-- link: <https://lists.apache.org/thread/oo2r4xh731bqbn9b0659jjl7f4cym9g6>
+- link: <https://lists.apache.org/thread/sj0tfcm6wk92dn6hl79gtnlf0yw3owgk>
 
 ### 4. Move the approved release candidate to the Apache dist/release server
 
