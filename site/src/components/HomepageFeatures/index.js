@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
@@ -41,24 +40,9 @@ const FeatureList = [
   },
 ];
 
-
-const featureStyle = {
-  features: {
-    flexWrap: 'wrap',
-    alignItems: 'flex-start',
-    alignContent: 'stretch',
-    justifyContent: 'space-between',
-  },
-  feature: {
-    flexGrow: 1,
-    flexBasis: '47%',
-    maxWidth: '47%',
-  }
-}
-
 function Feature({title, description}) {
   return (
-    <div className={clsx('col col--4')} style={featureStyle.feature}>
+    <div className={styles.featureCard}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
@@ -70,12 +54,10 @@ function Feature({title, description}) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row" style={featureStyle.features}>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+      <div className={styles.featuresGrid}>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
     </section>
   );

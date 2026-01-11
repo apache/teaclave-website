@@ -1,11 +1,35 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  padding: 2rem;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: border-color 0.35s ease;
+}
+
+.featureCard:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+@media screen and (min-width: 800px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 2rem;
+  }
 }
