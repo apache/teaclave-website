@@ -1,0 +1,137 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:  # Allow manual triggering
+
+# Minimal permissions for deployment
+permissions:
+  contents: write  # Required for pushing to asf-staging branch
+
+# Prevent concurrent deployments
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: false  # Don't cancel in-progress deployments
+
+jobs:
+  # Call the reusable build workflow
+  build:
+    name: Build
+    uses: ./.github/workflows/_reusable-build.yml
+    with:
+      artifact-retention-days: 30  # Keep production builds longer
+    permissions:
+      contents: read
+
+  # Deploy to staging branch
+  deploy-staging:
+    name: Deploy to Staging Branch
+    runs-on: ubuntu-22.04
+    needs: build
+    timeout-minutes: 15
+    environment:
+      name: staging
+      url: https://teaclave.apache.org
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false  # We'll configure auth manually
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.build-artifact-name }}
+          path: site/build/
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.3.0
+        timeout-minutes: 5
+        with:
+          python-version: '3.12'
+
+      - name: Install deployment tools
+        timeout-minutes: 5
+        run: |
+          python -m pip install --user ghp-import==2.1.0
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          
+          # Verify installation
+          command -v ghp-import || { echo "Error: ghp-import not installed"; exit 1; }
+          ghp-import --version
+
+      - name: Deploy to asf-staging branch
+        timeout-minutes: 10
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          
+          # Setup cleanup trap
+          cleanup() {
+            git config --local --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+          }
+          trap cleanup EXIT INT TERM
+          
+          # Verify build directory
+          if [ ! -d "site/build" ] || [ -z "$(ls -A site/build)" ]; then
+            echo "Error: Build directory is missing or empty"
+            exit 1
+          fi
+          
+          echo "Deploying build with $(find site/build -type f | wc -l) files..."
+          
+          # Configure Git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Configure authentication (token in memory only)
+          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${GITHUB_TOKEN} | base64)"
+          
+          # Deploy using ghp-import
+          echo "Creating asf-staging branch..."
+          ghp-import --no-history --force site/build -b asf-staging
+          
+          # Verify branch creation
+          if ! git show-ref --verify --quiet refs/heads/asf-staging; then
+            echo "Error: asf-staging branch was not created"
+            exit 1
+          fi
+          
+          # Show commit info
+          echo "Branch created with commit:"
+          git log -1 --oneline asf-staging
+          
+          # Push to remote
+          echo "Pushing to remote repository..."
+          git push https://github.com/${GITHUB_REPOSITORY}.git asf-staging --force
+          
+          echo "✅ Deployment completed successfully"
+
+      - name: Deployment Summary
+        run: |
+          echo "### 🚀 Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The website has been deployed to the staging environment." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### Deployment Details" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** \`asf-staging\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Repository:** \`${{ github.repository }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by:** @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### Artifacts Used" >> $GITHUB_STEP_SUMMARY
+          echo "- 📦 **Docker Image:** \`${{ needs.build.outputs.docker-artifact-name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- 🌐 **Website Build:** \`${{ needs.build.outputs.build-artifact-name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### What's Next?" >> $GITHUB_STEP_SUMMARY
+          echo "- 🌐 Visit the staging site to verify deployment" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 Monitor for any issues" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Ready for production promotion" >> $GITHUB_STEP_SUMMARY
