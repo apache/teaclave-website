@@ -1,0 +1,162 @@
+name: "[Reusable] Build"
+
+on:
+  workflow_call:
+    inputs:
+      artifact-retention-days:
+        description: 'Number of days to retain build artifacts'
+        required: false
+        type: number
+        default: 7
+      artifact-name-suffix:
+        description: 'Suffix for artifact names (e.g., SHA for PR builds)'
+        required: false
+        type: string
+        default: ''
+    outputs:
+      docker-artifact-name:
+        description: 'Name of the Docker image artifact'
+        value: ${{ jobs.build-docker-image.outputs.artifact-name }}
+      build-artifact-name:
+        description: 'Name of the website build artifact'
+        value: ${{ jobs.build-website.outputs.artifact-name }}
+
+jobs:
+  # Build the Docker image with API documentation
+  build-docker-image:
+    name: Build Docker Image
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    outputs:
+      artifact-name: ${{ steps.set-artifact-name.outputs.name }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3.7.1
+        timeout-minutes: 5
+        with:
+          driver: docker-container
+          install: true
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v6.9.0
+        timeout-minutes: 30
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: website:latest
+          outputs: type=docker,dest=/tmp/website-image.tar
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
+          sbom: false
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
+
+      - name: Set artifact name
+        id: set-artifact-name
+        run: |
+          if [ -n "${{ inputs.artifact-name-suffix }}" ]; then
+            echo "name=docker-image-${{ inputs.artifact-name-suffix }}" >> $GITHUB_OUTPUT
+          else
+            echo "name=docker-image" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.set-artifact-name.outputs.name }}
+          path: /tmp/website-image.tar
+          retention-days: ${{ inputs.artifact-retention-days }}
+
+  # Build the website
+  build-website:
+    name: Build Website
+    runs-on: ubuntu-22.04
+    needs: build-docker-image
+    timeout-minutes: 30
+    outputs:
+      artifact-name: ${{ steps.set-artifact-name.outputs.name }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 1
+
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build-docker-image.outputs.artifact-name }}
+          path: /tmp
+
+      - name: Load Docker image
+        run: |
+          docker load --input /tmp/website-image.tar
+          docker image ls -a
+
+      - name: Validate repository context
+        timeout-minutes: 1
+        run: |
+          if ! echo "${{ github.repository }}" | grep -qE '^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$'; then
+            echo "Error: Invalid repository format"
+            exit 1
+          fi
+
+      - name: Build website in Docker
+        timeout-minutes: 20
+        run: |
+          set -euo pipefail
+          
+          docker run --rm \
+            --security-opt=no-new-privileges:true \
+            -v "$GITHUB_WORKSPACE:/app/repo:rw" \
+            -w /app/repo/site \
+            website:latest \
+            /bin/bash -c '
+              set -euo pipefail
+              
+              git config --global --add safe.directory /app/repo
+              
+              echo "Building site..."
+              make build
+              
+              if [ ! -d "build" ] || [ -z "$(ls -A build)" ]; then
+                echo "Error: Build output is empty or missing"
+                exit 1
+              fi
+              
+              echo "Build completed successfully"
+              ls -la build/ | head -20
+            '
+          
+          # Fix file ownership from Docker
+          sudo chown -R runner:runner site/docs/ site/build/
+          
+          # Verify build output
+          if [ ! -r "site/build/index.html" ] && [ ! -r "site/build/index.htm" ]; then
+            echo "Warning: No index.html found in build output"
+            ls -la site/build/ | head -10
+          fi
+
+      - name: Set artifact name
+        id: set-artifact-name
+        run: |
+          if [ -n "${{ inputs.artifact-name-suffix }}" ]; then
+            echo "name=website-build-${{ inputs.artifact-name-suffix }}" >> $GITHUB_OUTPUT
+          else
+            echo "name=website-build" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.set-artifact-name.outputs.name }}
+          path: site/build/
+          retention-days: ${{ inputs.artifact-retention-days }}

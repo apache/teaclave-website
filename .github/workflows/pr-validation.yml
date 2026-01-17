@@ -1,0 +1,88 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:  # Allow manual triggering for testing
+
+# Read-only permissions for PR validation
+permissions:
+  contents: read
+  pull-requests: write  # To post comments/summaries
+
+# Allow concurrent PR builds (different PRs can build in parallel)
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true  # Cancel old builds when PR is updated
+
+jobs:
+  # Call the reusable build workflow
+  build:
+    name: Build
+    uses: ./.github/workflows/_reusable-build.yml
+    with:
+      artifact-retention-days: 7
+      artifact-name-suffix: ${{ github.sha }}
+    permissions:
+      contents: read
+
+  # Validate the build output
+  validate:
+    name: Validate Build
+    runs-on: ubuntu-22.04
+    needs: build
+    timeout-minutes: 10
+    
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.build-artifact-name }}
+          path: build/
+
+      - name: Validate build output
+        run: |
+          echo "Validating build output..."
+          
+          # Check for required files
+          if [ ! -f "build/index.html" ]; then
+            echo "❌ Error: index.html not found"
+            exit 1
+          fi
+          
+          # Check build size
+          BUILD_SIZE=$(du -sh build/ | cut -f1)
+          echo "✅ Build size: $BUILD_SIZE"
+          
+          # Count files
+          FILE_COUNT=$(find build/ -type f | wc -l)
+          echo "✅ Files generated: $FILE_COUNT"
+          
+          if [ "$FILE_COUNT" -lt 10 ]; then
+            echo "❌ Error: Too few files generated (expected > 10, got $FILE_COUNT)"
+            exit 1
+          fi
+          
+          echo "✅ Build validation passed!"
+
+      - name: PR Build Summary
+        run: |
+          echo "### ✅ Build Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Your changes successfully built the website!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### Build Details" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** \`${{ github.head_ref }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build Size:** $(du -sh build/ | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Files Generated:** $(find build/ -type f | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "- 📦 **Docker Image:** \`${{ needs.build.outputs.docker-artifact-name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- 🌐 **Website Build:** \`${{ needs.build.outputs.build-artifact-name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Build artifacts are ready for review" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔍 Download artifacts to inspect locally" >> $GITHUB_STEP_SUMMARY
+          echo "- 🚀 Merge to \`main\` to deploy to staging" >> $GITHUB_STEP_SUMMARY
