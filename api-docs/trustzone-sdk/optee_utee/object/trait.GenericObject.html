@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="A generic trait for an object (transient or persistent)."><title>GenericObject in optee_utee::object - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="optee_utee" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (8387315ab 2024-05-14)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../optee_utee/index.html">optee_utee</a><span class="version">0.8.0</span></h2></div><h2 class="location"><a href="#">GenericObject</a></h2><div class="sidebar-elems"><section><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.handle">handle</a></li></ul><h3><a href="#provided-methods">Provided Methods</a></h3><ul class="block"><li><a href="#method.info">info</a></li><li><a href="#method.ref_attribute">ref_attribute</a></li><li><a href="#method.restrict_usage">restrict_usage</a></li><li><a href="#method.value_attribute">value_attribute</a></li></ul><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In optee_utee::object</a></h2></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="../index.html">optee_utee</a>::<wbr><a href="index.html">object</a>::<wbr><a class="trait" href="#">GenericObject</a><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><span class="out-of-band"><a class="src" href="../../src/optee_utee/object/generic_object.rs.html#26-174">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait GenericObject {
+    // Required method
+    fn <a href="#tymethod.handle" class="fn">handle</a>(&amp;self) -&gt; <a class="type" href="../../optee_utee_sys/tee_api_types/type.TEE_ObjectHandle.html" title="type optee_utee_sys::tee_api_types::TEE_ObjectHandle">TEE_ObjectHandle</a>;
+
+    // Provided methods
+    fn <a href="#method.info" class="fn">info</a>(&amp;self) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;<a class="struct" href="struct.ObjectInfo.html" title="struct optee_utee::object::ObjectInfo">ObjectInfo</a>&gt; { ... }
+<span class="item-spacer"></span>    fn <a href="#method.restrict_usage" class="fn">restrict_usage</a>(&amp;mut self, obj_usage: <a class="struct" href="struct.UsageFlag.html" title="struct optee_utee::object::UsageFlag">UsageFlag</a>) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.unit.html">()</a>&gt; { ... }
+<span class="item-spacer"></span>    fn <a href="#method.ref_attribute" class="fn">ref_attribute</a>(&amp;self, id: <a class="enum" href="enum.AttributeId.html" title="enum optee_utee::object::AttributeId">AttributeId</a>, buffer: &amp;mut [<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u8.html">u8</a>]) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.usize.html">usize</a>&gt; { ... }
+<span class="item-spacer"></span>    fn <a href="#method.value_attribute" class="fn">value_attribute</a>(&amp;self, id: <a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u32.html">u32</a>) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;(<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u32.html">u32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u32.html">u32</a>)&gt; { ... }
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>A generic trait for an object (transient or persistent).</p>
+</div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.handle" class="method"><a class="src rightside" href="../../src/optee_utee/object/generic_object.rs.html#28">source</a><h4 class="code-header">fn <a href="#tymethod.handle" class="fn">handle</a>(&amp;self) -&gt; <a class="type" href="../../optee_utee_sys/tee_api_types/type.TEE_ObjectHandle.html" title="type optee_utee_sys::tee_api_types::TEE_ObjectHandle">TEE_ObjectHandle</a></h4></section></summary><div class="docblock"><p>Return the handle of an object.</p>
+</div></details></div><h2 id="provided-methods" class="section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="method.info" class="method"><a class="src rightside" href="../../src/optee_utee/object/generic_object.rs.html#48-54">source</a><h4 class="code-header">fn <a href="#method.info" class="fn">info</a>(&amp;self) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;<a class="struct" href="struct.ObjectInfo.html" title="struct optee_utee::object::ObjectInfo">ObjectInfo</a>&gt;</h4></section></summary><div class="docblock"><p>Return the characteristics of an object.</p>
+<h5 id="errors"><a class="doc-anchor" href="#errors">§</a>Errors</h5>
+<p>For <a href="struct.PersistentObject.html" title="struct optee_utee::object::PersistentObject">PersistentObject</a>:</p>
+<ul>
+<li><code>CorruptObject</code>: If the persistent object is corrupt. The object
+handle SHALL behave based on the
+<code>gpd.ta.doesNotCloseHandleOnCorruptObject</code> property.</li>
+<li><code>StorageNotAvailable</code>: If the persistent object is stored in a
+storage area which is currently inaccessible.</li>
+</ul>
+<h5 id="panics"><a class="doc-anchor" href="#panics">§</a>Panics</h5>
+<ul>
+<li>If object is not a valid opened object handle.</li>
+<li>If the implementation detects any other error associated with this
+function that is not explicitly associated with a defined return code
+for this function.</li>
+</ul>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.restrict_usage" class="method"><a class="src rightside" href="../../src/optee_utee/object/generic_object.rs.html#75-80">source</a><h4 class="code-header">fn <a href="#method.restrict_usage" class="fn">restrict_usage</a>(&amp;mut self, obj_usage: <a class="struct" href="struct.UsageFlag.html" title="struct optee_utee::object::UsageFlag">UsageFlag</a>) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.unit.html">()</a>&gt;</h4></section></summary><div class="docblock"><p>Restrict the object usage flags of an object handle to contain at most
+the flags passed in the obj_usage parameter.</p>
+<h5 id="errors-1"><a class="doc-anchor" href="#errors-1">§</a>Errors</h5>
+<p>For <a href="struct.PersistentObject.html" title="struct optee_utee::object::PersistentObject">PersistentObject</a>:</p>
+<ul>
+<li><code>CorruptObject</code>: If the persistent object is corrupt. The object
+handle SHALL behave based on the
+<code>gpd.ta.doesNotCloseHandleOnCorruptObject</code> property.</li>
+<li><code>StorageNotAvailable</code>: If the persistent object is stored in a
+storage area which is currently inaccessible.</li>
+</ul>
+<h5 id="panics-1"><a class="doc-anchor" href="#panics-1">§</a>Panics</h5>
+<ul>
+<li>If object is not a valid opened object handle.</li>
+<li>If the implementation detects any other error associated with this
+function that is not explicitly associated with a defined return code
+for this function.</li>
+</ul>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.ref_attribute" class="method"><a class="src rightside" href="../../src/optee_utee/object/generic_object.rs.html#113-126">source</a><h4 class="code-header">fn <a href="#method.ref_attribute" class="fn">ref_attribute</a>(&amp;self, id: <a class="enum" href="enum.AttributeId.html" title="enum optee_utee::object::AttributeId">AttributeId</a>, buffer: &amp;mut [<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u8.html">u8</a>]) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.usize.html">usize</a>&gt;</h4></section></summary><div class="docblock"><p>Extract one buffer attribute from an object. The attribute is
+identified by the argument id.</p>
+<h5 id="errors-2"><a class="doc-anchor" href="#errors-2">§</a>Errors</h5>
+<p>For all:</p>
+<ul>
+<li><code>ItemNotFound</code>: If the attribute is not found on this object.</li>
+<li><code>SHORT_BUFFER</code>: If buffer is NULL or too small to contain the key
+part.</li>
+</ul>
+<p>For <a href="struct.PersistentObject.html" title="struct optee_utee::object::PersistentObject">PersistentObject</a>:</p>
+<ul>
+<li><code>CorruptObject</code>: If the persistent object is corrupt. The object
+handle SHALL behave based on the
+<code>gpd.ta.doesNotCloseHandleOnCorruptObject</code> property.</li>
+<li><code>StorageNotAvailable</code>: If the persistent object is stored in a
+storage area which is currently inaccessible.</li>
+</ul>
+<h5 id="panics-2"><a class="doc-anchor" href="#panics-2">§</a>Panics</h5>
+<ul>
+<li>If object is not a valid opened object handle.</li>
+<li>If the object is not initialized.</li>
+<li>If Bit [29] of attributeID is not set to 0, so the attribute is not a
+buffer attribute.</li>
+<li>If Bit [28] of attributeID is set to 0, denoting a protected
+attribute, and the object usage does not contain the
+TEE_USAGE_EXTRACTABLE flag.</li>
+<li>If the implementation detects any other error associated with this
+function that is not explicitly associated with a defined return code
+for this function.</li>
+</ul>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.value_attribute" class="method"><a class="src rightside" href="../../src/optee_utee/object/generic_object.rs.html#159-173">source</a><h4 class="code-header">fn <a href="#method.value_attribute" class="fn">value_attribute</a>(&amp;self, id: <a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u32.html">u32</a>) -&gt; <a class="type" href="../type.Result.html" title="type optee_utee::Result">Result</a>&lt;(<a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u32.html">u32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/core/primitive.u32.html">u32</a>)&gt;</h4></section></summary><div class="docblock"><p>Extract one value attribute from an object. The attribute is identified
+by the argument id.</p>
+<h5 id="errors-3"><a class="doc-anchor" href="#errors-3">§</a>Errors</h5>
+<p>For all:</p>
+<ul>
+<li><code>ItemNotFound</code>: If the attribute is not found on this object.</li>
+<li><code>SHORT_BUFFER</code>: If buffer is NULL or too small to contain the key
+part.</li>
+</ul>
+<p>For <a href="struct.PersistentObject.html" title="struct optee_utee::object::PersistentObject">PersistentObject</a>:</p>
+<ul>
+<li><code>CorruptObject</code>: If the persistent object is corrupt. The object
+handle SHALL behave based on the
+<code>gpd.ta.doesNotCloseHandleOnCorruptObject</code> property.</li>
+<li><code>StorageNotAvailable</code>: If the persistent object is stored in a
+storage area which is currently inaccessible.</li>
+</ul>
+<h5 id="panics-3"><a class="doc-anchor" href="#panics-3">§</a>Panics</h5>
+<ul>
+<li>If object is not a valid opened object handle.</li>
+<li>If the object is not initialized.</li>
+<li>If Bit [29] of attributeID is not set to 0, so the attribute is not a
+buffer attribute.</li>
+<li>If Bit [28] of attributeID is set to 0, denoting a protected
+attribute, and the object usage does not contain the
+TEE_USAGE_EXTRACTABLE flag.</li>
+<li>If the implementation detects any other error associated with this
+function that is not explicitly associated with a defined return code
+for this function.</li>
+</ul>
+</div></details></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"><section id="impl-GenericObject-for-ObjectHandle" class="impl"><a class="src rightside" href="../../src/optee_utee/object/object_handle.rs.html#85-89">source</a><a href="#impl-GenericObject-for-ObjectHandle" class="anchor">§</a><h3 class="code-header">impl <a class="trait" href="trait.GenericObject.html" title="trait optee_utee::object::GenericObject">GenericObject</a> for <a class="struct" href="struct.ObjectHandle.html" title="struct optee_utee::object::ObjectHandle">ObjectHandle</a></h3></section><section id="impl-GenericObject-for-PersistentObject" class="impl"><a class="src rightside" href="../../src/optee_utee/object/persistent_object.rs.html#529-533">source</a><a href="#impl-GenericObject-for-PersistentObject" class="anchor">§</a><h3 class="code-header">impl <a class="trait" href="trait.GenericObject.html" title="trait optee_utee::object::GenericObject">GenericObject</a> for <a class="struct" href="struct.PersistentObject.html" title="struct optee_utee::object::PersistentObject">PersistentObject</a></h3></section><section id="impl-GenericObject-for-TransientObject" class="impl"><a class="src rightside" href="../../src/optee_utee/object/transient_object.rs.html#377-381">source</a><a href="#impl-GenericObject-for-TransientObject" class="anchor">§</a><h3 class="code-header">impl <a class="trait" href="trait.GenericObject.html" title="trait optee_utee::object::GenericObject">GenericObject</a> for <a class="struct" href="struct.TransientObject.html" title="struct optee_utee::object::TransientObject">TransientObject</a></h3></section></div><script src="../../trait.impl/optee_utee/object/generic_object/trait.GenericObject.js" async></script></section></div></main></body></html>

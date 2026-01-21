@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapache_teaclave_website=self.webpackChunkapache_teaclave_website||[]).push([[4540],{8622:(e,a,t)=>{t.r(a),t.d(a,{default:()=>l});var c=t(4041);function l(){return(0,c.useEffect)(()=>{window.location.href="https://github.com/apache/teaclave/blob/main/LICENSE"},[]),null}}}]);

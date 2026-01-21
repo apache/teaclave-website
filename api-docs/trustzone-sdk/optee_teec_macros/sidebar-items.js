@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["plugin_init","plugin_invoke"]};

@@ -1,0 +1,1 @@
+searchState.loadedDescShard("libc_alloc", 0, "A simple global allocator which hooks into <code>libc</code>. Useful …\nGlobal Allocator which hooks into libc to allocate / free …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.")

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapache_teaclave_website=self.webpackChunkapache_teaclave_website||[]).push([[8146],{9328:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":4,"totalCount":38,"nextPage":"/blog/page/2","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

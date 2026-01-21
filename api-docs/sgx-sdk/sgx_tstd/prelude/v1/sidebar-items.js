@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["alloc_error_handler","cfg_accessible","cfg_eval","derive","global_allocator","test","test_case"],"macro":["type_ascribe"]};
