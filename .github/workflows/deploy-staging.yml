@@ -94,7 +94,7 @@ jobs:
           # Configure authentication (token in memory only)
           git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${GITHUB_TOKEN} | base64)"
           
-          # Deploy using ghp-import
+          # Deploy using ghp-import (includes dotfiles like .asf.yaml and .nojekyll)
           echo "Creating asf-staging branch..."
           ghp-import --no-history --force site/build -b asf-staging
           
