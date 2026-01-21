@@ -159,4 +159,5 @@ jobs:
         with:
           name: ${{ steps.set-artifact-name.outputs.name }}
           path: site/build/
+          include-hidden-files: true  # Include .asf.yaml and .nojekyll
           retention-days: ${{ inputs.artifact-retention-days }}
