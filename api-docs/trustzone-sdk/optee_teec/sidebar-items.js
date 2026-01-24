@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["plugin_init","plugin_invoke"],"enum":["ConnectionMethods","ErrorKind","ErrorOrigin","ParamType"],"struct":["Context","Error","Operation","ParamNone","ParamTmpRef","ParamTypes","ParamValue","PluginMethod","PluginParameters","Session","Uuid"],"trait":["Param"],"type":["Result"]};

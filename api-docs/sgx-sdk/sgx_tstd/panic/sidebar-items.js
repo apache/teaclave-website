@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["always_abort","catch_unwind","panic_any","resume_unwind","set_hook","take_hook","update_hook"],"struct":["AssertUnwindSafe","Location","PanicInfo"],"trait":["RefUnwindSafe","UnwindSafe"]};

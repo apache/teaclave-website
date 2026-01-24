@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"sgx_tstd":[["impl&lt;S: <a class=\"trait\" href=\"sgx_tstd/borrow/trait.Borrow.html\" title=\"trait sgx_tstd::borrow::Borrow\">Borrow</a>&lt;<a class=\"struct\" href=\"sgx_tstd/ffi/struct.OsStr.html\" title=\"struct sgx_tstd::ffi::OsStr\">OsStr</a>&gt;&gt; <a class=\"trait\" href=\"sgx_tstd/slice/trait.Join.html\" title=\"trait sgx_tstd::slice::Join\">Join</a>&lt;&amp;<a class=\"struct\" href=\"sgx_tstd/ffi/struct.OsStr.html\" title=\"struct sgx_tstd::ffi::OsStr\">OsStr</a>&gt; for <a class=\"primitive\" href=\"https://doc.rust-lang.org/nightly/core/primitive.slice.html\">[S]</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

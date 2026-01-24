@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["at_exit","begin_panic","global_dtors","panic_display","panic_fmt"],"static":["GLOBAL_DTORS"]};

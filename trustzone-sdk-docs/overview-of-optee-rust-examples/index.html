@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-teaclave-trustzone-sdk/docs/overview-of-optee-rust-examples" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Overview of OP-TEE Rust Examples | Apache Teaclave™ </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://teaclave.apache.org/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://teaclave.apache.org/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://teaclave.apache.org/trustzone-sdk-docs/overview-of-optee-rust-examples"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Overview of OP-TEE Rust Examples | Apache Teaclave™ "><meta data-rh="true" name="description" content="All OP-TEE Rust examples are suffixed with -rs, which work as standalone host"><meta data-rh="true" property="og:description" content="All OP-TEE Rust examples are suffixed with -rs, which work as standalone host"><link data-rh="true" rel="canonical" href="https://teaclave.apache.org/trustzone-sdk-docs/overview-of-optee-rust-examples"><link data-rh="true" rel="alternate" href="https://teaclave.apache.org/trustzone-sdk-docs/overview-of-optee-rust-examples" hreflang="en"><link data-rh="true" rel="alternate" href="https://teaclave.apache.org/trustzone-sdk-docs/overview-of-optee-rust-examples" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Overview of OP-TEE Rust Examples","item":"https://teaclave.apache.org/trustzone-sdk-docs/overview-of-optee-rust-examples"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Apache Teaclave™  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Apache Teaclave™  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.d7e340bb.css">
+<script src="/assets/js/runtime~main.ee670279.js" defer="defer"></script>
+<script src="/assets/js/main.dbe34901.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_G6ar" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Apache Teaclave™" class="themedComponent_DHUr themedComponent--light_DIHH" style="height:2.5rem;max-width:300px;padding-left:1.6rem;position:relative;top:0.1rem"><img src="/img/logo.svg" alt="Apache Teaclave™" class="themedComponent_DHUr themedComponent--dark_Bv2M" style="height:2.5rem;max-width:300px;padding-left:1.6rem;position:relative;top:0.1rem"></div></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/powered-by">Powered By</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" file="community/community.md" href="/community">Community</a><ul class="dropdown__menu"><li><a class="dropdown__link" file="community/contributing.md" href="/contributing">Contributing</a></li><li><a class="dropdown__link" file="community/contributors.md" href="/contributors">Contributors</a></li><li><a class="dropdown__link" file="community/becoming-a-member.md" href="/becoming-a-member">Becoming a Member</a></li><li><a class="dropdown__link" file="community/maturity.md" href="/maturity">Maturity Assessment</a></li><li><a class="dropdown__link" file="community/release-guide.md" href="/release-guide">Release Guide</a></li></ul></div><a class="navbar__item navbar__link" href="/download">Download</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" file="overview.md" href="/overview">Docs</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" file="teaclave-trustzone-sdk/docs/README.md" href="/trustzone-sdk-docs/">Teaclave TrustZone SDK</a></li><li><a href="https://teaclave.apache.org/api-docs/trustzone-sdk/optee_teec" target="_self" rel="" class="dropdown__link">API Docs: Teaclave TrustZone SDK (Host)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://teaclave.apache.org/api-docs/trustzone-sdk/optee_utee" target="_self" rel="" class="dropdown__link">API Docs: Teaclave TrustZone SDK (TA)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a class="dropdown__link" file="teaclave-sgx-sdk/documents/README.md" href="/sgx-sdk-docs/">Teaclave SGX SDK</a></li><li><a href="https://teaclave.apache.org/api-docs/sgx-sdk/" target="_self" rel="" class="dropdown__link">API Docs: Teaclave SGX SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a class="dropdown__link" file="teaclave-docs/README.md" href="/teaclave-docs/">Teaclave</a></li><li><a class="dropdown__link" file="teaclave-faas-legacy/docs/README.md" href="/docs/">Teaclave FaaS (legacy)</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Repos</a><ul class="dropdown__menu"><li><a href="https://github.com/apache/teaclave" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-sgx-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave SGX SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-trustzone-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave TrustZone SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-java-tee-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave Java TEE SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-website" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave Website<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">ASF</a><ul class="dropdown__menu"><li><a href="https://www.apache.org/" target="_blank" rel="noopener noreferrer" class="dropdown__link">ASF Homepage<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/licenses/" target="_blank" rel="noopener noreferrer" class="dropdown__link">License<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/foundation/sponsorship.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Sponsorship<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/security/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Security<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Privacy<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/foundation/thanks.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Thanks<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/events/current-event.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Events<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="toggle_OLSw colorModeToggle_Hg9V"><button class="clean-btn toggleButton_wYmb toggleButtonDisabled_vaDU" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_KEbZ lightToggleIcon_Sxwe"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_KEbZ darkToggleIcon_Yem1"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_KEbZ systemToggleIcon_txm5"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_bmvg"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_UyTV"><div class="docsWrapper_XLvK"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_z1FD" type="button"></button><div class="docRoot_HciC"><aside class="theme-doc-sidebar-container docSidebarContainer_e5ai"><div class="sidebarViewport_N8x0"><div class="sidebar_vJCc"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_qiME"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/trustzone-sdk-docs/emulate-and-dev-in-docker.md"><span title="Quick Start" class="categoryLinkLabel_Oe72">Quick Start</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/emulate-and-dev-in-docker.md"><span title="Quick Emulation And Development in Docker" class="linkLabel_PuAu">Quick Emulation And Development in Docker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/emulate-and-dev-in-docker-std.md"><span title="Developing TAs with Rust Standard Library in Docker" class="linkLabel_PuAu">Developing TAs with Rust Standard Library in Docker</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/trustzone-sdk-docs/ta-development-modes.md"><span title="Development" class="categoryLinkLabel_Oe72">Development</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/ta-development-modes.md"><span title="TA Development Modes" class="linkLabel_PuAu">TA Development Modes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/trustzone-sdk-docs/overview-of-optee-rust-examples"><span title="Overview of OP-TEE Rust Examples" class="linkLabel_PuAu">Overview of OP-TEE Rust Examples</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/writing-rust-tas-using-optee-utee-build.md"><span title="Writing Rust TAs using optee-utee-build" class="linkLabel_PuAu">Writing Rust TAs using optee-utee-build</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/building-rust-ca-as-android-elf.md"><span title="Building Rust CA as Android ELF" class="linkLabel_PuAu">Building Rust CA as Android ELF</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/trustzone-sdk-docs/advanced-setup.md"><span title="Advanced Topics" class="categoryLinkLabel_Oe72">Advanced Topics</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/advanced-setup.md"><span title="Advanced Setup" class="linkLabel_PuAu">Advanced Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/expanding-ta-secure-memory-on-qemuv8.md"><span title="Expanding TA Secure Memory on QEMUv8" class="linkLabel_PuAu">Expanding TA Secure Memory on QEMUv8</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/migrating-to-new-building-env.md"><span title="Migrating to New Building Environment" class="linkLabel_PuAu">Migrating to New Building Environment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/debugging-optee-ta.md"><span title="Debugging OP-TEE TA" class="linkLabel_PuAu">Debugging OP-TEE TA</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/teaclave-trustzone-sdk/docs/operation-guide-for-integration-with-each-optee-release"><span title="Maintenance" class="categoryLinkLabel_Oe72">Maintenance</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/teaclave-trustzone-sdk/docs/operation-guide-for-integration-with-each-optee-release"><span title="Operation Guide for Integration with Each OP-TEE Release" class="linkLabel_PuAu">Operation Guide for Integration with Each OP-TEE Release</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_namt"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_YAwJ"><div class="docItemContainer_Rv5Z"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_zCmv" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_JFrk"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Development</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Overview of OP-TEE Rust Examples</span></li></ul></nav><div class="theme-doc-markdown markdown"><header><h1>Overview of OP-TEE Rust Examples</h1></header>
+<p>All OP-TEE Rust examples are suffixed with <code>-rs</code>, which work as standalone host
+application and corresponding TA (Trusted Application) and can be found in
+separate directories.</p>
+<p>To install all examples in <code>SDK_ROOT_DIR/out/</code>, run <code>make examples-install</code>
+after <code>make examples</code>.</p>
+<p>To compile one of the examples, run <code>make -C examples/EXAMPLE_DIR</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Host application name</th><th>TA UUID</th><th>Description</th><th>Std/No-std Support</th></tr></thead><tbody><tr><td>acipher-rs</td><td><code>057f4b66-bdab-11eb-96cf-33d6e41cc849</code></td><td>Generate an RSA key pair,  encrypt a supplied string and decrypt it.</td><td>both</td></tr><tr><td>aes-rs</td><td><code>0864c8ec-bdab-11eb-8926-c7fa47a8c92d</code></td><td>Run an AES encryption and decryption.</td><td>both</td></tr><tr><td>authentication-rs</td><td><code>0a5a06b2-bdab-11eb-add0-77f29de31296</code></td><td>Run AES-CCM authenticated encryption / decryption.</td><td>both</td></tr><tr><td>big_int-rs</td><td><code>0bef16a2-bdab-11eb-94be-6f9815f37c21</code></td><td>Do mathematical operations of big integers, such as addition, subtraction, multiplication, division, etc.</td><td>both</td></tr><tr><td>diffie_hellman-rs</td><td><code>0e6bf4fe-bdab-11eb-9bc5-3f4ecb50aee7</code></td><td>Run Diffie-Hellman key exchange to derive shared secrets.</td><td>both</td></tr><tr><td>digest-rs</td><td><code>10de87e2-bdab-11eb-b73c-63fec73e597c</code></td><td>Calculate the hash of the message using SHA256 digest algorithm.</td><td>both</td></tr><tr><td>error_handling-rs</td><td><code>ec59c1fc-b9e0-4c3c-8756-0a3cc48f0088</code></td><td>Demonstrate error handling patterns in Trusted Applications.</td><td>both</td></tr><tr><td>hello_world-rs</td><td><code>133af0ca-bdab-11eb-9130-43bf7873bf67</code></td><td>Increment and decrement an integer value.</td><td>both</td></tr><tr><td>hotp-rs</td><td><code>1585d412-bdab-11eb-ba91-3b085fd2601f</code></td><td>Generate HMAC based One Time Password which is  described in <a href="https://www.ietf.org/rfc/rfc4226.txt" target="_blank" rel="noopener noreferrer" class="">RFC4226</a>.</td><td>both</td></tr><tr><td>inter_ta-rs</td><td><code>fa9ea860-ef3b-4d59-8457-5564a60c0379</code></td><td>Demonstrate inter-TA communication patterns.</td><td>both</td></tr><tr><td>message_passing_interface-rs</td><td><code>17556a46-bdab-11eb-b325-d38c9a9af725</code></td><td>Passing serde json message between host application and TA, which is more convenient to send structured data.</td><td>std</td></tr><tr><td>random-rs</td><td><code>197c710c-bdab-11eb-8f3f-17a5f698d23b</code></td><td>Generate a random UUID.</td><td>both</td></tr><tr><td>property-rs</td><td><code>a3859d33-b540-4a69-8d29-696dde9115cc</code></td><td>Demonstrate property-based testing in Trusted Applications.</td><td>both</td></tr><tr><td>secure_storage-rs</td><td><code>1cd6d392-bdab-11eb-9082-abc902ac5cd4</code></td><td>Read / write / delete raw data from / into the OP-TEE secure storage.</td><td>both</td></tr><tr><td>serde-rs</td><td><code>1ed47816-bdab-11eb-9ebd-3ffe0648da93</code></td><td>Invoke third party crate <code>serde</code> for serialization and deserialization.</td><td>std</td></tr><tr><td>supp_plugin-rs</td><td><code>255fc838-de89-42d3-9a8e-d044c50fa57c</code></td><td>TA actively invokes a command defined in normal world plugins. Do interaction between host &lt;-&gt; TA &lt;-&gt; plugin. The plugin is identified by UUID: ef620757-fa2b-4f19-a1c4-6e51cfe4c0f9.</td><td>both</td></tr><tr><td>tcp_client-rs</td><td><code>59db8536-e5e6-11eb-8e9b-a316ce7a6568</code></td><td>Do HTTP connection from Trusted Application.</td><td>both</td></tr><tr><td>time-rs</td><td><code>21b1a1da-bdab-11eb-b614-275a7098826f</code></td><td>Set / get TEE time.</td><td>both</td></tr><tr><td>udp_socket-rs</td><td><code>87c2d78e-eb7b-11eb-8d25-df4d5338f285</code></td><td>Do UDP socket connection from Trusted Application.</td><td>both</td></tr><tr><td>signature_verification-rs</td><td><code>c7e478c2-89b3-46eb-ac19-571e66c3830d</code></td><td>Sign a message and verify the signature using the third party crate <a href="https://github.com/veracruz-project/ring" target="_blank" rel="noopener noreferrer" class="">ring</a>.</td><td>both</td></tr><tr><td>tls_client-rs</td><td><code>ec55bfe2-d9c7-11eb-8b0e-f3f8fad927f7</code></td><td>Do TLS connection from Trusted Application.</td><td>std</td></tr><tr><td>tls_server-rs</td><td><code>69547de6-f47e-11eb-994e-f34e88d5c2b4</code></td><td>Set up the TLS server in Trusted Application.</td><td>std</td></tr><tr><td>secure_db_abstraction-rs</td><td><code>e55291e1-521c-4dca-aa24-51e34ab32ad9</code></td><td>An abstraction of database base on Secure Storage.</td><td>std</td></tr><tr><td>mnist-rs</td><td>Train: <code>1b5f5b74-e9cf-4e62-8c3e-7e41da6d76f6</code> <br> Infer: <code>ff09aa8a-fbb9-4734-ae8c-d7cd1a3f6744</code></td><td>Training and Performing Inference in Trusted Application.</td><td>no-std</td></tr><tr><td>client_pool-rs</td><td><code>c9d73f40-ba45-4315-92c4-cf1255958729</code></td><td>Generic Client Session Pool.</td><td>both</td></tr><tr><td>build_with_optee_utee_sys-rs</td><td><code>bcac6292-5b9d-4b20-a2e5-b389d5e8ae2f</code></td><td>Using <code>optee_utee_sys</code> as <code>build-dependencies</code>, requires <code>workspace.resolver = &quot;2&quot;</code>, which is not supported in xargo, so no_std only.</td><td>no-std</td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/trustzone-sdk-docs/ta-development-modes.md"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">TA Development Modes</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/trustzone-sdk-docs/writing-rust-tas-using-optee-utee-build.md"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Writing Rust TAs using optee-utee-build</div></a></nav></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright"><div style="font-size:.7rem; text-align:left;">Copyright © 2019-2025, The Apache Software FoundationLicensed under the Apache License, Version 2.0. Apache Teaclave™, Apache, the Apache feather, and the Apache Teaclave™ project logo are either trademarks or registered trademarks of the Apache Software Foundation.</div></div></div></div></footer></div>
+</body>
+</html>

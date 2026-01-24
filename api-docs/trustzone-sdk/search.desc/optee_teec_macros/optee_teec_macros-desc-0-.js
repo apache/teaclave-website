@@ -1,0 +1,1 @@
+searchState.loadedDescShard("optee_teec_macros", 0, "Attribute to declare the init function of a plugin\nAttribute to declare the invoke function of a plugin")

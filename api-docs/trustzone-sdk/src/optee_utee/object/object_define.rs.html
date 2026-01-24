@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/root/.cargo/git/checkouts/teaclave-trustzone-sdk-abcbbc0ddc1e419f/06069b2/optee-utee/src/object/object_define.rs`."><title>object_define.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="optee_utee" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (8387315ab 2024-05-14)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<a href="#2" id="2">2</a>
+<a href="#3" id="3">3</a>
+<a href="#4" id="4">4</a>
+<a href="#5" id="5">5</a>
+<a href="#6" id="6">6</a>
+<a href="#7" id="7">7</a>
+<a href="#8" id="8">8</a>
+<a href="#9" id="9">9</a>
+<a href="#10" id="10">10</a>
+<a href="#11" id="11">11</a>
+<a href="#12" id="12">12</a>
+<a href="#13" id="13">13</a>
+<a href="#14" id="14">14</a>
+<a href="#15" id="15">15</a>
+<a href="#16" id="16">16</a>
+<a href="#17" id="17">17</a>
+<a href="#18" id="18">18</a>
+<a href="#19" id="19">19</a>
+<a href="#20" id="20">20</a>
+<a href="#21" id="21">21</a>
+<a href="#22" id="22">22</a>
+<a href="#23" id="23">23</a>
+<a href="#24" id="24">24</a>
+<a href="#25" id="25">25</a>
+<a href="#26" id="26">26</a>
+<a href="#27" id="27">27</a>
+<a href="#28" id="28">28</a>
+<a href="#29" id="29">29</a>
+<a href="#30" id="30">30</a>
+<a href="#31" id="31">31</a>
+<a href="#32" id="32">32</a>
+<a href="#33" id="33">33</a>
+<a href="#34" id="34">34</a>
+<a href="#35" id="35">35</a>
+<a href="#36" id="36">36</a>
+<a href="#37" id="37">37</a>
+<a href="#38" id="38">38</a>
+<a href="#39" id="39">39</a>
+<a href="#40" id="40">40</a>
+<a href="#41" id="41">41</a>
+<a href="#42" id="42">42</a>
+<a href="#43" id="43">43</a>
+<a href="#44" id="44">44</a>
+<a href="#45" id="45">45</a>
+<a href="#46" id="46">46</a>
+<a href="#47" id="47">47</a>
+<a href="#48" id="48">48</a>
+<a href="#49" id="49">49</a>
+<a href="#50" id="50">50</a>
+<a href="#51" id="51">51</a>
+<a href="#52" id="52">52</a>
+<a href="#53" id="53">53</a>
+<a href="#54" id="54">54</a>
+<a href="#55" id="55">55</a>
+<a href="#56" id="56">56</a>
+<a href="#57" id="57">57</a>
+<a href="#58" id="58">58</a>
+<a href="#59" id="59">59</a>
+<a href="#60" id="60">60</a>
+<a href="#61" id="61">61</a>
+<a href="#62" id="62">62</a>
+<a href="#63" id="63">63</a>
+<a href="#64" id="64">64</a>
+<a href="#65" id="65">65</a>
+<a href="#66" id="66">66</a>
+<a href="#67" id="67">67</a>
+<a href="#68" id="68">68</a>
+<a href="#69" id="69">69</a>
+<a href="#70" id="70">70</a>
+<a href="#71" id="71">71</a>
+<a href="#72" id="72">72</a>
+<a href="#73" id="73">73</a>
+<a href="#74" id="74">74</a>
+<a href="#75" id="75">75</a>
+<a href="#76" id="76">76</a>
+<a href="#77" id="77">77</a>
+<a href="#78" id="78">78</a>
+<a href="#79" id="79">79</a>
+<a href="#80" id="80">80</a>
+<a href="#81" id="81">81</a>
+<a href="#82" id="82">82</a>
+<a href="#83" id="83">83</a>
+<a href="#84" id="84">84</a>
+<a href="#85" id="85">85</a>
+<a href="#86" id="86">86</a>
+<a href="#87" id="87">87</a>
+<a href="#88" id="88">88</a>
+<a href="#89" id="89">89</a>
+<a href="#90" id="90">90</a>
+<a href="#91" id="91">91</a>
+<a href="#92" id="92">92</a>
+<a href="#93" id="93">93</a>
+<a href="#94" id="94">94</a>
+<a href="#95" id="95">95</a>
+<a href="#96" id="96">96</a>
+<a href="#97" id="97">97</a>
+<a href="#98" id="98">98</a>
+<a href="#99" id="99">99</a>
+<a href="#100" id="100">100</a>
+<a href="#101" id="101">101</a>
+<a href="#102" id="102">102</a>
+<a href="#103" id="103">103</a>
+<a href="#104" id="104">104</a>
+<a href="#105" id="105">105</a>
+<a href="#106" id="106">106</a>
+<a href="#107" id="107">107</a>
+<a href="#108" id="108">108</a>
+<a href="#109" id="109">109</a>
+<a href="#110" id="110">110</a>
+<a href="#111" id="111">111</a>
+<a href="#112" id="112">112</a>
+<a href="#113" id="113">113</a>
+<a href="#114" id="114">114</a>
+<a href="#115" id="115">115</a>
+<a href="#116" id="116">116</a>
+<a href="#117" id="117">117</a>
+<a href="#118" id="118">118</a>
+<a href="#119" id="119">119</a>
+<a href="#120" id="120">120</a>
+<a href="#121" id="121">121</a>
+<a href="#122" id="122">122</a>
+<a href="#123" id="123">123</a>
+<a href="#124" id="124">124</a>
+<a href="#125" id="125">125</a>
+<a href="#126" id="126">126</a>
+<a href="#127" id="127">127</a>
+<a href="#128" id="128">128</a>
+</pre></div><pre class="rust"><code><span class="comment">// Licensed to the Apache Software Foundation (ASF) under one
+// or more contributor license agreements.  See the NOTICE file
+// distributed with this work for additional information
+// regarding copyright ownership.  The ASF licenses this file
+// to you under the Apache License, Version 2.0 (the
+// "License"); you may not use this file except in compliance
+// with the License.  You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing,
+// software distributed under the License is distributed on an
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+// KIND, either express or implied.  See the License for the
+// specific language governing permissions and limitations
+// under the License.
+
+</span><span class="kw">use </span>bitflags::bitflags;
+<span class="kw">use </span>optee_utee_sys <span class="kw">as </span>raw;
+
+<span class="doccomment">/// Indicate the possible start offset when moving a data position in the data
+/// stream associated with a [PersistentObject](crate::PersistentObject).
+</span><span class="kw">pub enum </span>Whence {
+    <span class="doccomment">/// The data position is set to offset bytes from the beginning of the data stream.
+    </span>DataSeekSet,
+    <span class="doccomment">/// The data position is set to its current position plus offset.
+    </span>DataSeekCur,
+    <span class="doccomment">/// The data position is set to the size of the object data plus offset.
+    </span>DataSeekEnd,
+}
+
+<span class="kw">impl </span>From&lt;Whence&gt; <span class="kw">for </span>raw::TEE_Whence {
+    <span class="kw">fn </span>from(val: Whence) -&gt; <span class="self">Self </span>{
+        <span class="kw">match </span>val {
+            Whence::DataSeekSet =&gt; raw::TEE_Whence::TEE_DATA_SEEK_SET,
+            Whence::DataSeekCur =&gt; raw::TEE_Whence::TEE_DATA_SEEK_CUR,
+            Whence::DataSeekEnd =&gt; raw::TEE_Whence::TEE_DATA_SEEK_END,
+        }
+    }
+}
+
+<span class="attr">#[repr(u32)]
+</span><span class="kw">pub enum </span>ObjectStorageConstants {
+    Private = <span class="number">0x00000001</span>,
+    IllegalValue = <span class="number">0x7FFFFFFF</span>,
+}
+
+<span class="macro">bitflags!</span> {
+    <span class="doccomment">/// A set of flags that controls the access rights and sharing permissions
+    /// with which the object handle is opened.
+    </span><span class="kw">pub struct </span>DataFlag: u32 {
+        <span class="doccomment">/// The object is opened with the read access right. This allows the
+        /// Trusted Application to call the function `TEE_ReadObjectData`.
+        </span><span class="kw">const </span>ACCESS_READ = <span class="number">0x00000001</span>;
+        <span class="doccomment">/// The object is opened with the write access right. This allows the
+        /// Trusted Application to call the functions `TEE_WriteObjectData` and
+        /// `TEE_TruncateObjectData`.
+        </span><span class="kw">const </span>ACCESS_WRITE = <span class="number">0x00000002</span>;
+        <span class="doccomment">/// The object is opened with the write-meta access right. This allows
+        /// the Trusted Application to call the functions
+        /// `TEE_CloseAndDeletePersistentObject1` and
+        /// `TEE_RenamePersistentObject`.
+        </span><span class="kw">const </span>ACCESS_WRITE_META = <span class="number">0x00000004</span>;
+        <span class="doccomment">/// The caller allows another handle on the object to be created with
+        /// read access.
+        </span><span class="kw">const </span>SHARE_READ = <span class="number">0x00000010</span>;
+        <span class="doccomment">/// The caller allows another handle on the object to be created with
+        /// write access.
+        </span><span class="kw">const </span>SHARE_WRITE = <span class="number">0x00000020</span>;
+        <span class="doccomment">/// * If this flag is present and the object exists, then the object is
+        ///   deleted and re-created as an atomic operation: that is, the TA
+        ///   sees either the old object or the new one.
+        /// * If the flag is absent and the object exists, then the function
+        ///   SHALL return `TEE_ERROR_ACCESS_CONFLICT`.
+        </span><span class="kw">const </span>OVERWRITE = <span class="number">0x00000400</span>;
+    }
+}
+
+<span class="macro">bitflags!</span> {
+    <span class="doccomment">/// A set of flags that defines usages of data in TEE secure storage.
+    </span><span class="kw">pub struct </span>UsageFlag: u32 {
+        <span class="doccomment">/// The object [Attribute](Attribute) can be extracted.
+        </span><span class="kw">const </span>EXTRACTABLE = <span class="number">0x00000001</span>;
+        <span class="doccomment">/// The object can be used for encryption.
+        </span><span class="kw">const </span>ENCRYPT = <span class="number">0x00000002</span>;
+        <span class="doccomment">/// The object can be used for decryption.
+        </span><span class="kw">const </span>DECRYPT = <span class="number">0x00000004</span>;
+        <span class="doccomment">/// The object can be used for mac operation.
+        </span><span class="kw">const </span>MAC = <span class="number">0x00000008</span>;
+        <span class="doccomment">/// The object can be used for signature.
+        </span><span class="kw">const </span>SIGN = <span class="number">0x00000010</span>;
+        <span class="doccomment">/// The object can be used for verification of a signature.
+        </span><span class="kw">const </span>VERIFY = <span class="number">0x00000020</span>;
+        <span class="doccomment">/// The object can be used for deriving a key.
+        </span><span class="kw">const </span>DERIVE = <span class="number">0x00000040</span>;
+    }
+}
+
+<span class="doccomment">/// Miscellaneous constants.
+</span><span class="attr">#[repr(u32)]
+</span><span class="kw">pub enum </span>MiscellaneousConstants {
+    <span class="doccomment">/// Maximum offset of a data object.
+    </span>TeeDataMaxPosition = <span class="number">0xFFFFFFFF</span>,
+    <span class="doccomment">/// Maximum length of an object id.
+    </span>TeeObjectIdMaxLen = <span class="number">64</span>,
+}
+
+<span class="macro">bitflags!</span> {
+    <span class="doccomment">/// A set of flags that defines Handle features.
+    </span><span class="kw">pub struct </span>HandleFlag: u32{
+        <span class="doccomment">/// Set for a [PersistentObject](crate::PersistentObject).
+        </span><span class="kw">const </span>PERSISTENT = <span class="number">0x00010000</span>;
+        <span class="doccomment">/// 1) For a [PersistentObject](crate::PersistentObject), always set.
+        /// 2) For a [TransientObject](crate::TransientObject), initially
+        ///    cleared, then set when the object becomes initialized.
+        </span><span class="kw">const </span>INITIALIZED = <span class="number">0x00020000</span>;
+        <span class="doccomment">/// Following two flags are for crypto operation handles:
+        /// 1) Set if the required operation key has been set.
+        /// 2) Always set for digest operations.
+        </span><span class="kw">const </span>KEY_SET = <span class="number">0x00040000</span>;
+        <span class="doccomment">/// Set if the algorithm expects two keys to be set, using
+        /// `TEE_SetOperationKey2`.
+        /// This happens only if algorithm is set to
+        /// [AesXts](crate::AlgorithmId::AesXts)
+        /// or `TEE_ALG_SM2_KEP`(not supported now).
+        </span><span class="kw">const </span>EXPECT_TWO_KEYS = <span class="number">0x00080000</span>;
+    }
+}
+</code></pre></div></section></main></body></html>

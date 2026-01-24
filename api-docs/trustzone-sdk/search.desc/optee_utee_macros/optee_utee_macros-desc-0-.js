@@ -1,0 +1,1 @@
+searchState.loadedDescShard("optee_utee_macros", 0, "Attribute to declare the entry point of closing a session. …\nAttribute to declare the entry point of creating TA.\nAttribute to declare the entry point of destroying TA.\nAttribute to declare the entry point of invoking commands. …\nAttribute to declare the entry point of opening a session. …")
