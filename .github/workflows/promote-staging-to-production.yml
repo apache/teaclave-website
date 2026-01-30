@@ -1,0 +1,85 @@
+# Promote Staging to Production
+#
+# Manual-only workflow: after verifying the staging site, run this to replace
+# the production branch (asf-site) with the content of asf-staging.
+#
+# Flow:
+#   1. PR merged → deploy-staging.yml runs → asf-staging updated
+#   2. Visit staging website, verify it looks correct
+#   3. Go to Actions → "Promote Staging to Production" → Run workflow
+#   4. asf-site is replaced with asf-staging → final website updated
+
+name: Promote Staging to Production
+
+on:
+  workflow_dispatch:
+
+# Permissions to push to the production branch
+permissions:
+  contents: write
+
+# Prevent concurrent promotions
+concurrency:
+  group: promote-staging-to-production
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    name: Replace asf-site with asf-staging
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    environment:
+      name: production
+      url: https://teaclave.apache.org
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+
+      - name: Fetch asf-staging
+        run: |
+          git fetch origin asf-staging
+          if ! git rev-parse --verify origin/asf-staging >/dev/null 2>&1; then
+            echo "Error: Branch asf-staging not found. Run deploy-staging first."
+            exit 1
+          fi
+          echo "asf-staging is at: $(git rev-parse origin/asf-staging)"
+
+      - name: Replace asf-site with asf-staging
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          cleanup() {
+            git config --local --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+          }
+          trap cleanup EXIT INT TERM
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${GITHUB_TOKEN} | base64)"
+
+          # Push asf-staging to asf-site (replace production with staging content)
+          git push https://github.com/${GITHUB_REPOSITORY}.git origin/asf-staging:asf-site --force
+
+          echo "✅ Production branch (asf-site) updated with content from asf-staging"
+
+      - name: Promotion Summary
+        run: |
+          echo "### ✅ Production Updated" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The **asf-site** branch has been replaced with the content of **asf-staging**." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "#### Details" >> $GITHUB_STEP_SUMMARY
+          echo "- **Source:** \`asf-staging\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target:** \`asf-site\` (production)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by:** @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The live website will reflect the new content shortly." >> $GITHUB_STEP_SUMMARY

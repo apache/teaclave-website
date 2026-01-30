@@ -18,19 +18,17 @@ The official website for Apache Teaclave™, generated with the Docusaurus stati
    make build
    ```
 
-### Deployment
+### Deployment (CI/CD)
 
-To deploy the generated site to the staging and production environments:
+Deployment is handled by GitHub Actions:
 
-```bash
-# Deploy to staging
-ghp-import --no-history --force site/build/ -b asf-staging
-git push -f asf-staging
+1. **Merge a PR** (or push to `master`) → the **Deploy Staging** workflow runs and updates the **asf-staging** branch.
+2. **Verify** the staging site.
+3. **Promote to production** → In the repo, go to **Actions** → **"Promote Staging to Production"** → **Run workflow**. This updates **asf-site** with the content of **asf-staging**.
 
-# Deploy to production
-ghp-import --no-history --force site/build/ -b asf-site
-git push -f asf-site
-```
+For workflow details and architecture, see [.github/workflows/README.md](.github/workflows/README.md).
+
+Manual deployment from a local build (e.g. `make staging` / `make site` in `site/`) is still supported; see `site/Makefile`.
 
 ### Website URLs
 
