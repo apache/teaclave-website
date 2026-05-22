@@ -1,18 +1,18 @@
 # SGX Docs stage
-FROM teaclave/teaclave-build-ubuntu-1804-sgx-2.14:latest AS sgx-docs
+FROM teaclave/teaclave-build-ubuntu-2004-sgx-2.17.1:0.2.0 AS sgx-docs
 WORKDIR /app
+RUN (apt update || true) && apt install -y ca-certificates && update-ca-certificates
 COPY sgx-sdk-api-docs /app/sgx-sdk-api-docs
 RUN . "$HOME/.cargo/env" && cd sgx-sdk-api-docs && cargo doc
 RUN mkdir -p /prebuilt_docs && \
     cp -r sgx-sdk-api-docs/target/doc /prebuilt_docs/sgx-sdk-docs
 
 # Trustzone Docs stage
-FROM teaclave/teaclave-trustzone-emulator-std-optee-4.5.0-expand-memory:latest AS tz-docs
+FROM teaclave/teaclave-trustzone-emulator-std-expand-memory:latest AS tz-docs
 WORKDIR /app
 COPY tz-sdk-api-docs /app/tz-sdk-api-docs
 RUN . /opt/teaclave/setup/bootstrap_env && \
     . /opt/teaclave/environment && \
-    . $HOME/.cargo/env && \
     cd tz-sdk-api-docs && cargo doc
 RUN mkdir -p /prebuilt_docs && \
     cp -r tz-sdk-api-docs/target/doc /prebuilt_docs/tz-sdk-docs
