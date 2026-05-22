@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["optee_teec",[["impl <a class=\"trait\" href=\"num_enum/trait.FromPrimitive.html\" title=\"trait num_enum::FromPrimitive\">FromPrimitive</a> for <a class=\"enum\" href=\"optee_teec/enum.ErrorKind.html\" title=\"enum optee_teec::ErrorKind\">ErrorKind</a>"],["impl <a class=\"trait\" href=\"num_enum/trait.FromPrimitive.html\" title=\"trait num_enum::FromPrimitive\">FromPrimitive</a> for <a class=\"enum\" href=\"optee_teec/enum.ErrorOrigin.html\" title=\"enum optee_teec::ErrorOrigin\">ErrorOrigin</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[506]}

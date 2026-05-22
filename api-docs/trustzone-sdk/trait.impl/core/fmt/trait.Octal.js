@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["optee_utee",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Octal.html\" title=\"trait core::fmt::Octal\">Octal</a> for <a class=\"struct\" href=\"optee_utee/object/struct.DataFlag.html\" title=\"struct optee_utee::object::DataFlag\">DataFlag</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Octal.html\" title=\"trait core::fmt::Octal\">Octal</a> for <a class=\"struct\" href=\"optee_utee/object/struct.HandleFlag.html\" title=\"struct optee_utee::object::HandleFlag\">HandleFlag</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Octal.html\" title=\"trait core::fmt::Octal\">Octal</a> for <a class=\"struct\" href=\"optee_utee/object/struct.UsageFlag.html\" title=\"struct optee_utee::object::UsageFlag\">UsageFlag</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[838]}

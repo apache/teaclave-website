@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AttributeId","MiscellaneousConstants","ObjectStorageConstants","TransientObjectType","Whence"],"struct":["Attribute","AttributeMemref","AttributeValue","DataFlag","HandleFlag","ObjectEnumHandle","ObjectHandle","ObjectInfo","PersistentObject","TransientObject","UsageFlag"],"trait":["GenericObject"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["BigInt","BigIntFMM","BigIntFMMContext"],"type":["BigIntFMMContextUnit","BigIntFMMUnit","BigIntUnit"]};

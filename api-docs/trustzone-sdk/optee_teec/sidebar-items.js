@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ConnectionMethods","ErrorKind","ErrorOrigin","ParamType"],"struct":["Context","Error","Operation","ParamNone","ParamTmpRef","ParamTypes","ParamValue","PluginParameters","Session","Uuid"],"trait":["Param"],"type":["Result"]};
