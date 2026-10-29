@@ -21,7 +21,7 @@ Each SDK evolves independently to best support its respective platform and use c
 
 | Latest Version | Source Code               | PGP/SHA | Release Notes |
 |:-------:|:-------------------------:|:----:|:-------:|
-| 0.9.0   | [apache-teaclave-trustzone-sdk-0.9.0.tar.gz](https://www.apache.org/dyn/closer.lua/teaclave/trustzone-sdk-0.9.0/apache-teaclave-trustzone-sdk-0.9.0.tar.gz?action=download) | [asc](https://downloads.apache.org/teaclave/trustzone-sdk-0.9.0/apache-teaclave-trustzone-sdk-0.9.0.tar.gz.asc), [sha512](https://downloads.apache.org/teaclave/trustzone-sdk-0.9.0/apache-teaclave-trustzone-sdk-0.9.0.tar.gz.sha512) | [notes](https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.9.0) |
+| 0.10.0  | [apache-teaclave-trustzone-sdk-0.10.0.tar.gz](https://www.apache.org/dyn/closer.lua/teaclave/trustzone-sdk-0.10.0/apache-teaclave-trustzone-sdk-0.10.0.tar.gz?action=download) | [asc](https://downloads.apache.org/teaclave/trustzone-sdk-0.10.0/apache-teaclave-trustzone-sdk-0.10.0.tar.gz.asc), [sha512](https://downloads.apache.org/teaclave/trustzone-sdk-0.10.0/apache-teaclave-trustzone-sdk-0.10.0.tar.gz.sha512) | [notes](https://github.com/apache/teaclave-trustzone-sdk/releases/tag/v0.10.0) |
 
 ### Teaclave SGX SDK
 
