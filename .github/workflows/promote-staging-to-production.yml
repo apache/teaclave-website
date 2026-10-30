@@ -63,7 +63,10 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${GITHUB_TOKEN} | base64)"
+          # Use `base64 -w0`: plain `base64` wraps lines at 76 chars, and the
+          # current GITHUB_TOKEN is long enough that wrapping inserts newlines
+          # into the header value, which GitHub rejects (HTTP/2 stream reset).
+          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(printf 'x-access-token:%s' "${GITHUB_TOKEN}" | base64 -w0)"
 
           # Push asf-staging to asf-site (replace production with staging content)
           git push https://github.com/${GITHUB_REPOSITORY}.git origin/asf-staging:asf-site --force
