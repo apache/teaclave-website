@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["ascii","c_str","memchr"]};

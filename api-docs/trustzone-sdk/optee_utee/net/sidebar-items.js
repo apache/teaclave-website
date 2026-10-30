@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["SocketError"],"struct":["Setup","Socket","TcpAdapter","UdpAdapter"],"trait":["SocketAdapter","StdCompatConnect","StdCompatRead","StdCompatWrite"],"type":["TcpStream","UdpSocket"]};

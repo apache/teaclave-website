@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["MAX_REGISTER_COUNT"],"enum":["ExceptionType","ExceptionVector","HandleResult"],"fn":["register","register_exception","unregister"],"struct":["CpuContext","ExceptionInfo","Handle"],"type":["ExceptionHandler"]};

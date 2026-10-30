@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PageType"],"fn":["apply_epc_pages","modpr_ocall","mprotect_ocall","trim_epc_pages"],"struct":["PageFlags","PageInfo","PageRange"]};

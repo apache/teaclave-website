@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-teaclave-trustzone-sdk/docs/security-model" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Security Model | Apache Teaclave™ </title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://teaclave.apache.org/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://teaclave.apache.org/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://teaclave.apache.org/teaclave-trustzone-sdk/docs/security-model"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Security Model | Apache Teaclave™ "><meta data-rh="true" name="description" content="This document describes the trust model, trust boundaries, and security"><meta data-rh="true" property="og:description" content="This document describes the trust model, trust boundaries, and security"><link data-rh="true" rel="canonical" href="https://teaclave.apache.org/teaclave-trustzone-sdk/docs/security-model"><link data-rh="true" rel="alternate" href="https://teaclave.apache.org/teaclave-trustzone-sdk/docs/security-model" hreflang="en"><link data-rh="true" rel="alternate" href="https://teaclave.apache.org/teaclave-trustzone-sdk/docs/security-model" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Security Model","item":"https://teaclave.apache.org/teaclave-trustzone-sdk/docs/security-model"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Apache Teaclave™  RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Apache Teaclave™  Atom Feed"><link rel="stylesheet" href="/assets/css/styles.d7e340bb.css">
+<script src="/assets/js/runtime~main.38fd0beb.js" defer="defer"></script>
+<script src="/assets/js/main.3530dafd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_G6ar" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Apache Teaclave™" class="themedComponent_DHUr themedComponent--light_DIHH" style="height:2.5rem;max-width:300px;padding-left:1.6rem;position:relative;top:0.1rem"><img src="/img/logo.svg" alt="Apache Teaclave™" class="themedComponent_DHUr themedComponent--dark_Bv2M" style="height:2.5rem;max-width:300px;padding-left:1.6rem;position:relative;top:0.1rem"></div></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/powered-by">Powered By</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" file="community/community.md" href="/community">Community</a><ul class="dropdown__menu"><li><a class="dropdown__link" file="community/contributing.md" href="/contributing">Contributing</a></li><li><a class="dropdown__link" file="community/contributors.md" href="/contributors">Contributors</a></li><li><a class="dropdown__link" file="community/becoming-a-member.md" href="/becoming-a-member">Becoming a Member</a></li><li><a class="dropdown__link" file="community/maturity.md" href="/maturity">Maturity Assessment</a></li><li><a class="dropdown__link" file="community/release-guide.md" href="/release-guide">Release Guide</a></li></ul></div><a class="navbar__item navbar__link" href="/download">Download</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" file="overview.md" href="/overview">Docs</a><ul class="dropdown__menu"><li><a class="dropdown__link" file="teaclave-trustzone-sdk/docs/README.md" href="/trustzone-sdk-docs/">Teaclave TrustZone SDK</a></li><li><a href="https://teaclave.apache.org/api-docs/trustzone-sdk/optee_teec" target="_self" rel="" class="dropdown__link">API Docs: Teaclave TrustZone SDK (Host)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://teaclave.apache.org/api-docs/trustzone-sdk/optee_utee" target="_self" rel="" class="dropdown__link">API Docs: Teaclave TrustZone SDK (TA)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a class="dropdown__link" file="teaclave-sgx-sdk/documents/README.md" href="/sgx-sdk-docs/">Teaclave SGX SDK</a></li><li><a href="https://teaclave.apache.org/api-docs/sgx-sdk/" target="_self" rel="" class="dropdown__link">API Docs: Teaclave SGX SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a class="dropdown__link" file="teaclave-docs/README.md" href="/teaclave-docs/">Teaclave</a></li><li><a class="dropdown__link" file="teaclave-faas-legacy/docs/README.md" href="/docs/">Teaclave FaaS (legacy)</a></li></ul></div><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Repos</a><ul class="dropdown__menu"><li><a href="https://github.com/apache/teaclave" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-sgx-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave SGX SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-trustzone-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave TrustZone SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-java-tee-sdk" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave Java TEE SDK<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://github.com/apache/teaclave-website" target="_blank" rel="noopener noreferrer" class="dropdown__link">Teaclave Website<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">ASF</a><ul class="dropdown__menu"><li><a href="https://www.apache.org/" target="_blank" rel="noopener noreferrer" class="dropdown__link">ASF Homepage<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/licenses/" target="_blank" rel="noopener noreferrer" class="dropdown__link">License<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/foundation/sponsorship.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Sponsorship<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/security/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Security<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Privacy<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/foundation/thanks.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Thanks<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://www.apache.org/events/current-event.html" target="_blank" rel="noopener noreferrer" class="dropdown__link">Events<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_awgD"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="toggle_OLSw colorModeToggle_Hg9V"><button class="clean-btn toggleButton_wYmb toggleButtonDisabled_vaDU" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_KEbZ lightToggleIcon_Sxwe"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_KEbZ darkToggleIcon_Yem1"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_KEbZ systemToggleIcon_txm5"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_bmvg"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_UyTV"><div class="docsWrapper_XLvK"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_z1FD" type="button"></button><div class="docRoot_HciC"><aside class="theme-doc-sidebar-container docSidebarContainer_e5ai"><div class="sidebarViewport_N8x0"><div class="sidebar_vJCc"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_qiME"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/trustzone-sdk-docs/emulate-and-dev-in-docker.md"><span title="Quick Start" class="categoryLinkLabel_Oe72">Quick Start</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/emulate-and-dev-in-docker.md"><span title="Quick Emulation And Development in Docker" class="linkLabel_PuAu">Quick Emulation And Development in Docker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/emulate-and-dev-in-docker-std.md"><span title="Developing TAs with Rust Standard Library in Docker" class="linkLabel_PuAu">Developing TAs with Rust Standard Library in Docker</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/teaclave-trustzone-sdk/docs/security-model"><span title="Security" class="categoryLinkLabel_Oe72">Security</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/teaclave-trustzone-sdk/docs/security-model"><span title="Security Model" class="linkLabel_PuAu">Security Model</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/trustzone-sdk-docs/ta-development-modes.md"><span title="Development" class="categoryLinkLabel_Oe72">Development</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/ta-development-modes.md"><span title="TA Development Modes" class="linkLabel_PuAu">TA Development Modes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/overview-of-optee-rust-examples"><span title="Overview of OP-TEE Rust Examples" class="linkLabel_PuAu">Overview of OP-TEE Rust Examples</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/writing-rust-tas-using-optee-utee-build.md"><span title="Writing Rust TAs using optee-utee-build" class="linkLabel_PuAu">Writing Rust TAs using optee-utee-build</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/optee-utee-parameter-migration.md"><span title="Migrating to the Typed optee-utee Parameter API" class="linkLabel_PuAu">Migrating to the Typed optee-utee Parameter API</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/optee-utee-writing-unit-tests-with-mocks"><span title="OPTEE-UTEE: Writing Unit Tests with Mocks" class="linkLabel_PuAu">OPTEE-UTEE: Writing Unit Tests with Mocks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/building-rust-ca-as-android-elf.md"><span title="Building Rust CA as Android ELF" class="linkLabel_PuAu">Building Rust CA as Android ELF</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/trustzone-sdk-docs/advanced-setup.md"><span title="Advanced Topics" class="categoryLinkLabel_Oe72">Advanced Topics</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/advanced-setup.md"><span title="Advanced Setup" class="linkLabel_PuAu">Advanced Setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/expanding-ta-secure-memory-on-qemuv8.md"><span title="Expanding TA Secure Memory on QEMUv8" class="linkLabel_PuAu">Expanding TA Secure Memory on QEMUv8</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/migrating-to-new-building-env.md"><span title="Migrating to New Building Environment" class="linkLabel_PuAu">Migrating to New Building Environment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/trustzone-sdk-docs/debugging-optee-ta.md"><span title="Debugging OP-TEE TA" class="linkLabel_PuAu">Debugging OP-TEE TA</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_d9ci menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/teaclave-trustzone-sdk/docs/operation-guide-for-integration-with-each-optee-release"><span title="Maintenance" class="categoryLinkLabel_Oe72">Maintenance</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/teaclave-trustzone-sdk/docs/operation-guide-for-integration-with-each-optee-release"><span title="Operation Guide for Integration with Each OP-TEE Release" class="linkLabel_PuAu">Operation Guide for Integration with Each OP-TEE Release</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/teaclave-trustzone-sdk/docs/crates-io-ownership"><span title="crates.io Ownership Record" class="linkLabel_PuAu">crates.io Ownership Record</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_namt"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_YAwJ"><div class="docItemContainer_Rv5Z"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_zCmv" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_JFrk"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Security</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Security Model</span></li></ul></nav><div class="tocCollapsible_O_Qc theme-doc-toc-mobile tocMobile_tjDr"><button type="button" class="clean-btn tocCollapsibleButton_htYj">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Security Model</h1></header>
+<p>This document describes the trust model, trust boundaries, and security
+assumptions of the Apache Teaclave™ TrustZone SDK. It has two audiences:</p>
+<ol>
+<li class=""><strong>Developers</strong> writing Trusted Applications (TAs) and Client Applications
+(CAs) with this SDK, who need to know where the security boundary is and what
+responsibilities fall on their code.</li>
+<li class=""><strong>Automated reviewers (including LLM-based audit agents)</strong>, who need an
+explicit map of trust postures onto the repository&#x27;s file structure so that
+findings are calibrated — flagging real boundary issues without raising false
+positives on code where the concern does not apply.</li>
+</ol>
+<p>The model here follows the
+<a href="https://globalplatform.org/specs-library/tee-internal-core-api-specification/" target="_blank" rel="noopener noreferrer" class="">GlobalPlatform TEE Internal Core API</a>
+and the <a href="https://www.op-tee.org/" target="_blank" rel="noopener noreferrer" class="">OP-TEE</a> implementation that this SDK is built
+on. Nothing in this SDK weakens or replaces those guarantees; it provides
+ergonomic Rust bindings on top of them.</p>
+<blockquote>
+<p>This document describes the security model of the <strong>SDK and its boundary
+code</strong>. Individual demos (e.g. <code>projects/web3/eth_wallet</code>) carry their own,
+additional security-assumptions sections scoped to that application. Those are
+not repeated here.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="1-trust-model">1. Trust model<a href="#1-trust-model" class="hash-link" aria-label="Direct link to 1. Trust model" title="Direct link to 1. Trust model" translate="no">​</a></h2>
+<p>A TrustZone system is partitioned into two worlds by hardware:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Normal World (REE)</th><th>Secure World (TEE)</th></tr></thead><tbody><tr><td>Runs</td><td>Rich OS (Linux/Android), the CA, all user apps</td><td>OP-TEE OS + Trusted Applications</td></tr><tr><td>Trust posture</td><td><strong>Untrusted</strong></td><td><strong>Trusted</strong></td></tr><tr><td>Memory</td><td>Visible to the secure world</td><td>Not visible to the normal world</td></tr><tr><td>In this SDK</td><td><code>optee-teec</code> (CA library)</td><td><code>optee-utee</code> (TA library)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="trusted-computing-base-tcb">Trusted Computing Base (TCB)<a href="#trusted-computing-base-tcb" class="hash-link" aria-label="Direct link to Trusted Computing Base (TCB)" title="Direct link to Trusted Computing Base (TCB)" translate="no">​</a></h3>
+<p>The following are <strong>trusted</strong> and assumed correct:</p>
+<ul>
+<li class="">The hardware root of trust and TrustZone partitioning.</li>
+<li class="">The secure boot chain and OP-TEE OS.</li>
+<li class="">The Trusted Application itself, once loaded and verified by OP-TEE.</li>
+<li class="">The GlobalPlatform Internal Core API surface OP-TEE provides.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="adversary">Adversary<a href="#adversary" class="hash-link" aria-label="Direct link to Adversary" title="Direct link to Adversary" translate="no">​</a></h3>
+<p>The adversary is assumed to have <strong>full control of the Normal World</strong>,
+including root privileges in the Rich OS. Concretely, the adversary can:</p>
+<ul>
+<li class="">Invoke any TA, open any session, and call any command ID with <strong>arbitrary
+parameters</strong> — values, buffer pointers, and buffer lengths are all
+attacker-chosen.</li>
+<li class="">Place arbitrary, malicious, or malformed content in any shared-memory buffer
+passed to a TA.</li>
+<li class=""><strong>Mutate shared-memory buffers concurrently</strong>, including during a TA call
+(Time-of-Check-to-Time-of-Use, TOCTOU).</li>
+<li class="">Read any memory and any file in the Normal World, including encrypted secure-
+storage blobs that OP-TEE chooses to persist on the Normal World filesystem.</li>
+<li class="">Delete, withhold, replay, or reorder anything stored or transmitted through
+the Normal World (availability and rollback attacks).</li>
+<li class="">Observe timing and other side channels visible from the Normal World.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="out-of-scope">Out of scope<a href="#out-of-scope" class="hash-link" aria-label="Direct link to Out of scope" title="Direct link to Out of scope" translate="no">​</a></h3>
+<p>Unless a specific demo states otherwise, the following are <strong>not</strong> defended
+against by this SDK and are the responsibility of the hardware/integrator:</p>
+<ul>
+<li class="">Physical and hardware attacks (glitching, bus probing, decapsulation).</li>
+<li class="">Microarchitectural side channels (Spectre-class, cache timing).</li>
+<li class="">Rollback of secure storage when no anti-rollback hardware (e.g. RPMB) is used.</li>
+<li class="">Denial of service from the Normal World (it controls scheduling and power).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="2-the-trust-boundary">2. The trust boundary<a href="#2-the-trust-boundary" class="hash-link" aria-label="Direct link to 2. The trust boundary" title="Direct link to 2. The trust boundary" translate="no">​</a></h2>
+<p>The single most important boundary is the <strong>TA entry point</strong>. Everything
+crossing from the Normal World into a TA is attacker-controlled until the TA has
+validated it.</p>
+<div class="language-text codeBlockContainer_ZGJx theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_kX1v"><pre tabindex="0" class="prism-code language-text codeBlock_TAPP thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_AdAo"><span class="token-line" style="color:#393A34"><span class="token plain">   NORMAL WORLD (untrusted)              ││            SECURE WORLD (trusted)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                         ││</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   ┌──────────────┐   TEEC_InvokeCommand  ││  TA_InvokeCommandEntryPoint</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   │  CA / Rich   │ ────────────────────► ││ ──────────────────────────►  TA logic</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   │  OS (root)   │   params + shared mem ││  typed params                 (your code)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   └──────────────┘                       ││  (ParametersAny / wrappers)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                            TRUST BOUNDARY ↑↑</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">              (params, pointers, lengths, buffer contents</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">               are all attacker-controlled and may mutate</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">               concurrently — validate before use)</span><br></span></code></pre></div></div>
+<p>In this SDK the boundary is crossed through the entry-point macros in
+<code>optee-utee</code> (<code>#[ta_invoke_command]</code>, <code>#[ta_open_session]</code>, etc.), which
+convert the raw <code>TEE_Param</code> array into direction-typed wrappers — either a
+concrete 4-tuple such as <code>(ParameterMemrefInput&lt;&#x27;_&gt;, ...)</code> or the
+type-erased <code>ParametersAny&lt;&#x27;_&gt;</code> — before your TA logic runs.</p>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="parameter-trust-by-type">Parameter trust, by type<a href="#parameter-trust-by-type" class="hash-link" aria-label="Direct link to Parameter trust, by type" title="Direct link to Parameter trust, by type" translate="no">​</a></h3>
+<p><code>crates/optee-utee/src/parameter/</code> exposes the GlobalPlatform parameter types
+(see <code>docs/optee-utee-parameter-migration.md</code>):</p>
+<ul>
+<li class="">
+<p><strong><code>ParameterValueInput</code> / <code>ParameterValueInout</code> / <code>ParameterValueOutput</code></strong> —
+two <code>u32</code> registers read via <code>get_a()</code>/<code>get_b()</code> (written via <code>set_a()</code>/
+<code>set_b()</code>). Untrusted <em>content</em>, but bounded in size and not aliased to
+Normal-World memory. Validate the values; there is no pointer/length to
+worry about.</p>
+</li>
+<li class="">
+<p><strong><code>ParameterMemrefInput</code> / <code>ParameterMemrefInout</code> / <code>ParameterMemrefOutput</code></strong>
+— a <strong>shared-memory reference</strong>: a <code>{buffer, size}</code> pair (<code>raw::Memref</code>).
+This is the high-risk case. The typed API is copy-based: reads go through
+<code>ParameterMemrefRead::read_to_vec</code> (whole buffer) / <code>read_at</code> (partial
+range) and writes through <code>ParameterMemrefWrite::set_output</code> / <code>write_at</code>,
+with the shared length exposed as <code>ParameterMemref::buffer_len</code>. The typed
+API never hands out a TA-side reference into shared memory.</p>
+<p>OP-TEE core guarantees the pointer refers to memory the caller is allowed to
+share (so it cannot be used to read arbitrary secure memory), but <strong>the
+contents and the length are attacker-chosen, and the backing memory remains
+mapped and writable by the Normal World for the duration of the call.</strong></p>
+<p>(The legacy <code>deprecated::ParamMemref::buffer()</code> accessor, which constructs a
+Rust slice directly over the Normal-World pointer, remains for transitional
+code but must not be used in new code.)</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="boundary-invariants-the-ta-must-enforce">Boundary invariants the TA must enforce<a href="#boundary-invariants-the-ta-must-enforce" class="hash-link" aria-label="Direct link to Boundary invariants the TA must enforce" title="Direct link to Boundary invariants the TA must enforce" translate="no">​</a></h3>
+<p>These are obligations on <strong>TA code</strong>, not provided automatically:</p>
+<ol>
+<li class=""><strong>Validate <code>param_types</code> first.</strong> Confirm each slot is the type you expect
+before interpreting it. A concrete tuple is validated up front by the
+entry-point macros; <code>ParameterAny</code> branch accessors (<code>as_value_input</code>,
+<code>as_memref_input</code>, ...) return <code>BadParameters</code> on a type mismatch —
+propagate that, do not bypass it.</li>
+<li class=""><strong>Treat every byte of a memref as adversarial input.</strong> Length, encoding, and
+structure must all be checked. Never assume a buffer is NUL-terminated, well-
+formed, or non-empty.</li>
+<li class=""><strong>Bound all lengths.</strong> A <code>size</code> of <code>0</code>, a huge <code>size</code>, or a <code>size</code> that does
+not match the payload are all legal inputs the adversary may send.</li>
+<li class=""><strong>Copy-then-validate to avoid TOCTOU.</strong> Because the Normal World can mutate a
+shared buffer concurrently, copy untrusted input into secure memory <strong>once</strong>
+before validating and using it. Do not read the same shared field twice and
+assume it is unchanged (a &quot;double fetch&quot;). Treat <code>ParameterMemrefInput</code> as
+read-once.</li>
+<li class=""><strong>Do not leak secrets through <code>*Output</code> / <code>*Inout</code> buffers.</strong> Anything written
+to an output memref becomes visible to the Normal World. Write only what the
+caller is authorized to learn; size outputs deliberately and set the updated
+size with <code>set_updated_size</code>.</li>
+<li class=""><strong>Fail closed.</strong> On any validation failure, return an error
+(<code>ErrorKind::BadParameters</code> and friends) — never proceed with partially
+validated input.</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="3-trust-posture-map-of-the-repository">3. Trust-posture map of the repository<a href="#3-trust-posture-map-of-the-repository" class="hash-link" aria-label="Direct link to 3. Trust-posture map of the repository" title="Direct link to 3. Trust-posture map of the repository" translate="no">​</a></h2>
+<p>Use this table to decide whether a given concern (especially &quot;untrusted input&quot;)
+applies to a file. This is the key reference for an automated reviewer.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Path</th><th>World / role</th><th>Trust posture</th><th>What to scrutinize</th></tr></thead><tbody><tr><td><code>crates/optee-utee/</code></td><td>TA library (Secure World)</td><td><strong>Boundary + trusted</strong></td><td>The boundary lives here. <code>parameter/</code> (typed <code>memref</code>/<code>value</code>/<code>none</code> params and the legacy <code>deprecated</code> module), <code>tee_parameter.rs</code>, the entry-point glue, and any <code>unsafe</code> deref of caller-supplied pointers/lengths.</td></tr><tr><td><code>crates/optee-utee-macros/</code></td><td>TA entry-point codegen</td><td><strong>Boundary</strong></td><td>The generated <code>TA_*EntryPoint</code> wrappers: do they faithfully pass <code>param_types</code> and the raw params, and propagate errors without dropping them?</td></tr><tr><td><code>crates/optee-utee-sys/</code></td><td>Raw FFI to OP-TEE Internal Core API</td><td><strong>Below the type system</strong></td><td>Signatures must match OP-TEE; <code>unsafe</code> correctness. The Rust type system does <strong>not</strong> protect callers here.</td></tr><tr><td><code>crates/optee-teec/</code></td><td>CA library (Normal World)</td><td><strong>Untrusted side</strong></td><td>This runs in the adversary&#x27;s world. &quot;Missing input validation&quot; here is generally <strong>not</strong> a TA-security finding — the TA cannot trust this code regardless. Focus instead on memory safety and not mishandling secrets returned to the CA.</td></tr><tr><td><code>crates/optee-teec-sys/</code></td><td>Raw FFI for the CA</td><td>Untrusted side / FFI</td><td>FFI correctness only.</td></tr><tr><td><code>crates/secure_db/</code>, <code>crates/rustls_provider/</code></td><td>Run inside the TA</td><td><strong>Trusted, but process untrusted data</strong></td><td>Logic runs in the TEE, but inputs (DB contents persisted via Normal World storage, bytes from a TLS peer) originate outside the TCB. Apply the boundary invariants to those inputs.</td></tr><tr><td><code>crates/*-build</code>, <code>*-macros</code>, <code>*-systest</code></td><td>Build-time / test tooling</td><td>Build-time</td><td>Not in the runtime TCB. Review as ordinary tooling, not as boundary code.</td></tr><tr><td><code>examples/</code></td><td>Illustrative TA+CA pairs</td><td><strong>Illustrative, not hardened</strong></td><td>Demonstrate API usage. They are teaching material and may intentionally omit production hardening; do not report them as if they were production code, but <em>do</em> note where they model an unsafe pattern a developer might copy.</td></tr><tr><td><code>projects/</code></td><td>Reference applications (e.g. <code>web3/eth_wallet</code>)</td><td><strong>Reference, with stated assumptions</strong></td><td>Read the project&#x27;s own &quot;Security Assumptions&quot; section first; review against <em>that</em> stated threat model.</td></tr><tr><td><code>tests/</code>, <code>.patches/</code>, <code>tools/</code></td><td>Test harness / tooling</td><td>Build/test-time</td><td>Not runtime TCB.</td></tr></tbody></table>
+<p>Within any TA-side crate, the layout of a typical application is:</p>
+<ul>
+<li class=""><strong><code>ta/</code></strong> — runs in the Secure World. The trust boundary is its entry points.</li>
+<li class=""><strong><code>host/</code> (CA)</strong> — runs in the Normal World. Untrusted.</li>
+<li class=""><strong><code>proto/</code></strong> — shared message/serialization definitions used by both sides.
+Deserialization of these structures <strong>inside the TA</strong> is boundary code: a
+malicious CA can send malformed <code>proto</code> bytes.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="4-storage-secrets-and-other-assumptions">4. Storage, secrets, and other assumptions<a href="#4-storage-secrets-and-other-assumptions" class="hash-link" aria-label="Direct link to 4. Storage, secrets, and other assumptions" title="Direct link to 4. Storage, secrets, and other assumptions" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Secure storage is confidential and integrity-protected, but not inherently
+anti-rollback or highly available.</strong> OP-TEE may persist secure objects as
+encrypted blobs on the Normal World filesystem, where the adversary can delete
+or roll them back. Anti-rollback requires hardware support such as RPMB.
+(See the <code>eth_wallet</code> demo&#x27;s notes for a concrete discussion.)</li>
+<li class=""><strong>Secrets must never cross to the Normal World in cleartext</strong> unless the
+application&#x27;s threat model explicitly accepts it. Returning a mnemonic or key
+to the CA is a deliberate, documented risk where it appears in demos.</li>
+<li class=""><strong>A secure user interface (trusted display/input) is hardware-specific and not
+provided by this SDK.</strong> Where a flow needs user confirmation of a sensitive
+action, that confirmation cannot be trusted if it round-trips through the
+Normal World.</li>
+<li class=""><strong>Cryptographic operations</strong> should use the OP-TEE/GlobalPlatform crypto API
+surface (<code>crates/optee-utee/src/crypto_op.rs</code>, <code>arithmetical.rs</code>) rather than
+re-implementing primitives in the TA.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="5-dependencies-and-the-supply-chain">5. Dependencies and the supply chain<a href="#5-dependencies-and-the-supply-chain" class="hash-link" aria-label="Direct link to 5. Dependencies and the supply chain" title="Direct link to 5. Dependencies and the supply chain" translate="no">​</a></h2>
+<p>This is a TrustZone-specific concern that differs sharply from ordinary
+applications: <strong>every crate compiled into a TA runs inside the Secure World and
+is therefore part of the Trusted Computing Base.</strong> A vulnerability or backdoor
+in a TA dependency is not &quot;just&quot; code execution in a userspace process — it is
+code execution <strong>inside the TEE</strong>, with access to whatever secrets and
+capabilities the TA holds. The trust boundary of §2 stops attacker <em>input</em> at
+the entry point; it does <strong>not</strong> sandbox the TA&#x27;s own dependencies.</p>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="what-runs-where">What runs where<a href="#what-runs-where" class="hash-link" aria-label="Direct link to What runs where" title="Direct link to What runs where" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Dependency kind</th><th>Executes</th><th>Trust domain</th></tr></thead><tbody><tr><td>Regular <code>[dependencies]</code> of a TA</td><td>At runtime, <strong>inside the TEE</strong></td><td><strong>TCB</strong> — fully trusted, no sandbox</td></tr><tr><td><code>[dependencies]</code> of a CA</td><td>At runtime, in the Normal World</td><td>Untrusted world (not TA-security-relevant)</td></tr><tr><td><code>[build-dependencies]</code> and proc-macros (<code>*-macros</code>)</td><td>At <strong>build time</strong> on the developer/CI host</td><td>Build host — build-time code execution</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="consequences-for-the-audit">Consequences for the audit<a href="#consequences-for-the-audit" class="hash-link" aria-label="Direct link to Consequences for the audit" title="Direct link to Consequences for the audit" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>The TCB includes the full transitive dependency tree of each TA.</strong> When
+reviewing a TA, the in-scope code is not only <code>ta/</code> — it is every crate the TA
+pulls in. Cryptographic crates such as <code>rustls</code>, <code>rustls-rustcrypto</code>,
+<code>ed25519-dalek</code>, <code>secp256k1</code>, <code>sha3</code>, <code>bip32</code>, and serialization crates such
+as <code>serde</code>/<code>bincode</code> (see <code>crates/rustls_provider</code>, <code>crates/secure_db</code>, and
+<code>projects/web3/eth_wallet/ta</code>) all run with full TEE privilege.</li>
+<li class=""><strong><code>no-std</code> vs <code>std</code> is a TCB-size decision, not only an ergonomics one.</strong> The
+SDK recommends <code>no-std</code> by default; one security reason is that <code>std</code> mode
+pulls in a substantially larger dependency and runtime surface, all of which
+enters the TCB. Prefer the smallest dependency set that meets the requirement.</li>
+<li class=""><strong>Software crypto in a TA bypasses hardware crypto and key isolation.</strong> Crates
+like <code>ed25519-dalek</code>/<code>secp256k1</code> perform key operations in TA-resident memory
+rather than in a hardware crypto engine or secure key store. That is a
+legitimate design choice, but it means key material lives in TEE RAM and the
+implementation&#x27;s side-channel resistance is now your concern. Where the
+platform offers it, prefer the OP-TEE/GlobalPlatform crypto API
+(<code>crates/optee-utee/src/crypto_op.rs</code>).</li>
+<li class=""><strong>Randomness must be TEE-backed.</strong> A TA&#x27;s RNG (e.g. anything reaching
+<code>getrandom</code>) must be sourced from a TEE/hardware entropy source, never from
+the Normal World. Verify the entropy path for any crate that needs randomness
+inside a TA.</li>
+<li class=""><strong>Build-time dependencies are a supply-chain risk even though they never enter
+the TEE.</strong> Proc-macros and build scripts execute arbitrary code on the build
+host and can tamper with the generated TA binary. Treat the build host and CI
+as part of the trust chain.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_SAay" id="current-state-and-recommendations">Current state and recommendations<a href="#current-state-and-recommendations" class="hash-link" aria-label="Direct link to Current state and recommendations" title="Direct link to Current state and recommendations" translate="no">​</a></h3>
+<p>The repository does not currently ship a dependency-vetting policy (no
+<code>deny.toml</code>, <code>cargo-audit</code>/<code>cargo-vet</code>/<code>cargo-supply-chain</code> configuration, and no
+committed top-level lockfile policy for downstream TAs). For
+production-grade TAs, integrators should:</p>
+<ul>
+<li class=""><strong>Pin and lock</strong> dependencies (commit <code>Cargo.lock</code>) so audited versions are
+reproducible.</li>
+<li class="">Run <strong><code>cargo audit</code></strong> (RUSTSEC advisories) and consider <strong><code>cargo deny</code></strong> to
+enforce allowed licenses, ban yanked/duplicate crates, and gate new
+dependencies.</li>
+<li class="">Consider <strong><code>cargo vet</code></strong> or vendoring for the subset of crates that end up in
+the TCB.</li>
+<li class=""><strong>Minimize the TA dependency tree</strong> and review new TA dependencies as TCB
+additions, with the same scrutiny as first-party TA code.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="6-guidance-for-automated--llm-security-review">6. Guidance for automated / LLM security review<a href="#6-guidance-for-automated--llm-security-review" class="hash-link" aria-label="Direct link to 6. Guidance for automated / LLM security review" title="Direct link to 6. Guidance for automated / LLM security review" translate="no">​</a></h2>
+<blockquote>
+<p><strong>Note to the reviewing agent:</strong> When you audit a TA, <strong>do not stop at the
+first-party <code>ta/</code> code — also review its dependencies whenever your tooling and
+context allow it.</strong> A TA&#x27;s entire transitive crate tree runs inside the TEE and
+is part of the TCB (§5). If you can access the dependency sources or lockfile,
+enumerate the TA&#x27;s transitive dependencies, flag any that are unpinned,
+yanked, or carry known RUSTSEC advisories, and pay particular attention to
+crates that handle crypto, randomness/entropy, or deserialization inside the
+TEE. If you cannot reach the dependency sources, say so explicitly and list the
+TA&#x27;s declared dependencies as unreviewed TCB surface rather than silently
+skipping them.</p>
+</blockquote>
+<p>To keep findings high-signal:</p>
+<p><strong>Where real findings concentrate</strong></p>
+<ul>
+<li class="">TA entry points and anything reachable from them that reads <code>Parameters</code>.</li>
+<li class="">Every memref read: is the length bounded (<code>buffer_len</code> checked before use)?
+Is untrusted input copied via <code>read_to_vec</code>/<code>read_at</code> and validated on the
+copied bytes (no double-fetch / TOCTOU)? Any remaining
+<code>deprecated::ParamMemref::buffer()</code> use hands out a shared slice and needs
+explicit justification for the same bar.</li>
+<li class=""><code>unsafe</code> blocks in <code>optee-utee</code> and the <code>*-sys</code> crates that dereference
+caller-supplied pointers or lengths.</li>
+<li class="">Deserialization inside a TA of <code>proto</code>/shared structures.</li>
+<li class="">Output/Inout memrefs that might leak more than intended.</li>
+<li class="">Secure-storage code that assumes persistence, freshness, or availability.</li>
+<li class="">TA dependencies (§5): the in-scope TCB is the TA&#x27;s full transitive crate tree,
+not just <code>ta/</code> — including software crypto, the entropy/RNG path, and <code>serde</code>/
+<code>bincode</code> deserialization of attacker-influenced data inside the TEE.</li>
+</ul>
+<p><strong>Expected non-findings (avoid these false positives)</strong></p>
+<ul>
+<li class="">&quot;Missing input validation in the CA&quot; — CA code (<code>optee-teec</code>, <code>host/</code>) is in
+the untrusted world; the TA must validate regardless, so CA-side validation is
+not a security control.</li>
+<li class="">Treating <code>examples/</code> as production code. Note copy-risk patterns, but frame
+them as illustrative.</li>
+<li class="">Flagging <code>unsafe</code> in <code>*-sys</code> crates merely for existing — FFI is <code>unsafe</code> by
+necessity. The finding must be a concrete mismatch or misuse.</li>
+<li class="">Reporting a demo&#x27;s <em>documented and accepted</em> risk (e.g. mnemonic returned to
+the Normal World in <code>eth_wallet</code>) as a new vulnerability.</li>
+</ul>
+<p><strong>Before reporting</strong>, state which side of the trust boundary the code runs on
+and which adversary capability (§1) the issue depends on. If a finding does not
+trace to a concrete adversary capability crossing the boundary, it is likely a
+false positive.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_SAay" id="7-reporting-vulnerabilities">7. Reporting vulnerabilities<a href="#7-reporting-vulnerabilities" class="hash-link" aria-label="Direct link to 7. Reporting vulnerabilities" title="Direct link to 7. Reporting vulnerabilities" translate="no">​</a></h2>
+<p>Security issues in the SDK itself should be reported privately first, per
+<a class="" href="/teaclave-trustzone-sdk/SECURITY.md"><code>SECURITY.md</code></a>, before any public disclosure.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/trustzone-sdk-docs/emulate-and-dev-in-docker-std.md"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Developing TAs with Rust Standard Library in Docker</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/trustzone-sdk-docs/ta-development-modes.md"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">TA Development Modes</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_TN1Q thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-trust-model" class="table-of-contents__link toc-highlight">1. Trust model</a><ul><li><a href="#trusted-computing-base-tcb" class="table-of-contents__link toc-highlight">Trusted Computing Base (TCB)</a></li><li><a href="#adversary" class="table-of-contents__link toc-highlight">Adversary</a></li><li><a href="#out-of-scope" class="table-of-contents__link toc-highlight">Out of scope</a></li></ul></li><li><a href="#2-the-trust-boundary" class="table-of-contents__link toc-highlight">2. The trust boundary</a><ul><li><a href="#parameter-trust-by-type" class="table-of-contents__link toc-highlight">Parameter trust, by type</a></li><li><a href="#boundary-invariants-the-ta-must-enforce" class="table-of-contents__link toc-highlight">Boundary invariants the TA must enforce</a></li></ul></li><li><a href="#3-trust-posture-map-of-the-repository" class="table-of-contents__link toc-highlight">3. Trust-posture map of the repository</a></li><li><a href="#4-storage-secrets-and-other-assumptions" class="table-of-contents__link toc-highlight">4. Storage, secrets, and other assumptions</a></li><li><a href="#5-dependencies-and-the-supply-chain" class="table-of-contents__link toc-highlight">5. Dependencies and the supply chain</a><ul><li><a href="#what-runs-where" class="table-of-contents__link toc-highlight">What runs where</a></li><li><a href="#consequences-for-the-audit" class="table-of-contents__link toc-highlight">Consequences for the audit</a></li><li><a href="#current-state-and-recommendations" class="table-of-contents__link toc-highlight">Current state and recommendations</a></li></ul></li><li><a href="#6-guidance-for-automated--llm-security-review" class="table-of-contents__link toc-highlight">6. Guidance for automated / LLM security review</a></li><li><a href="#7-reporting-vulnerabilities" class="table-of-contents__link toc-highlight">7. Reporting vulnerabilities</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright"><div style="font-size:.7rem; text-align:left;">Copyright © 2019-2025, The Apache Software FoundationLicensed under the Apache License, Version 2.0. Apache Teaclave™, Apache, the Apache feather, and the Apache Teaclave™ project logo are either trademarks or registered trademarks of the Apache Software Foundation.</div></div></div></div></footer></div>
+</body>
+</html>

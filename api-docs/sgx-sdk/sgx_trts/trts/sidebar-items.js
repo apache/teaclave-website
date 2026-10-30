@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["at_exit","cpu_core_num","enclave_mode","is_supported_edmm","is_within_enclave","is_within_host","version"],"struct":["MmLayout","OcBuffer"],"trait":["EnclaveRange"]};

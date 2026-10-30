@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["VarError"],"fn":["args","args_os","home_dir","join_paths","remove_var","set_var","split_paths","temp_dir","var","var_os","vars","vars_os"],"mod":["consts"],"struct":["Args","ArgsOs","JoinPathsError","SplitPaths","Vars","VarsOs"]};
